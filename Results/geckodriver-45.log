@@ -1,0 +1,9 @@
+1623762664113	geckodriver	INFO	Listening on 127.0.0.1:55576
+1623762667139	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\jatul\\AppData\\Local\\Temp\\rust_mozprofileOj7af1"
+1623762668540	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jatul\\AppData\\Local\\Temp\\rust_mozprofileOj7af1\\search.json.mozlz4", (void 0)))
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+1623762672455	Marionette	INFO	Listening on port 55584
+1623762672975	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623762692477	Marionette	INFO	Stopped listening on port 55584

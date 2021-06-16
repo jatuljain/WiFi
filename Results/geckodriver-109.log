@@ -1,0 +1,8 @@
+1623773816593	geckodriver	INFO	Listening on 127.0.0.1:55815
+1623773819640	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\jatul\\AppData\\Local\\Temp\\rust_mozprofile41YC5E"
+1623773820273	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jatul\\AppData\\Local\\Temp\\rust_mozprofile41YC5E\\search.json.mozlz4", (void 0)))
+1623773823608	Marionette	INFO	Listening on port 61109
+1623773823864	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://mijnmodem.kpn/js/global.js?ver=1592911205, line 1665: TypeError: goTopWin.G_option.progressbar is undefined
+1623773845712	Marionette	INFO	Stopped listening on port 61109

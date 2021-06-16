@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.1 (Python 3.9.4 on win32)" generated="20210615 18:26:32.212" rpa="false" schemaversion="2">
+<suite id="s1" name="WLAN ChannelID" source="D:\Personal\Automation\KPN\Tests\WLAN_ChannelID.robot">
+<test id="s1-t1" name="Verify setting ChannelID 1">
+<kw name="Login to DUT" library="CommonFunction" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOME_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210615 18:26:32.574" level="INFO">Opening browser 'firefox' to base url 'https://mijnmodem.kpn/login.htm'.</msg>
+<msg timestamp="20210615 18:26:32.589" level="INFO">Firefox driver log is always forced to to: D:\Personal\Automation\KPN\results\geckodriver-117.log</msg>
+<status status="PASS" starttime="20210615 18:26:32.574" endtime="20210615 18:26:43.573"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210615 18:26:43.573" endtime="20210615 18:26:43.617"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:26:45.621" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210615 18:26:43.618" endtime="20210615 18:26:45.621"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Password}</arg>
+<arg>${Password_value}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210615 18:26:45.623" level="INFO">Sending key(s) ('Qwerty1!',) to //input[@name='ui_pws'] element.</msg>
+<msg timestamp="20210615 18:26:45.945" level="INFO">Sending keys Qwerty1!</msg>
+<status status="PASS" starttime="20210615 18:26:45.622" endtime="20210615 18:26:46.031"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:26:48.046" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210615 18:26:46.031" endtime="20210615 18:26:48.046"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:26:48.047" level="INFO">Clicking element '//tbody/tr[5]/td[1]'.</msg>
+<status status="PASS" starttime="20210615 18:26:48.046" endtime="20210615 18:26:50.751"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:26:55.760" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210615 18:26:50.751" endtime="20210615 18:26:55.760"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Topology Overview}</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210615 18:26:55.760" endtime="20210615 18:26:55.768"/>
+</kw>
+<status status="PASS" starttime="20210615 18:26:32.573" endtime="20210615 18:26:55.768"/>
+</kw>
+<kw name="Verify ChannelID scenarios">
+<arg>2</arg>
+<tag>ChannelIDSet</tag>
+<tag>Funtional</tag>
+<tag>WiFi</tag>
+<doc>This Test case is to verify setting different channel with Bandwith 20mhz</doc>
+<kw name="Go to WLAN Page" library="WLANPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WLAN_Tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:26:55.771" level="INFO">Clicking element '//a[normalize-space()='WLAN']'.</msg>
+<status status="PASS" starttime="20210615 18:26:55.771" endtime="20210615 18:26:55.812"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:27:00.829" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210615 18:26:55.813" endtime="20210615 18:27:00.829"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Access Points</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210615 18:27:00.829" endtime="20210615 18:27:00.829"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>id:frm_main2</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210615 18:27:00.829" level="INFO">Selecting frame 'id:frm_main2'.</msg>
+<status status="PASS" starttime="20210615 18:27:00.829" endtime="20210615 18:27:00.844"/>
+</kw>
+<kw name="Current Frame Should Contain" library="SeleniumLibrary">
+<arg>${wlan_page}</arg>
+<doc>Verifies that the current frame contains ``text``.</doc>
+<msg timestamp="20210615 18:27:00.844" level="INFO">Current frame contains text 'Restore WiFi Defaults'.</msg>
+<status status="PASS" starttime="20210615 18:27:00.844" endtime="20210615 18:27:00.844"/>
+</kw>
+<status status="PASS" starttime="20210615 18:26:55.770" endtime="20210615 18:27:00.844"/>
+</kw>
+<kw name="Set the 2.4Ghz Channel ID with value" library="WLANPage">
+<arg>${ChannelID_index}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${2.4Ghz_ChannelID_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:27:00.844" level="INFO">Clicking element '//tbody/tr[@id='tr_wchan_both']/td[@class='tdText']/div[1]'.</msg>
+<status status="PASS" starttime="20210615 18:27:00.844" endtime="20210615 18:27:01.086"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[${item label}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:27:01.086" level="INFO">Clicking element '//*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20210615 18:27:01.086" endtime="20210615 18:27:01.309"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WLAN_save_setting}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:27:01.309" level="INFO">Clicking element '//*[@id="save"]/span[2]'.</msg>
+<status status="PASS" starttime="20210615 18:27:01.309" endtime="20210615 18:27:01.562"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>ChannelID_${item label}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 18:27:01.685" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ChannelID_2.png"&gt;&lt;img src="ChannelID_2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 18:27:01.562" endtime="20210615 18:27:01.685"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>15s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:27:16.700" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" starttime="20210615 18:27:01.685" endtime="20210615 18:27:16.700"/>
+</kw>
+<status status="PASS" starttime="20210615 18:27:00.844" endtime="20210615 18:27:16.700"/>
+</kw>
+<status status="PASS" starttime="20210615 18:26:55.769" endtime="20210615 18:27:16.700"/>
+</kw>
+<kw name="Logout from DUT" library="CommonFunction" type="TEARDOWN">
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210615 18:27:16.702" endtime="20210615 18:27:16.705"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Logout_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:27:16.706" level="INFO">Clicking element 'btn_logout'.</msg>
+<status status="PASS" starttime="20210615 18:27:16.706" endtime="20210615 18:27:17.134"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:27:19.136" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210615 18:27:17.134" endtime="20210615 18:27:19.136"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210615 18:27:19.136" endtime="20210615 18:27:20.229"/>
+</kw>
+<status status="PASS" starttime="20210615 18:27:16.700" endtime="20210615 18:27:20.229"/>
+</kw>
+<status status="PASS" starttime="20210615 18:26:32.565" endtime="20210615 18:27:20.229"/>
+</test>
+<test id="s1-t2" name="Verify setting ChannelID 2">
+<kw name="Login to DUT" library="CommonFunction" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOME_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210615 18:27:20.237" level="INFO">Opening browser 'firefox' to base url 'https://mijnmodem.kpn/login.htm'.</msg>
+<msg timestamp="20210615 18:27:20.254" level="INFO">Firefox driver log is always forced to to: D:\Personal\Automation\KPN\results\geckodriver-118.log</msg>
+<status status="PASS" starttime="20210615 18:27:20.236" endtime="20210615 18:27:32.001"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210615 18:27:32.001" endtime="20210615 18:27:32.015"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:27:34.035" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210615 18:27:32.015" endtime="20210615 18:27:34.035"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Password}</arg>
+<arg>${Password_value}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210615 18:27:34.035" level="INFO">Sending key(s) ('Qwerty1!',) to //input[@name='ui_pws'] element.</msg>
+<msg timestamp="20210615 18:27:34.341" level="INFO">Sending keys Qwerty1!</msg>
+<status status="PASS" starttime="20210615 18:27:34.035" endtime="20210615 18:27:34.359"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:27:36.373" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210615 18:27:34.360" endtime="20210615 18:27:36.373"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:27:36.373" level="INFO">Clicking element '//tbody/tr[5]/td[1]'.</msg>
+<status status="PASS" starttime="20210615 18:27:36.373" endtime="20210615 18:27:38.731"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:27:43.738" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210615 18:27:38.731" endtime="20210615 18:27:43.738"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Topology Overview}</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210615 18:27:43.738" endtime="20210615 18:27:43.744"/>
+</kw>
+<status status="PASS" starttime="20210615 18:27:20.236" endtime="20210615 18:27:43.744"/>
+</kw>
+<kw name="Verify ChannelID scenarios">
+<arg>3</arg>
+<tag>ChannelIDSet</tag>
+<tag>Funtional</tag>
+<tag>WiFi</tag>
+<doc>This Test case is to verify setting different channel with Bandwith 20mhz</doc>
+<kw name="Go to WLAN Page" library="WLANPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WLAN_Tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:27:43.748" level="INFO">Clicking element '//a[normalize-space()='WLAN']'.</msg>
+<status status="PASS" starttime="20210615 18:27:43.748" endtime="20210615 18:27:43.791"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:27:48.793" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210615 18:27:43.792" endtime="20210615 18:27:48.793"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Access Points</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210615 18:27:48.793" endtime="20210615 18:27:48.802"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>id:frm_main2</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210615 18:27:48.802" level="INFO">Selecting frame 'id:frm_main2'.</msg>
+<status status="PASS" starttime="20210615 18:27:48.802" endtime="20210615 18:27:48.811"/>
+</kw>
+<kw name="Current Frame Should Contain" library="SeleniumLibrary">
+<arg>${wlan_page}</arg>
+<doc>Verifies that the current frame contains ``text``.</doc>
+<msg timestamp="20210615 18:27:48.818" level="INFO">Current frame contains text 'Restore WiFi Defaults'.</msg>
+<status status="PASS" starttime="20210615 18:27:48.811" endtime="20210615 18:27:48.819"/>
+</kw>
+<status status="PASS" starttime="20210615 18:27:43.744" endtime="20210615 18:27:48.819"/>
+</kw>
+<kw name="Set the 2.4Ghz Channel ID with value" library="WLANPage">
+<arg>${ChannelID_index}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${2.4Ghz_ChannelID_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:27:48.820" level="INFO">Clicking element '//tbody/tr[@id='tr_wchan_both']/td[@class='tdText']/div[1]'.</msg>
+<status status="PASS" starttime="20210615 18:27:48.819" endtime="20210615 18:27:49.058"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[${item label}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:27:49.059" level="INFO">Clicking element '//*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[3]/a'.</msg>
+<status status="PASS" starttime="20210615 18:27:49.058" endtime="20210615 18:27:49.275"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WLAN_save_setting}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:27:49.276" level="INFO">Clicking element '//*[@id="save"]/span[2]'.</msg>
+<status status="PASS" starttime="20210615 18:27:49.275" endtime="20210615 18:27:49.524"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>ChannelID_${item label}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 18:27:49.602" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ChannelID_3.png"&gt;&lt;img src="ChannelID_3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 18:27:49.524" endtime="20210615 18:27:49.602"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>15s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:28:04.613" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" starttime="20210615 18:27:49.603" endtime="20210615 18:28:04.613"/>
+</kw>
+<status status="PASS" starttime="20210615 18:27:48.819" endtime="20210615 18:28:04.613"/>
+</kw>
+<status status="PASS" starttime="20210615 18:27:43.744" endtime="20210615 18:28:04.613"/>
+</kw>
+<kw name="Logout from DUT" library="CommonFunction" type="TEARDOWN">
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210615 18:28:04.615" endtime="20210615 18:28:04.618"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Logout_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:28:04.619" level="INFO">Clicking element 'btn_logout'.</msg>
+<status status="PASS" starttime="20210615 18:28:04.619" endtime="20210615 18:28:04.865"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:28:06.866" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210615 18:28:04.865" endtime="20210615 18:28:06.866"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210615 18:28:06.866" endtime="20210615 18:28:07.956"/>
+</kw>
+<status status="PASS" starttime="20210615 18:28:04.614" endtime="20210615 18:28:07.956"/>
+</kw>
+<status status="PASS" starttime="20210615 18:27:20.235" endtime="20210615 18:28:07.956"/>
+</test>
+<test id="s1-t3" name="Verify setting ChannelID 3">
+<kw name="Login to DUT" library="CommonFunction" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOME_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210615 18:28:07.967" level="INFO">Opening browser 'firefox' to base url 'https://mijnmodem.kpn/login.htm'.</msg>
+<msg timestamp="20210615 18:28:07.986" level="INFO">Firefox driver log is always forced to to: D:\Personal\Automation\KPN\results\geckodriver-119.log</msg>
+<status status="PASS" starttime="20210615 18:28:07.966" endtime="20210615 18:28:17.847"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210615 18:28:17.847" endtime="20210615 18:28:17.847"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:28:19.851" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210615 18:28:17.847" endtime="20210615 18:28:19.851"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Password}</arg>
+<arg>${Password_value}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210615 18:28:19.851" level="INFO">Sending key(s) ('Qwerty1!',) to //input[@name='ui_pws'] element.</msg>
+<msg timestamp="20210615 18:28:20.290" level="INFO">Sending keys Qwerty1!</msg>
+<status status="PASS" starttime="20210615 18:28:19.851" endtime="20210615 18:28:20.321"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:28:22.322" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210615 18:28:20.321" endtime="20210615 18:28:22.322"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:28:22.322" level="INFO">Clicking element '//tbody/tr[5]/td[1]'.</msg>
+<status status="PASS" starttime="20210615 18:28:22.322" endtime="20210615 18:28:24.674"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:28:29.685" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210615 18:28:24.674" endtime="20210615 18:28:29.685"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Topology Overview}</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210615 18:28:29.685" endtime="20210615 18:28:29.690"/>
+</kw>
+<status status="PASS" starttime="20210615 18:28:07.966" endtime="20210615 18:28:29.690"/>
+</kw>
+<kw name="Verify ChannelID scenarios">
+<arg>4</arg>
+<tag>ChannelIDSet</tag>
+<tag>Funtional</tag>
+<tag>WiFi</tag>
+<doc>This Test case is to verify setting different channel with Bandwith 20mhz</doc>
+<kw name="Go to WLAN Page" library="WLANPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WLAN_Tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:28:29.696" level="INFO">Clicking element '//a[normalize-space()='WLAN']'.</msg>
+<status status="PASS" starttime="20210615 18:28:29.696" endtime="20210615 18:28:29.753"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:28:34.768" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210615 18:28:29.753" endtime="20210615 18:28:34.768"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Access Points</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210615 18:28:34.768" endtime="20210615 18:28:34.774"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>id:frm_main2</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210615 18:28:34.774" level="INFO">Selecting frame 'id:frm_main2'.</msg>
+<status status="PASS" starttime="20210615 18:28:34.774" endtime="20210615 18:28:34.786"/>
+</kw>
+<kw name="Current Frame Should Contain" library="SeleniumLibrary">
+<arg>${wlan_page}</arg>
+<doc>Verifies that the current frame contains ``text``.</doc>
+<msg timestamp="20210615 18:28:34.794" level="INFO">Current frame contains text 'Restore WiFi Defaults'.</msg>
+<status status="PASS" starttime="20210615 18:28:34.787" endtime="20210615 18:28:34.794"/>
+</kw>
+<status status="PASS" starttime="20210615 18:28:29.696" endtime="20210615 18:28:34.795"/>
+</kw>
+<kw name="Set the 2.4Ghz Channel ID with value" library="WLANPage">
+<arg>${ChannelID_index}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${2.4Ghz_ChannelID_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:28:34.796" level="INFO">Clicking element '//tbody/tr[@id='tr_wchan_both']/td[@class='tdText']/div[1]'.</msg>
+<status status="PASS" starttime="20210615 18:28:34.795" endtime="20210615 18:28:35.037"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[${item label}]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:28:35.037" level="INFO">Clicking element '//*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[4]/a'.</msg>
+<status status="PASS" starttime="20210615 18:28:35.037" endtime="20210615 18:28:35.253"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WLAN_save_setting}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:28:35.253" level="INFO">Clicking element '//*[@id="save"]/span[2]'.</msg>
+<status status="PASS" starttime="20210615 18:28:35.253" endtime="20210615 18:28:35.500"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>ChannelID_${item label}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 18:28:35.601" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ChannelID_4.png"&gt;&lt;img src="ChannelID_4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 18:28:35.500" endtime="20210615 18:28:35.601"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>15s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:28:50.610" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" starttime="20210615 18:28:35.601" endtime="20210615 18:28:50.610"/>
+</kw>
+<status status="PASS" starttime="20210615 18:28:34.795" endtime="20210615 18:28:50.610"/>
+</kw>
+<status status="PASS" starttime="20210615 18:28:29.690" endtime="20210615 18:28:50.610"/>
+</kw>
+<kw name="Logout from DUT" library="CommonFunction" type="TEARDOWN">
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210615 18:28:50.612" endtime="20210615 18:28:50.616"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Logout_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 18:28:50.616" level="INFO">Clicking element 'btn_logout'.</msg>
+<status status="PASS" starttime="20210615 18:28:50.616" endtime="20210615 18:28:50.869"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 18:28:52.869" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210615 18:28:50.869" endtime="20210615 18:28:52.870"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210615 18:28:52.870" endtime="20210615 18:28:55.335"/>
+</kw>
+<status status="PASS" starttime="20210615 18:28:50.610" endtime="20210615 18:28:55.335"/>
+</kw>
+<status status="PASS" starttime="20210615 18:28:07.965" endtime="20210615 18:28:55.336"/>
+</test>
+<status status="PASS" starttime="20210615 18:26:32.212" endtime="20210615 18:28:55.338"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="WLAN ChannelID">WLAN ChannelID</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
