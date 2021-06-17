@@ -22,7 +22,7 @@ Verify WLAN 2.4GHz Channel ID from GUI and Console should match
     Close All Connections
     Go to WLAN Page
     ${2.4Ghz_ChannelID_GUI}=  Get the 2.4Ghz channel id from GUI
-    log  Channel ID from Console is ${2.4Ghz_ChannelID_GUI}
+    log  Channel ID from GUI is ${2.4Ghz_ChannelID_GUI}
     Should be equal  ${2.4Ghz_ChannelID_Console}  ${2.4Ghz_ChannelID_GUI}
 
 
@@ -35,7 +35,7 @@ Verify WLAN 5GHz Channel ID from GUI and Console should match
     Close All Connections
     Go to WLAN Page
     ${5Ghz_ChannelID_GUI}=  Get the 5Ghz channel id from GUI
-    log  Channel ID from Console is ${5Ghz_ChannelID_GUI}
+    log  Channel ID from GUI is ${5Ghz_ChannelID_GUI}
     Should be equal  ${5Ghz_ChannelID_Console}  ${5Ghz_ChannelID_GUI}
 
 
