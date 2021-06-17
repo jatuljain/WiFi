@@ -1,8 +1,0 @@
-1623759993810	geckodriver	INFO	Listening on 127.0.0.1:52382
-1623759996834	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\jatul\\AppData\\Local\\Temp\\rust_mozprofilelKkNKx"
-1623759997886	Marionette	INFO	Marionette enabled
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jatul\\AppData\\Local\\Temp\\rust_mozprofilelKkNKx\\search.json.mozlz4", (void 0)))
-[Parent 18820, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
-1623760001455	Marionette	INFO	Listening on port 52390
-1623760001751	Marionette	WARN	TLS certificate errors will be ignored for this session
-1623760020866	Marionette	INFO	Stopped listening on port 52390
