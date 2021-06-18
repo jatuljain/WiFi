@@ -1,0 +1,1 @@
+netsh wlan show network mode=bssid  | Select-String -Pattern "jacques"  -Context 1,16
