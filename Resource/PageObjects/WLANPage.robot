@@ -1,5 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary
+# Library  SeleniumLibrary
 Library  Screenshot  screenshot_module | pillow 
 
 *** Variables ***
@@ -76,9 +76,7 @@ Set 2.4Ghz Bandwith with value
     [Arguments]    ${item label}
     click element  ${2.4Ghz_Bandwidth_dropdown}
     click element  //*[@id="tr_bandwidth_both"]/td[2]/div[1]/ul/li[${item label}]/a
-    # click element  ${WLAN_save_setting}
-    # Capture page screenshot  Bandwith_${item label}.png
-    # sleep  15s
+
 
 Set 5Ghz Bandwith with value
     [Arguments]    ${item label}

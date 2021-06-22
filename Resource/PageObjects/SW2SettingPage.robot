@@ -1,0 +1,59 @@
+*** Variables ***
+${Wireless Settings}  Wireless Settings
+${Settings_Tab}  //div[@id='id_nav_1']
+${2.4Ghz_Channel}  //select[@name='wchan_24g_both']
+${2.4Ghz_ChannelID_dropdown}  //tbody/tr[@id='wireless_24ghz']/td[@class='tdTextTa_20']/div[1]
+${5Ghz_ChannelID_dropdown}  //tbody/tr[@id='wireless_5ghz']/td[@class='tdTextTa_20']/div[1]
+${2.4Ghz_Bandwidth_dropdown}  //table[3]/tbody[1]/tr[3]/td[2]/div[1]
+${5Ghz_Bandwidth_dropdown}  //table[3]/tbody[1]/tr[4]/td[2]/div[1]
+${WLAN_save_setting}  //span[@class='ButtonMiddle tapurple']
+${WLAN_save_setting_Popup}  //body//div[@id='msgbox']//div//div//div[1]
+# ${2.4Ghz_ChannelID_Value}  //*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[2]/a
+${2.4Ghz_ChannelID_Value}  //tr[@id='wireless_24ghz']//li[1]/a
+${WPA Encryption}  //select[@id='cypher_suite_24g']
+${5Ghz_Channel}  //select[@name='wchan_5g_both']
+${wlan_page}  Restore WiFi Defaults
+${ssid_name_2.4G}  wl_ssid_24g
+${ssid_password_2.4G}  sharedkey_24g
+
+
+
+***Keywords***
+
+Go to Settings Page
+    unselect frame  
+    select frame  name:topFrame  
+    click element  ${Settings_Tab}
+    Sleep  2s
+    unselect frame 
+    select frame  id:frm_main2
+    wait until page contains  ${Wireless Settings}  5s
+
+
+Set 2.4Ghz Channel ID with value
+    [Arguments]    ${item label}
+    click element  ${2.4Ghz_ChannelID_dropdown}
+    click element  //tr[@id='wireless_24ghz']//li[${item label}]/a
+
+Set 5Ghz Channel ID with value
+    [Arguments]    ${item label}
+    click element  ${5Ghz_ChannelID_dropdown}
+    click element  //tr[@id='wireless_5ghz']//li[${item label}]/a
+
+
+Set 2.4Ghz Bandwith with value
+    [Arguments]    ${item label}
+    click element  ${2.4Ghz_Bandwidth_dropdown}
+    click element  //table[3]/tbody/tr[3]/td[2]/div/ul/li[${item label}]/a
+
+
+Set 5Ghz Bandwith with value
+    [Arguments]    ${item label}
+    click element  ${5Ghz_Bandwidth_dropdown}
+    click element  //table[3]/tbody/tr[4]/td[2]/div/ul/li[${item label}]/a
+
+Save the WiFi setting
+    click element  ${WLAN_save_setting}
+    sleep  2s
+    Click element  ${WLAN_save_setting_Popup}
+    sleep  15s

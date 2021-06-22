@@ -4,7 +4,7 @@ Library    Collections
 Library  String
 
 *** Variables ***
-${SSID}  jacques
+${SSID}  jacquesSW2
 ${disconnect_cmd}  netsh wlan disconnect
 ${cmd}  netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,16
 ${disable_WiFi_Adaptor_cmd}  netsh interface set interface "Wi-Fi" disable
