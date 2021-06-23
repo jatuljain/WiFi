@@ -1,0 +1,7 @@
+1624452488031	geckodriver	INFO	Listening on 127.0.0.1:62089
+1624452491047	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\jatul\\AppData\\Local\\Temp\\rust_mozprofileuaZanG"
+1624452492526	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jatul\\AppData\\Local\\Temp\\rust_mozprofileuaZanG\\search.json.mozlz4", (void 0)))
+1624452497582	Marionette	INFO	Listening on port 62297
+1624452497820	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624452535254	Marionette	INFO	Stopped listening on port 62297

@@ -1,0 +1,8 @@
+1624453818238	geckodriver	INFO	Listening on 127.0.0.1:54248
+1624453821246	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\jatul\\AppData\\Local\\Temp\\rust_mozprofilegaifBT"
+1624453822044	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jatul\\AppData\\Local\\Temp\\rust_mozprofilegaifBT\\search.json.mozlz4", (void 0)))
+1624453826140	Marionette	INFO	Listening on port 54256
+1624453826581	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\jatul\AppData\Local\Temp\rust_mozprofilegaifBT\protections.sqlite
+1624453837294	Marionette	INFO	Stopped listening on port 54256
