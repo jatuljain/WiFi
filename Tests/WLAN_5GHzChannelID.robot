@@ -14,7 +14,7 @@ Test Template  Verify 5Ghz ChannelID scenarios
 
 
 *** Variables ***
-@{Loop}=  1  2  3 
+# @{Loop}=  1  2  3 
 ${5Ghz_ChannelID_Analyser}  0
 
 
@@ -38,11 +38,11 @@ Verify 5Ghz ChannelID scenarios
     Close All Connections
     Should be equal  ${5Ghz_ChannelID_Console}  ${5GHz_Channel}
     IF  ${5GHz_Channel} < 100
-      sleep  90s
+      sleep  60s
     ELSE  
-      sleep  250s
+      sleep  180s
     END
-    FOR  ${VAR}  IN   @{Loop}
+    FOR  ${VAR}  IN RANGE    14
       ${5Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser
       ${5Ghz_ChannelID_Analyser_Length}  Get Length  ${5Ghz_ChannelID_Analyser}
       log  ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}

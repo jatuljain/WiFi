@@ -14,7 +14,7 @@ Test Template  Verify 5Ghz ChannelID scenarios
 
 
 *** Variables ***
-@{Loop}=  1  2  3 
+# @{Loop}=  1  2  3 
 ${5Ghz_ChannelID_Analyser}  0
 
 *** Test Cases ***            

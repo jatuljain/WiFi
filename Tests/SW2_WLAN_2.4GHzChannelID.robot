@@ -38,7 +38,7 @@ Verify 2.4Ghz ChannelID scenarios
     # Close All Connections
     # Should be equal  ${2.4Ghz_ChannelID_Console}  ${24GHz_Channel}
     sleep  60s
-    FOR  ${VAR}  IN   @{Loop}
+    FOR  ${VAR}  IN RANGE    10
       ${2.4Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser
       ${2.4Ghz_ChannelID_Analyser_Length}  Get Length  ${2.4Ghz_ChannelID_Analyser}
       log  ChannelIDs are ${2.4Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${2.4Ghz_ChannelID_Analyser_Length}
