@@ -48,3 +48,5 @@ Verify 2.4Ghz ChannelID scenarios
       sleep  30s
     END
     # list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${2.4Ghz_ChannelID_Console}
+    Connect to SSID
+    

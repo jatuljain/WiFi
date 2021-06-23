@@ -9,7 +9,7 @@ ${disconnect_cmd}  netsh wlan disconnect
 ${cmd}  netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,16
 ${disable_WiFi_Adaptor_cmd}  netsh interface set interface "Wi-Fi" disable
 ${enable_WiFi_Adaptor_cmd}  netsh interface set interface "Wi-Fi" enable
-
+${Connect_SSID}  netsh wlan connect name="${SSID}" ssid="${SSID}" interface="Wi-Fi"
 
 
 *** Keywords ***
@@ -43,3 +43,8 @@ Fetch the 2.4GHz Channel IDs from Windows Analyser
     log  Analyser Channel IDs are ${Analyser_ChannelID_5Ghz} 
     [return]  ${Analyser_ChannelID_5Ghz} 
     # close all connection
+
+Connect to SSID
+    Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Connect_SSID}  shell=True
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Connect_SSID}  shell=True
+    log  ${result.stdout}
