@@ -32,16 +32,12 @@ Verify 5Ghz ChannelID scenarios
     Set 5Ghz Bandwith with value  ${5GHz_Bandwidth}
     Save the WiFi setting
     Logout from DUT
-    # Telnet to DUT Console
-    # ${5Ghz_ChannelID_Console}=  Get the 5Ghz channel id from console
-    # log  Channel ID from Console is ${5Ghz_ChannelID_Console}
-    # Close All Connections
-    # Should be equal  ${5Ghz_ChannelID_Console}  ${5GHz_Channel}
     IF  ${5GHz_Channel} < 100
       sleep  60s
     ELSE  
-      sleep  250s
-    END    FOR  ${VAR}  IN   @{Loop}
+      sleep  180s
+    END    
+    FOR  ${VAR}  IN RANGE    14
       ${5Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser
       ${5Ghz_ChannelID_Analyser_Length}  Get Length  ${5Ghz_ChannelID_Analyser}
       log  ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}

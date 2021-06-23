@@ -42,11 +42,6 @@ Verify 5Ghz ChannelID scenarios
     ELSE  
       sleep  250s
     END
-    # ${5Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser
-    # ${5Ghz_ChannelID_Analyser_Length}  Get Length  ${5Ghz_ChannelID_Analyser}
-    # Log  length of ChannelID from Analyser ${5Ghz_ChannelID_Analyser_Length}
-    # Run Keyword If  ${5Ghz_ChannelID_Analyser_Length} < 2  ${5Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser
-    
     FOR  ${VAR}  IN   @{Loop}
       ${5Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser
       ${5Ghz_ChannelID_Analyser_Length}  Get Length  ${5Ghz_ChannelID_Analyser}

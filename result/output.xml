@@ -1,383 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.1 (Python 3.9.4 on win32)" generated="20210622 16:04:49.365" rpa="false" schemaversion="2">
+<robot generator="Robot 4.0.1 (Python 3.9.4 on win32)" generated="20210622 21:37:41.371" rpa="false" schemaversion="2">
 <suite id="s1" name="Sw2 WLAN 5GHzChannelID" source="D:\Personal\Automation\KPN\WiFi\Tests\Sw2_WLAN_5GHzChannelID.robot">
-<test id="s1-t1" name="Verify setting 5Ghz ChannelID 36 with Bandwith 20 MHz">
+<test id="s1-t1" name="Verify setting 5Ghz ChannelID 140 with Bandwith 20/40/80 MHz">
 <kw name="Login to DUT" library="SW2CommonFunction" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${HOME_PAGE}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210622 16:04:49.841" level="INFO">Opening browser 'firefox' to base url 'http://192.168.2.8/login.htm'.</msg>
-<msg timestamp="20210622 16:04:49.857" level="INFO">Firefox driver log is always forced to to: D:\Personal\Automation\KPN\WiFi\result\geckodriver-112.log</msg>
-<status status="PASS" starttime="20210622 16:04:49.840" endtime="20210622 16:05:02.176"/>
+<msg timestamp="20210622 21:37:41.808" level="INFO">Opening browser 'firefox' to base url 'http://192.168.2.10/login.htm'.</msg>
+<msg timestamp="20210622 21:37:41.818" level="INFO">Firefox driver log is always forced to to: D:\Personal\Automation\KPN\WiFi\result\geckodriver-83.log</msg>
+<status status="PASS" starttime="20210622 21:37:41.807" endtime="20210622 21:37:50.464"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210622 16:05:02.176" endtime="20210622 16:05:02.182"/>
+<status status="PASS" starttime="20210622 21:37:50.464" endtime="20210622 21:37:50.468"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:05:04.185" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:05:02.182" endtime="20210622 16:05:04.185"/>
+<msg timestamp="20210622 21:37:52.476" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210622 21:37:50.468" endtime="20210622 21:37:52.476"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${Password}</arg>
 <arg>${Password_value}</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20210622 16:05:04.186" level="INFO">Sending key(s) ('Qwerty1!',) to //input[@name='ui_pws'] element.</msg>
-<msg timestamp="20210622 16:05:04.505" level="INFO">Sending keys Qwerty1!</msg>
-<status status="PASS" starttime="20210622 16:05:04.185" endtime="20210622 16:05:04.539"/>
+<msg timestamp="20210622 21:37:52.477" level="INFO">Sending key(s) ('Qwerty1!',) to //input[@name='ui_pws'] element.</msg>
+<msg timestamp="20210622 21:37:52.774" level="INFO">Sending keys Qwerty1!</msg>
+<status status="PASS" starttime="20210622 21:37:52.476" endtime="20210622 21:37:52.796"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:05:06.548" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:05:04.539" endtime="20210622 16:05:06.548"/>
+<msg timestamp="20210622 21:37:54.809" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210622 21:37:52.796" endtime="20210622 21:37:54.809"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:05:06.550" level="INFO">Clicking element '//div[@id='btn_loginbtn']'.</msg>
-<status status="PASS" starttime="20210622 16:05:06.549" endtime="20210622 16:05:06.835"/>
+<msg timestamp="20210622 21:37:54.810" level="INFO">Clicking element '//div[@id='btn_loginbtn']'.</msg>
+<status status="PASS" starttime="20210622 21:37:54.809" endtime="20210622 21:37:55.066"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:05:08.839" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:05:06.835" endtime="20210622 16:05:08.839"/>
+<msg timestamp="20210622 21:37:57.074" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210622 21:37:55.066" endtime="20210622 21:37:57.074"/>
 </kw>
 <kw name="Select Frame" library="SeleniumLibrary">
 <arg>id:frm_main2</arg>
 <doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20210622 16:05:08.840" level="INFO">Selecting frame 'id:frm_main2'.</msg>
-<status status="PASS" starttime="20210622 16:05:08.839" endtime="20210622 16:05:08.850"/>
+<msg timestamp="20210622 21:37:57.075" level="INFO">Selecting frame 'id:frm_main2'.</msg>
+<status status="PASS" starttime="20210622 21:37:57.075" endtime="20210622 21:37:57.087"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${Status}</arg>
 <arg>10s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210622 16:05:08.850" endtime="20210622 16:05:08.858"/>
+<status status="PASS" starttime="20210622 21:37:57.087" endtime="20210622 21:37:57.094"/>
 </kw>
-<status status="PASS" starttime="20210622 16:04:49.840" endtime="20210622 16:05:08.858"/>
-</kw>
-<kw name="Verify 5Ghz ChannelID scenarios">
-<arg>36</arg>
-<arg>2</arg>
-<arg>1</arg>
-<tag>5GhzChannelIDSet</tag>
-<tag>Funtional</tag>
-<tag>SW2</tag>
-<tag>WiFi</tag>
-<doc>This Test case is to verify setting different channel and Bandwith in SW2</doc>
-<kw name="Go to Settings Page" library="SW2SettingPage">
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20210622 16:05:08.860" endtime="20210622 16:05:08.864"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>name:topFrame</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20210622 16:05:08.864" level="INFO">Selecting frame 'name:topFrame'.</msg>
-<status status="PASS" starttime="20210622 16:05:08.864" endtime="20210622 16:05:08.876"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Settings_Tab}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:05:08.877" level="INFO">Clicking element '//div[@id='id_nav_1']'.</msg>
-<status status="PASS" starttime="20210622 16:05:08.876" endtime="20210622 16:05:09.099"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:05:11.108" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:05:09.099" endtime="20210622 16:05:11.108"/>
-</kw>
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20210622 16:05:11.108" endtime="20210622 16:05:11.112"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>id:frm_main2</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20210622 16:05:11.112" level="INFO">Selecting frame 'id:frm_main2'.</msg>
-<status status="PASS" starttime="20210622 16:05:11.112" endtime="20210622 16:05:11.119"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>${Wireless Settings}</arg>
-<arg>5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210622 16:05:11.119" endtime="20210622 16:05:11.128"/>
-</kw>
-<status status="PASS" starttime="20210622 16:05:08.860" endtime="20210622 16:05:11.128"/>
-</kw>
-<kw name="Set 5Ghz Channel ID with value" library="SW2SettingPage">
-<arg>${ChannelID5_index}</arg>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${5Ghz_ChannelID_dropdown}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:05:11.129" level="INFO">Clicking element '//tbody/tr[@id='wireless_5ghz']/td[@class='tdTextTa_20']/div[1]'.</msg>
-<status status="PASS" starttime="20210622 16:05:11.128" endtime="20210622 16:05:11.352"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//tr[@id='wireless_5ghz']//li[${item label}]/a</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:05:11.352" level="INFO">Clicking element '//tr[@id='wireless_5ghz']//li[2]/a'.</msg>
-<status status="PASS" starttime="20210622 16:05:11.352" endtime="20210622 16:05:11.579"/>
-</kw>
-<status status="PASS" starttime="20210622 16:05:11.128" endtime="20210622 16:05:11.579"/>
-</kw>
-<kw name="Set 5Ghz Bandwith with value" library="SW2SettingPage">
-<arg>${5GHz_Bandwidth}</arg>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${5Ghz_Bandwidth_dropdown}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:05:11.580" level="INFO">Clicking element '//table[3]/tbody[1]/tr[4]/td[2]/div[1]'.</msg>
-<status status="PASS" starttime="20210622 16:05:11.579" endtime="20210622 16:05:11.806"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//table[3]/tbody/tr[4]/td[2]/div/ul/li[${item label}]/a</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:05:11.806" level="INFO">Clicking element '//table[3]/tbody/tr[4]/td[2]/div/ul/li[1]/a'.</msg>
-<status status="PASS" starttime="20210622 16:05:11.806" endtime="20210622 16:05:12.032"/>
-</kw>
-<status status="PASS" starttime="20210622 16:05:11.579" endtime="20210622 16:05:12.032"/>
-</kw>
-<kw name="Save the WiFi setting" library="SW2SettingPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${WLAN_save_setting}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:05:12.034" level="INFO">Clicking element '//span[@class='ButtonMiddle tapurple']'.</msg>
-<status status="PASS" starttime="20210622 16:05:12.033" endtime="20210622 16:05:12.275"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:05:14.278" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:05:12.275" endtime="20210622 16:05:14.278"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${WLAN_save_setting_Popup}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:05:14.279" level="INFO">Clicking element '//body//div[@id='msgbox']//div//div//div[1]'.</msg>
-<status status="PASS" starttime="20210622 16:05:14.278" endtime="20210622 16:05:14.535"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>15s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:05:29.546" level="INFO">Slept 15 seconds</msg>
-<status status="PASS" starttime="20210622 16:05:14.535" endtime="20210622 16:05:29.547"/>
-</kw>
-<status status="PASS" starttime="20210622 16:05:12.032" endtime="20210622 16:05:29.547"/>
-</kw>
-<kw name="Logout from DUT" library="SW2CommonFunction">
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20210622 16:05:29.547" endtime="20210622 16:05:29.552"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>name:topFrame</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20210622 16:05:29.553" level="INFO">Selecting frame 'name:topFrame'.</msg>
-<status status="PASS" starttime="20210622 16:05:29.553" endtime="20210622 16:05:29.560"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Logout_button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:05:29.562" level="INFO">Clicking element '//*[@id="u_login"]'.</msg>
-<status status="PASS" starttime="20210622 16:05:29.561" endtime="20210622 16:05:29.776"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:05:31.787" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:05:29.776" endtime="20210622 16:05:31.787"/>
-</kw>
-<kw name="Close All Browsers" library="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210622 16:05:31.787" endtime="20210622 16:05:33.685"/>
-</kw>
-<status status="PASS" starttime="20210622 16:05:29.547" endtime="20210622 16:05:33.686"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>90s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:07:03.699" level="INFO">Slept 1 minute 30 seconds</msg>
-<status status="PASS" starttime="20210622 16:05:33.686" endtime="20210622 16:07:03.699"/>
-</kw>
-<for flavor="IN">
-<var>${VAR}</var>
-<value>@{Loop}</value>
-<iter>
-<var name="${VAR}">1</var>
-<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
-<var>${5Ghz_ChannelID_Analyser}</var>
-<kw name="Run Process" library="Process">
-<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
-<arg>${cmd}</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<msg timestamp="20210622 16:07:03.701" level="INFO">Starting process:
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"jacquesSW2\" -Context 1,16"</msg>
-<msg timestamp="20210622 16:07:03.708" level="INFO">Waiting for process to complete.</msg>
-<msg timestamp="20210622 16:07:04.449" level="INFO">Process completed.</msg>
-<status status="PASS" starttime="20210622 16:07:03.700" endtime="20210622 16:07:04.449"/>
-</kw>
-<kw name="Run Process" library="Process">
-<var>${result}</var>
-<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
-<arg>${cmd}</arg>
-<arg>shell=True</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<msg timestamp="20210622 16:07:04.450" level="INFO">Starting process:
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"jacquesSW2\" -Context 1,16"</msg>
-<msg timestamp="20210622 16:07:04.454" level="INFO">Waiting for process to complete.</msg>
-<msg timestamp="20210622 16:07:04.966" level="INFO">Process completed.</msg>
-<msg timestamp="20210622 16:07:04.966" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
-<status status="PASS" starttime="20210622 16:07:04.450" endtime="20210622 16:07:04.967"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${result.stdout}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20210622 16:07:04.968" level="INFO">
-  
-&gt; SSID 1 : jacquesSW2
-      Network type            : Infrastructure
-      Authentication          : WPA2-Personal
-      Encryption              : CCMP 
-      BSSID 1                 : 8a:19:b5:6e:41:98
-           Signal             : 75%  
-           Radio type         : 802.11ac
-           Channel            : 36 
-           Basic rates (Mbps) : 24 58.5
-           Other rates (Mbps) : 12 18 36 48 54 526.5
-  
-  SSID 2 : 
-      Network type            : Infrastructure
-      Authentication          : WPA2-Personal
-      Encryption              : CCMP 
-      BSSID 1                 : 8a:19:b5:6e:41:9a
-           Signal             : 73%  
-
-</msg>
-<status status="PASS" starttime="20210622 16:07:04.967" endtime="20210622 16:07:04.968"/>
-</kw>
-<kw name="Get Regexp Matches" library="String">
-<var>${Analyser_ChannelID_5Ghz}</var>
-<arg>${result.stdout}</arg>
-<arg>Channel.*: (\\d+)</arg>
-<arg>1</arg>
-<doc>Returns a list of all non-overlapping matches in the given string.</doc>
-<msg timestamp="20210622 16:07:04.970" level="INFO">${Analyser_ChannelID_5Ghz} = ['36']</msg>
-<status status="PASS" starttime="20210622 16:07:04.968" endtime="20210622 16:07:04.970"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz[0]} and ${Analyser_ChannelID_5Ghz[1]}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20210622 16:07:04.972" level="FAIL">Resolving variable '${Analyser_ChannelID_5Ghz[1]}' failed: IndexError: list index out of range</msg>
-<status status="FAIL" starttime="20210622 16:07:04.970" endtime="20210622 16:07:04.972"/>
-</kw>
-<status status="FAIL" starttime="20210622 16:07:03.700" endtime="20210622 16:07:04.972"/>
-</kw>
-<kw name="Get Length" library="BuiltIn">
-<var>${5Ghz_ChannelID_Analyser_Length}</var>
-<arg>${5Ghz_ChannelID_Analyser}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="NOT RUN" starttime="20210622 16:07:04.972" endtime="20210622 16:07:04.972"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20210622 16:07:04.972" endtime="20210622 16:07:04.972"/>
-</kw>
-<kw name="Exit For Loop If" library="BuiltIn">
-<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 1</arg>
-<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="NOT RUN" starttime="20210622 16:07:04.972" endtime="20210622 16:07:04.972"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>30s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20210622 16:07:04.973" endtime="20210622 16:07:04.973"/>
-</kw>
-<status status="FAIL" starttime="20210622 16:07:03.699" endtime="20210622 16:07:04.973"/>
-</iter>
-<status status="FAIL" starttime="20210622 16:07:03.699" endtime="20210622 16:07:04.973"/>
-</for>
-<kw name="List Should Contain Value" library="Collections">
-<arg>${5Ghz_ChannelID_Analyser}</arg>
-<arg>${5GHz_Channel}</arg>
-<doc>Fails if the ``value`` is not found from ``list``.</doc>
-<status status="NOT RUN" starttime="20210622 16:07:04.973" endtime="20210622 16:07:04.973"/>
-</kw>
-<status status="FAIL" starttime="20210622 16:05:08.859" endtime="20210622 16:07:04.973"/>
-</kw>
-<status status="FAIL" starttime="20210622 16:04:49.839" endtime="20210622 16:07:04.974">Resolving variable '${Analyser_ChannelID_5Ghz[1]}' failed: IndexError: list index out of range</status>
-</test>
-<test id="s1-t2" name="Verify setting 5Ghz ChannelID 40 with Bandwith 20 MHz">
-<kw name="Login to DUT" library="SW2CommonFunction" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${HOME_PAGE}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210622 16:07:04.978" level="INFO">Opening browser 'firefox' to base url 'http://192.168.2.8/login.htm'.</msg>
-<msg timestamp="20210622 16:07:04.993" level="INFO">Firefox driver log is always forced to to: D:\Personal\Automation\KPN\WiFi\result\geckodriver-113.log</msg>
-<status status="PASS" starttime="20210622 16:07:04.978" endtime="20210622 16:07:16.883"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210622 16:07:16.884" endtime="20210622 16:07:16.892"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:07:18.898" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:07:16.892" endtime="20210622 16:07:18.898"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${Password}</arg>
-<arg>${Password_value}</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20210622 16:07:18.898" level="INFO">Sending key(s) ('Qwerty1!',) to //input[@name='ui_pws'] element.</msg>
-<msg timestamp="20210622 16:07:19.196" level="INFO">Sending keys Qwerty1!</msg>
-<status status="PASS" starttime="20210622 16:07:18.898" endtime="20210622 16:07:19.216"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:07:21.230" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:07:19.216" endtime="20210622 16:07:21.230"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Login_button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:07:21.231" level="INFO">Clicking element '//div[@id='btn_loginbtn']'.</msg>
-<status status="PASS" starttime="20210622 16:07:21.230" endtime="20210622 16:07:21.489"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:07:23.494" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:07:21.489" endtime="20210622 16:07:23.494"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>id:frm_main2</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20210622 16:07:23.495" level="INFO">Selecting frame 'id:frm_main2'.</msg>
-<status status="PASS" starttime="20210622 16:07:23.495" endtime="20210622 16:07:23.507"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>${Status}</arg>
-<arg>10s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210622 16:07:23.507" endtime="20210622 16:07:23.516"/>
-</kw>
-<status status="PASS" starttime="20210622 16:07:04.977" endtime="20210622 16:07:23.516"/>
+<status status="PASS" starttime="20210622 21:37:41.806" endtime="20210622 21:37:57.095"/>
 </kw>
 <kw name="Verify 5Ghz ChannelID scenarios">
-<arg>40</arg>
+<arg>140</arg>
+<arg>20</arg>
 <arg>3</arg>
-<arg>1</arg>
 <tag>5GhzChannelIDSet</tag>
 <tag>Funtional</tag>
 <tag>SW2</tag>
@@ -386,141 +73,254 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show netwo
 <kw name="Go to Settings Page" library="SW2SettingPage">
 <kw name="Unselect Frame" library="SeleniumLibrary">
 <doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20210622 16:07:23.518" endtime="20210622 16:07:23.522"/>
+<status status="PASS" starttime="20210622 21:37:57.096" endtime="20210622 21:37:57.100"/>
 </kw>
 <kw name="Select Frame" library="SeleniumLibrary">
 <arg>name:topFrame</arg>
 <doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20210622 16:07:23.522" level="INFO">Selecting frame 'name:topFrame'.</msg>
-<status status="PASS" starttime="20210622 16:07:23.522" endtime="20210622 16:07:23.530"/>
+<msg timestamp="20210622 21:37:57.101" level="INFO">Selecting frame 'name:topFrame'.</msg>
+<status status="PASS" starttime="20210622 21:37:57.101" endtime="20210622 21:37:57.110"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Settings_Tab}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:07:23.531" level="INFO">Clicking element '//div[@id='id_nav_1']'.</msg>
-<status status="PASS" starttime="20210622 16:07:23.530" endtime="20210622 16:07:23.751"/>
+<msg timestamp="20210622 21:37:57.111" level="INFO">Clicking element '//div[@id='id_nav_1']'.</msg>
+<status status="PASS" starttime="20210622 21:37:57.110" endtime="20210622 21:37:57.331"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:07:25.756" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:07:23.752" endtime="20210622 16:07:25.756"/>
+<msg timestamp="20210622 21:37:59.336" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210622 21:37:57.332" endtime="20210622 21:37:59.336"/>
 </kw>
 <kw name="Unselect Frame" library="SeleniumLibrary">
 <doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20210622 16:07:25.757" endtime="20210622 16:07:25.761"/>
+<status status="PASS" starttime="20210622 21:37:59.336" endtime="20210622 21:37:59.341"/>
 </kw>
 <kw name="Select Frame" library="SeleniumLibrary">
 <arg>id:frm_main2</arg>
 <doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20210622 16:07:25.762" level="INFO">Selecting frame 'id:frm_main2'.</msg>
-<status status="PASS" starttime="20210622 16:07:25.762" endtime="20210622 16:07:25.771"/>
+<msg timestamp="20210622 21:37:59.341" level="INFO">Selecting frame 'id:frm_main2'.</msg>
+<status status="PASS" starttime="20210622 21:37:59.341" endtime="20210622 21:37:59.348"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${Wireless Settings}</arg>
 <arg>5s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210622 16:07:25.771" endtime="20210622 16:07:25.779"/>
+<status status="PASS" starttime="20210622 21:37:59.349" endtime="20210622 21:37:59.356"/>
 </kw>
-<status status="PASS" starttime="20210622 16:07:23.517" endtime="20210622 16:07:25.780"/>
+<status status="PASS" starttime="20210622 21:37:57.096" endtime="20210622 21:37:59.356"/>
 </kw>
 <kw name="Set 5Ghz Channel ID with value" library="SW2SettingPage">
 <arg>${ChannelID5_index}</arg>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${5Ghz_ChannelID_dropdown}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:07:25.781" level="INFO">Clicking element '//tbody/tr[@id='wireless_5ghz']/td[@class='tdTextTa_20']/div[1]'.</msg>
-<status status="PASS" starttime="20210622 16:07:25.781" endtime="20210622 16:07:26.013"/>
+<msg timestamp="20210622 21:37:59.357" level="INFO">Clicking element '//tbody/tr[@id='wireless_5ghz']/td[@class='tdTextTa_20']/div[1]'.</msg>
+<status status="PASS" starttime="20210622 21:37:59.357" endtime="20210622 21:37:59.594"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>//tr[@id='wireless_5ghz']//li[${item label}]/a</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:07:26.014" level="INFO">Clicking element '//tr[@id='wireless_5ghz']//li[3]/a'.</msg>
-<status status="PASS" starttime="20210622 16:07:26.013" endtime="20210622 16:07:26.239"/>
+<msg timestamp="20210622 21:37:59.595" level="INFO">Clicking element '//tr[@id='wireless_5ghz']//li[20]/a'.</msg>
+<status status="PASS" starttime="20210622 21:37:59.595" endtime="20210622 21:37:59.821"/>
 </kw>
-<status status="PASS" starttime="20210622 16:07:25.780" endtime="20210622 16:07:26.239"/>
+<status status="PASS" starttime="20210622 21:37:59.357" endtime="20210622 21:37:59.821"/>
 </kw>
 <kw name="Set 5Ghz Bandwith with value" library="SW2SettingPage">
 <arg>${5GHz_Bandwidth}</arg>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${5Ghz_Bandwidth_dropdown}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:07:26.241" level="INFO">Clicking element '//table[3]/tbody[1]/tr[4]/td[2]/div[1]'.</msg>
-<status status="PASS" starttime="20210622 16:07:26.241" endtime="20210622 16:07:26.478"/>
+<msg timestamp="20210622 21:37:59.822" level="INFO">Clicking element '//table[3]/tbody[1]/tr[4]/td[2]/div[1]'.</msg>
+<status status="PASS" starttime="20210622 21:37:59.822" endtime="20210622 21:38:00.049"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>//table[3]/tbody/tr[4]/td[2]/div/ul/li[${item label}]/a</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:07:26.479" level="INFO">Clicking element '//table[3]/tbody/tr[4]/td[2]/div/ul/li[1]/a'.</msg>
-<status status="PASS" starttime="20210622 16:07:26.478" endtime="20210622 16:07:26.702"/>
+<msg timestamp="20210622 21:38:00.050" level="INFO">Clicking element '//table[3]/tbody/tr[4]/td[2]/div/ul/li[3]/a'.</msg>
+<status status="PASS" starttime="20210622 21:38:00.049" endtime="20210622 21:38:00.306"/>
 </kw>
-<status status="PASS" starttime="20210622 16:07:26.240" endtime="20210622 16:07:26.703"/>
+<status status="PASS" starttime="20210622 21:37:59.822" endtime="20210622 21:38:00.306"/>
 </kw>
 <kw name="Save the WiFi setting" library="SW2SettingPage">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${WLAN_save_setting}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:07:26.704" level="INFO">Clicking element '//span[@class='ButtonMiddle tapurple']'.</msg>
-<status status="PASS" starttime="20210622 16:07:26.703" endtime="20210622 16:07:26.930"/>
+<msg timestamp="20210622 21:38:00.307" level="INFO">Clicking element '//span[@class='ButtonMiddle tapurple']'.</msg>
+<status status="PASS" starttime="20210622 21:38:00.307" endtime="20210622 21:38:00.533"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:07:28.930" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:07:26.930" endtime="20210622 16:07:28.930"/>
+<msg timestamp="20210622 21:38:02.536" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210622 21:38:00.533" endtime="20210622 21:38:02.536"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${WLAN_save_setting_Popup}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:07:28.931" level="INFO">Clicking element '//body//div[@id='msgbox']//div//div//div[1]'.</msg>
-<status status="PASS" starttime="20210622 16:07:28.930" endtime="20210622 16:07:29.177"/>
+<msg timestamp="20210622 21:38:02.537" level="INFO">Clicking element '//body//div[@id='msgbox']//div//div//div[1]'.</msg>
+<status status="PASS" starttime="20210622 21:38:02.536" endtime="20210622 21:38:02.782"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>15s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:07:44.183" level="INFO">Slept 15 seconds</msg>
-<status status="PASS" starttime="20210622 16:07:29.178" endtime="20210622 16:07:44.183"/>
+<msg timestamp="20210622 21:38:17.794" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" starttime="20210622 21:38:02.782" endtime="20210622 21:38:17.794"/>
 </kw>
-<status status="PASS" starttime="20210622 16:07:26.703" endtime="20210622 16:07:44.183"/>
+<status status="PASS" starttime="20210622 21:38:00.306" endtime="20210622 21:38:17.794"/>
 </kw>
 <kw name="Logout from DUT" library="SW2CommonFunction">
 <kw name="Unselect Frame" library="SeleniumLibrary">
 <doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20210622 16:07:44.184" endtime="20210622 16:07:44.191"/>
+<status status="PASS" starttime="20210622 21:38:17.795" endtime="20210622 21:38:17.801"/>
 </kw>
 <kw name="Select Frame" library="SeleniumLibrary">
 <arg>name:topFrame</arg>
 <doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20210622 16:07:44.191" level="INFO">Selecting frame 'name:topFrame'.</msg>
-<status status="PASS" starttime="20210622 16:07:44.191" endtime="20210622 16:07:44.198"/>
+<msg timestamp="20210622 21:38:17.801" level="INFO">Selecting frame 'name:topFrame'.</msg>
+<status status="PASS" starttime="20210622 21:38:17.801" endtime="20210622 21:38:17.813"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Logout_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:07:44.199" level="INFO">Clicking element '//*[@id="u_login"]'.</msg>
-<status status="PASS" starttime="20210622 16:07:44.198" endtime="20210622 16:07:44.427"/>
+<msg timestamp="20210622 21:38:17.814" level="INFO">Clicking element '//*[@id="u_login"]'.</msg>
+<status status="PASS" starttime="20210622 21:38:17.814" endtime="20210622 21:38:18.037"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:07:46.437" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:07:44.427" endtime="20210622 16:07:46.437"/>
+<msg timestamp="20210622 21:38:20.047" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210622 21:38:18.038" endtime="20210622 21:38:20.047"/>
 </kw>
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210622 16:07:46.437" endtime="20210622 16:07:47.655"/>
+<status status="PASS" starttime="20210622 21:38:20.047" endtime="20210622 21:38:21.401"/>
 </kw>
-<status status="PASS" starttime="20210622 16:07:44.183" endtime="20210622 16:07:47.655"/>
+<status status="PASS" starttime="20210622 21:38:17.795" endtime="20210622 21:38:21.401"/>
+</kw>
+<if>
+<branch type="IF" condition="${5GHz_Channel} &lt; 100">
+<kw name="Sleep" library="BuiltIn">
+<arg>60s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20210622 21:38:21.401" endtime="20210622 21:38:21.401"/>
+</kw>
+<status status="NOT RUN" starttime="20210622 21:38:21.401" endtime="20210622 21:38:21.401"/>
+</branch>
+<branch type="ELSE">
+<kw name="Sleep" library="BuiltIn">
+<arg>180s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:41:21.407" level="INFO">Slept 3 minutes</msg>
+<status status="PASS" starttime="20210622 21:38:21.402" endtime="20210622 21:41:21.407"/>
+</kw>
+<status status="PASS" starttime="20210622 21:38:21.401" endtime="20210622 21:41:21.407"/>
+</branch>
+<status status="PASS" starttime="20210622 21:38:21.401" endtime="20210622 21:41:21.407"/>
+</if>
+<for flavor="IN RANGE">
+<var>${VAR}</var>
+<value>14</value>
+<iter>
+<var name="${VAR}">0</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:41:21.408" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:41:21.411" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:41:21.928" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:41:21.407" endtime="20210622 21:41:21.928"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:41:21.929" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:41:21.932" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:41:22.494" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:41:22.495" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:41:21.929" endtime="20210622 21:41:22.495"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:41:22.496" level="INFO">
+  
+&gt; SSID 4 : owl
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 92:19:b5:6e:3f:38
+           Signal             : 78%  
+           Radio type         : 802.11n
+           Channel            : 11 
+           Basic rates (Mbps) : 6.5 16 19.5 117
+           Other rates (Mbps) : 18 19.5 24 36 39 48 54 156
+  
+  SSID 5 : HP-Print-F6-ENVY 4500 series
+      Network type            : Infrastructure
+      Authentication          : Open
+      Encryption              : None 
+      BSSID 1                 : f0:92:1c:fb:90:f6
+           Signal             : 28%  
+
+</msg>
+<status status="PASS" starttime="20210622 21:41:22.495" endtime="20210622 21:41:22.496"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:41:22.497" level="INFO">${Analyser_ChannelID_5Ghz} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:41:22.496" endtime="20210622 21:41:22.497"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:41:22.498" level="INFO">Analyser Channel IDs are ['11']</msg>
+<status status="PASS" starttime="20210622 21:41:22.498" endtime="20210622 21:41:22.498"/>
+</kw>
+<msg timestamp="20210622 21:41:22.498" level="INFO">${5Ghz_ChannelID_Analyser} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:41:21.407" endtime="20210622 21:41:22.498"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:41:22.499" level="INFO">Length is 1</msg>
+<msg timestamp="20210622 21:41:22.499" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 1</msg>
+<status status="PASS" starttime="20210622 21:41:22.498" endtime="20210622 21:41:22.499"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:41:22.499" level="INFO">ChannelIDs are ['11'] and Length of ChannelIDs is 1</msg>
+<status status="PASS" starttime="20210622 21:41:22.499" endtime="20210622 21:41:22.499"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:41:22.500" endtime="20210622 21:41:22.500"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>90s</arg>
+<arg>30s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:09:17.669" level="INFO">Slept 1 minute 30 seconds</msg>
-<status status="PASS" starttime="20210622 16:07:47.655" endtime="20210622 16:09:17.669"/>
+<msg timestamp="20210622 21:41:52.512" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:41:22.500" endtime="20210622 21:41:52.512"/>
 </kw>
-<for flavor="IN">
-<var>${VAR}</var>
-<value>@{Loop}</value>
+<status status="PASS" starttime="20210622 21:41:21.407" endtime="20210622 21:41:52.512"/>
+</iter>
 <iter>
 <var name="${VAR}">1</var>
 <kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
@@ -530,11 +330,11 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show netwo
 <arg>${cmd}</arg>
 <arg>shell=True</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<msg timestamp="20210622 16:09:17.670" level="INFO">Starting process:
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"jacquesSW2\" -Context 1,16"</msg>
-<msg timestamp="20210622 16:09:17.674" level="INFO">Waiting for process to complete.</msg>
-<msg timestamp="20210622 16:09:18.234" level="INFO">Process completed.</msg>
-<status status="PASS" starttime="20210622 16:09:17.670" endtime="20210622 16:09:18.234"/>
+<msg timestamp="20210622 21:41:52.513" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:41:52.517" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:41:53.081" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:41:52.513" endtime="20210622 21:41:53.081"/>
 </kw>
 <kw name="Run Process" library="Process">
 <var>${result}</var>
@@ -542,38 +342,38 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show netwo
 <arg>${cmd}</arg>
 <arg>shell=True</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<msg timestamp="20210622 16:09:18.235" level="INFO">Starting process:
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"jacquesSW2\" -Context 1,16"</msg>
-<msg timestamp="20210622 16:09:18.238" level="INFO">Waiting for process to complete.</msg>
-<msg timestamp="20210622 16:09:18.778" level="INFO">Process completed.</msg>
-<msg timestamp="20210622 16:09:18.778" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
-<status status="PASS" starttime="20210622 16:09:18.234" endtime="20210622 16:09:18.778"/>
+<msg timestamp="20210622 21:41:53.082" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:41:53.093" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:41:53.635" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:41:53.636" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:41:53.081" endtime="20210622 21:41:53.636"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${result.stdout}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20210622 16:09:18.779" level="INFO">
+<msg timestamp="20210622 21:41:53.638" level="INFO">
   
-&gt; SSID 13 : jacquesSW2
+&gt; SSID 12 : owl
       Network type            : Infrastructure
       Authentication          : WPA2-Personal
       Encryption              : CCMP 
-      BSSID 1                 : 8a:19:b5:6e:41:98
-           Signal             : 76%  
-           Radio type         : 802.11ac
-           Channel            : 40 
-           Basic rates (Mbps) : 24 58.5
-           Other rates (Mbps) : 12 18 36 48 54 526.5
+      BSSID 1                 : 92:19:b5:6e:3f:38
+           Signal             : 78%  
+           Radio type         : 802.11n
+           Channel            : 11 
+           Basic rates (Mbps) : 6.5 16 19.5 117
+           Other rates (Mbps) : 18 19.5 24 36 39 48 54 156
   
-  SSID 14 : DIRECT-32-HP M282 LaserJet
+  SSID 13 : 
       Network type            : Infrastructure
       Authentication          : WPA2-Personal
       Encryption              : CCMP 
-      BSSID 1                 : 5e:3a:45:4f:f7:32
-           Signal             : 25%  
+      BSSID 1                 : 72:6a:b0:0d:03:67
+           Signal             : 99%  
 
 </msg>
-<status status="PASS" starttime="20210622 16:09:18.778" endtime="20210622 16:09:18.779"/>
+<status status="PASS" starttime="20210622 21:41:53.636" endtime="20210622 21:41:53.638"/>
 </kw>
 <kw name="Get Regexp Matches" library="String">
 <var>${Analyser_ChannelID_5Ghz}</var>
@@ -581,358 +381,1476 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show netwo
 <arg>Channel.*: (\\d+)</arg>
 <arg>1</arg>
 <doc>Returns a list of all non-overlapping matches in the given string.</doc>
-<msg timestamp="20210622 16:09:18.781" level="INFO">${Analyser_ChannelID_5Ghz} = ['40']</msg>
-<status status="PASS" starttime="20210622 16:09:18.780" endtime="20210622 16:09:18.781"/>
+<msg timestamp="20210622 21:41:53.639" level="INFO">${Analyser_ChannelID_5Ghz} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:41:53.638" endtime="20210622 21:41:53.639"/>
 </kw>
 <kw name="Log" library="BuiltIn">
-<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz[0]} and ${Analyser_ChannelID_5Ghz[1]}</arg>
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20210622 16:09:18.783" level="FAIL">Resolving variable '${Analyser_ChannelID_5Ghz[1]}' failed: IndexError: list index out of range</msg>
-<status status="FAIL" starttime="20210622 16:09:18.781" endtime="20210622 16:09:18.783"/>
+<msg timestamp="20210622 21:41:53.639" level="INFO">Analyser Channel IDs are ['11']</msg>
+<status status="PASS" starttime="20210622 21:41:53.639" endtime="20210622 21:41:53.639"/>
 </kw>
-<status status="FAIL" starttime="20210622 16:09:17.670" endtime="20210622 16:09:18.783"/>
+<msg timestamp="20210622 21:41:53.640" level="INFO">${5Ghz_ChannelID_Analyser} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:41:52.513" endtime="20210622 21:41:53.640"/>
 </kw>
 <kw name="Get Length" library="BuiltIn">
 <var>${5Ghz_ChannelID_Analyser_Length}</var>
 <arg>${5Ghz_ChannelID_Analyser}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="NOT RUN" starttime="20210622 16:09:18.783" endtime="20210622 16:09:18.784"/>
+<msg timestamp="20210622 21:41:53.640" level="INFO">Length is 1</msg>
+<msg timestamp="20210622 21:41:53.640" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 1</msg>
+<status status="PASS" starttime="20210622 21:41:53.640" endtime="20210622 21:41:53.640"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20210622 16:09:18.784" endtime="20210622 16:09:18.784"/>
+<msg timestamp="20210622 21:41:53.641" level="INFO">ChannelIDs are ['11'] and Length of ChannelIDs is 1</msg>
+<status status="PASS" starttime="20210622 21:41:53.640" endtime="20210622 21:41:53.641"/>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
-<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 1</arg>
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="NOT RUN" starttime="20210622 16:09:18.784" endtime="20210622 16:09:18.784"/>
+<status status="PASS" starttime="20210622 21:41:53.641" endtime="20210622 21:41:53.641"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>30s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20210622 16:09:18.784" endtime="20210622 16:09:18.784"/>
+<msg timestamp="20210622 21:42:23.655" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:41:53.641" endtime="20210622 21:42:23.655"/>
 </kw>
-<status status="FAIL" starttime="20210622 16:09:17.669" endtime="20210622 16:09:18.784"/>
+<status status="PASS" starttime="20210622 21:41:52.512" endtime="20210622 21:42:23.655"/>
 </iter>
-<status status="FAIL" starttime="20210622 16:09:17.669" endtime="20210622 16:09:18.784"/>
+<iter>
+<var name="${VAR}">2</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:42:23.657" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:42:23.660" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:42:24.191" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:42:23.656" endtime="20210622 21:42:24.191"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:42:24.192" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:42:24.195" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:42:24.696" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:42:24.696" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:42:24.191" endtime="20210622 21:42:24.696"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:42:24.698" level="INFO"/>
+<status status="PASS" starttime="20210622 21:42:24.697" endtime="20210622 21:42:24.698"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:42:24.699" level="INFO">${Analyser_ChannelID_5Ghz} = []</msg>
+<status status="PASS" starttime="20210622 21:42:24.698" endtime="20210622 21:42:24.699"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:42:24.699" level="INFO">Analyser Channel IDs are []</msg>
+<status status="PASS" starttime="20210622 21:42:24.699" endtime="20210622 21:42:24.700"/>
+</kw>
+<msg timestamp="20210622 21:42:24.700" level="INFO">${5Ghz_ChannelID_Analyser} = []</msg>
+<status status="PASS" starttime="20210622 21:42:23.656" endtime="20210622 21:42:24.700"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:42:24.700" level="INFO">Length is 0</msg>
+<msg timestamp="20210622 21:42:24.700" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 0</msg>
+<status status="PASS" starttime="20210622 21:42:24.700" endtime="20210622 21:42:24.700"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:42:24.701" level="INFO">ChannelIDs are [] and Length of ChannelIDs is 0</msg>
+<status status="PASS" starttime="20210622 21:42:24.700" endtime="20210622 21:42:24.701"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:42:24.701" endtime="20210622 21:42:24.701"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:42:54.703" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:42:24.702" endtime="20210622 21:42:54.703"/>
+</kw>
+<status status="PASS" starttime="20210622 21:42:23.655" endtime="20210622 21:42:54.703"/>
+</iter>
+<iter>
+<var name="${VAR}">3</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:42:54.704" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:42:54.708" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:42:55.318" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:42:54.704" endtime="20210622 21:42:55.318"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:42:55.319" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:42:55.322" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:42:55.871" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:42:55.872" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:42:55.318" endtime="20210622 21:42:55.872"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:42:55.873" level="INFO">
+  
+&gt; SSID 18 : owl
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 92:19:b5:6e:3f:38
+           Signal             : 76%  
+           Radio type         : 802.11n
+           Channel            : 11 
+           Basic rates (Mbps) : 6.5 16 19.5 117
+           Other rates (Mbps) : 18 19.5 24 36 39 48 54 156
+  
+
+</msg>
+<status status="PASS" starttime="20210622 21:42:55.872" endtime="20210622 21:42:55.873"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:42:55.874" level="INFO">${Analyser_ChannelID_5Ghz} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:42:55.873" endtime="20210622 21:42:55.874"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:42:55.875" level="INFO">Analyser Channel IDs are ['11']</msg>
+<status status="PASS" starttime="20210622 21:42:55.875" endtime="20210622 21:42:55.875"/>
+</kw>
+<msg timestamp="20210622 21:42:55.875" level="INFO">${5Ghz_ChannelID_Analyser} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:42:54.704" endtime="20210622 21:42:55.875"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:42:55.875" level="INFO">Length is 1</msg>
+<msg timestamp="20210622 21:42:55.876" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 1</msg>
+<status status="PASS" starttime="20210622 21:42:55.875" endtime="20210622 21:42:55.876"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:42:55.876" level="INFO">ChannelIDs are ['11'] and Length of ChannelIDs is 1</msg>
+<status status="PASS" starttime="20210622 21:42:55.876" endtime="20210622 21:42:55.876"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:42:55.876" endtime="20210622 21:42:55.877"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:43:25.890" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:42:55.877" endtime="20210622 21:43:25.890"/>
+</kw>
+<status status="PASS" starttime="20210622 21:42:54.703" endtime="20210622 21:43:25.890"/>
+</iter>
+<iter>
+<var name="${VAR}">4</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:43:25.891" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:43:25.895" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:43:26.428" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:43:25.891" endtime="20210622 21:43:26.428"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:43:26.429" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:43:26.433" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:43:26.932" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:43:26.932" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:43:26.428" endtime="20210622 21:43:26.932"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:43:26.934" level="INFO"/>
+<status status="PASS" starttime="20210622 21:43:26.933" endtime="20210622 21:43:26.934"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:43:26.935" level="INFO">${Analyser_ChannelID_5Ghz} = []</msg>
+<status status="PASS" starttime="20210622 21:43:26.934" endtime="20210622 21:43:26.935"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:43:26.936" level="INFO">Analyser Channel IDs are []</msg>
+<status status="PASS" starttime="20210622 21:43:26.935" endtime="20210622 21:43:26.936"/>
+</kw>
+<msg timestamp="20210622 21:43:26.936" level="INFO">${5Ghz_ChannelID_Analyser} = []</msg>
+<status status="PASS" starttime="20210622 21:43:25.890" endtime="20210622 21:43:26.936"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:43:26.936" level="INFO">Length is 0</msg>
+<msg timestamp="20210622 21:43:26.936" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 0</msg>
+<status status="PASS" starttime="20210622 21:43:26.936" endtime="20210622 21:43:26.936"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:43:26.937" level="INFO">ChannelIDs are [] and Length of ChannelIDs is 0</msg>
+<status status="PASS" starttime="20210622 21:43:26.937" endtime="20210622 21:43:26.937"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:43:26.937" endtime="20210622 21:43:26.938"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:43:56.951" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:43:26.938" endtime="20210622 21:43:56.951"/>
+</kw>
+<status status="PASS" starttime="20210622 21:43:25.890" endtime="20210622 21:43:56.951"/>
+</iter>
+<iter>
+<var name="${VAR}">5</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:43:56.952" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:43:56.956" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:43:57.606" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:43:56.952" endtime="20210622 21:43:57.606"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:43:57.607" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:43:57.611" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:43:58.311" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:43:58.311" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:43:57.607" endtime="20210622 21:43:58.311"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:43:58.313" level="INFO">
+  
+&gt; SSID 10 : owl
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 92:19:b5:6e:3f:38
+           Signal             : 78%  
+           Radio type         : 802.11n
+           Channel            : 11 
+           Basic rates (Mbps) : 6.5 16 19.5 117
+           Other rates (Mbps) : 18 19.5 24 36 39 48 54 156
+  
+  SSID 11 : HP-Print-F6-ENVY 4500 series
+      Network type            : Infrastructure
+      Authentication          : Open
+      Encryption              : None 
+      BSSID 1                 : f0:92:1c:fb:90:f6
+           Signal             : 41%  
+
+</msg>
+<status status="PASS" starttime="20210622 21:43:58.311" endtime="20210622 21:43:58.313"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:43:58.314" level="INFO">${Analyser_ChannelID_5Ghz} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:43:58.313" endtime="20210622 21:43:58.314"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:43:58.315" level="INFO">Analyser Channel IDs are ['11']</msg>
+<status status="PASS" starttime="20210622 21:43:58.314" endtime="20210622 21:43:58.315"/>
+</kw>
+<msg timestamp="20210622 21:43:58.315" level="INFO">${5Ghz_ChannelID_Analyser} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:43:56.951" endtime="20210622 21:43:58.316"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:43:58.316" level="INFO">Length is 1</msg>
+<msg timestamp="20210622 21:43:58.316" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 1</msg>
+<status status="PASS" starttime="20210622 21:43:58.316" endtime="20210622 21:43:58.316"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:43:58.316" level="INFO">ChannelIDs are ['11'] and Length of ChannelIDs is 1</msg>
+<status status="PASS" starttime="20210622 21:43:58.316" endtime="20210622 21:43:58.317"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:43:58.317" endtime="20210622 21:43:58.317"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:44:28.321" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:43:58.317" endtime="20210622 21:44:28.321"/>
+</kw>
+<status status="PASS" starttime="20210622 21:43:56.951" endtime="20210622 21:44:28.321"/>
+</iter>
+<iter>
+<var name="${VAR}">6</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:44:28.322" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:44:28.326" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:44:28.874" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:44:28.322" endtime="20210622 21:44:28.874"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:44:28.875" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:44:28.879" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:44:29.424" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:44:29.425" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:44:28.874" endtime="20210622 21:44:29.425"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:44:29.427" level="INFO">
+  
+&gt; SSID 18 : owl
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 92:19:b5:6e:3f:38
+           Signal             : 80%  
+           Radio type         : 802.11n
+           Channel            : 11 
+           Basic rates (Mbps) : 6.5 16 19.5 117
+           Other rates (Mbps) : 18 19.5 24 36 39 48 54 156
+  
+  SSID 19 : 
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 72:6a:b0:0d:03:67
+           Signal             : 76%  
+
+</msg>
+<status status="PASS" starttime="20210622 21:44:29.425" endtime="20210622 21:44:29.427"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:44:29.430" level="INFO">${Analyser_ChannelID_5Ghz} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:44:29.428" endtime="20210622 21:44:29.430"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:44:29.430" level="INFO">Analyser Channel IDs are ['11']</msg>
+<status status="PASS" starttime="20210622 21:44:29.430" endtime="20210622 21:44:29.430"/>
+</kw>
+<msg timestamp="20210622 21:44:29.431" level="INFO">${5Ghz_ChannelID_Analyser} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:44:28.321" endtime="20210622 21:44:29.431"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:44:29.431" level="INFO">Length is 1</msg>
+<msg timestamp="20210622 21:44:29.431" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 1</msg>
+<status status="PASS" starttime="20210622 21:44:29.431" endtime="20210622 21:44:29.431"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:44:29.432" level="INFO">ChannelIDs are ['11'] and Length of ChannelIDs is 1</msg>
+<status status="PASS" starttime="20210622 21:44:29.431" endtime="20210622 21:44:29.432"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:44:29.432" endtime="20210622 21:44:29.433"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:44:59.443" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:44:29.433" endtime="20210622 21:44:59.443"/>
+</kw>
+<status status="PASS" starttime="20210622 21:44:28.321" endtime="20210622 21:44:59.443"/>
+</iter>
+<iter>
+<var name="${VAR}">7</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:44:59.444" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:44:59.447" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:45:00.051" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:44:59.444" endtime="20210622 21:45:00.051"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:45:00.052" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:45:00.056" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:45:00.619" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:45:00.619" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:45:00.051" endtime="20210622 21:45:00.619"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:45:00.621" level="INFO">
+  
+&gt; SSID 15 : owl
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 92:19:b5:6e:3f:38
+           Signal             : 76%  
+           Radio type         : 802.11n
+           Channel            : 11 
+           Basic rates (Mbps) : 6.5 16 19.5 117
+           Other rates (Mbps) : 18 19.5 24 36 39 48 54 156
+  
+  SSID 16 : VRV9517F64CC1
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 4c:1b:86:f6:4c:c1
+           Signal             : 53%  
+
+</msg>
+<status status="PASS" starttime="20210622 21:45:00.619" endtime="20210622 21:45:00.621"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:45:00.622" level="INFO">${Analyser_ChannelID_5Ghz} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:45:00.621" endtime="20210622 21:45:00.622"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:45:00.622" level="INFO">Analyser Channel IDs are ['11']</msg>
+<status status="PASS" starttime="20210622 21:45:00.622" endtime="20210622 21:45:00.622"/>
+</kw>
+<msg timestamp="20210622 21:45:00.623" level="INFO">${5Ghz_ChannelID_Analyser} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:44:59.443" endtime="20210622 21:45:00.623"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:45:00.623" level="INFO">Length is 1</msg>
+<msg timestamp="20210622 21:45:00.623" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 1</msg>
+<status status="PASS" starttime="20210622 21:45:00.623" endtime="20210622 21:45:00.623"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:45:00.624" level="INFO">ChannelIDs are ['11'] and Length of ChannelIDs is 1</msg>
+<status status="PASS" starttime="20210622 21:45:00.623" endtime="20210622 21:45:00.624"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:45:00.624" endtime="20210622 21:45:00.624"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:45:30.632" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:45:00.624" endtime="20210622 21:45:30.632"/>
+</kw>
+<status status="PASS" starttime="20210622 21:44:59.443" endtime="20210622 21:45:30.632"/>
+</iter>
+<iter>
+<var name="${VAR}">8</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:45:30.633" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:45:30.637" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:45:31.185" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:45:30.633" endtime="20210622 21:45:31.185"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:45:31.185" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:45:31.189" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:45:31.738" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:45:31.738" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:45:31.185" endtime="20210622 21:45:31.738"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:45:31.740" level="INFO">
+  
+&gt; SSID 13 : owl
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 92:19:b5:6e:3f:38
+           Signal             : 75%  
+           Radio type         : 802.11n
+           Channel            : 11 
+           Basic rates (Mbps) : 6.5 16 19.5 117
+           Other rates (Mbps) : 18 19.5 24 36 39 48 54 156
+  
+  SSID 14 : 
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 6a:1b:86:f6:4c:c3
+           Signal             : 51%  
+
+</msg>
+<status status="PASS" starttime="20210622 21:45:31.738" endtime="20210622 21:45:31.740"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:45:31.741" level="INFO">${Analyser_ChannelID_5Ghz} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:45:31.740" endtime="20210622 21:45:31.741"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:45:31.741" level="INFO">Analyser Channel IDs are ['11']</msg>
+<status status="PASS" starttime="20210622 21:45:31.741" endtime="20210622 21:45:31.741"/>
+</kw>
+<msg timestamp="20210622 21:45:31.741" level="INFO">${5Ghz_ChannelID_Analyser} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:45:30.632" endtime="20210622 21:45:31.741"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:45:31.742" level="INFO">Length is 1</msg>
+<msg timestamp="20210622 21:45:31.742" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 1</msg>
+<status status="PASS" starttime="20210622 21:45:31.742" endtime="20210622 21:45:31.742"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:45:31.744" level="INFO">ChannelIDs are ['11'] and Length of ChannelIDs is 1</msg>
+<status status="PASS" starttime="20210622 21:45:31.742" endtime="20210622 21:45:31.744"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:45:31.744" endtime="20210622 21:45:31.745"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:46:01.752" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:45:31.745" endtime="20210622 21:46:01.752"/>
+</kw>
+<status status="PASS" starttime="20210622 21:45:30.632" endtime="20210622 21:46:01.752"/>
+</iter>
+<iter>
+<var name="${VAR}">9</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:46:01.754" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:46:01.758" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:46:02.295" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:46:01.753" endtime="20210622 21:46:02.295"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:46:02.296" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:46:02.299" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:46:02.844" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:46:02.844" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:46:02.295" endtime="20210622 21:46:02.844"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:46:02.846" level="INFO">
+  
+&gt; SSID 10 : owl
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 92:19:b5:6e:3f:38
+           Signal             : 76%  
+           Radio type         : 802.11n
+           Channel            : 11 
+           Basic rates (Mbps) : 6.5 16 19.5 117
+           Other rates (Mbps) : 18 19.5 24 36 39 48 54 156
+  
+  SSID 11 : KPN Fon
+      Network type            : Infrastructure
+      Authentication          : Open
+      Encryption              : None 
+      BSSID 1                 : 72:6a:b0:0d:03:64
+           Signal             : 99%  
+
+</msg>
+<status status="PASS" starttime="20210622 21:46:02.844" endtime="20210622 21:46:02.846"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:46:02.847" level="INFO">${Analyser_ChannelID_5Ghz} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:46:02.846" endtime="20210622 21:46:02.847"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:46:02.848" level="INFO">Analyser Channel IDs are ['11']</msg>
+<status status="PASS" starttime="20210622 21:46:02.847" endtime="20210622 21:46:02.848"/>
+</kw>
+<msg timestamp="20210622 21:46:02.848" level="INFO">${5Ghz_ChannelID_Analyser} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:46:01.752" endtime="20210622 21:46:02.848"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:46:02.848" level="INFO">Length is 1</msg>
+<msg timestamp="20210622 21:46:02.848" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 1</msg>
+<status status="PASS" starttime="20210622 21:46:02.848" endtime="20210622 21:46:02.849"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:46:02.849" level="INFO">ChannelIDs are ['11'] and Length of ChannelIDs is 1</msg>
+<status status="PASS" starttime="20210622 21:46:02.849" endtime="20210622 21:46:02.849"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:46:02.849" endtime="20210622 21:46:02.850"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:46:32.852" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:46:02.850" endtime="20210622 21:46:32.852"/>
+</kw>
+<status status="PASS" starttime="20210622 21:46:01.752" endtime="20210622 21:46:32.852"/>
+</iter>
+<iter>
+<var name="${VAR}">10</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:46:32.852" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:46:32.856" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:46:33.415" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:46:32.852" endtime="20210622 21:46:33.415"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:46:33.416" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:46:33.419" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:46:33.977" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:46:33.977" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:46:33.415" endtime="20210622 21:46:33.977"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:46:33.979" level="INFO">
+  
+&gt; SSID 20 : owl
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 92:19:b5:6e:3f:38
+           Signal             : 76%  
+           Radio type         : 802.11n
+           Channel            : 11 
+           Basic rates (Mbps) : 6.5 16 19.5 117
+           Other rates (Mbps) : 18 19.5 24 36 39 48 54 156
+  
+  SSID 21 : 
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 6a:1b:86:f6:4c:c3
+           Signal             : 50%  
+
+</msg>
+<status status="PASS" starttime="20210622 21:46:33.977" endtime="20210622 21:46:33.979"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:46:33.980" level="INFO">${Analyser_ChannelID_5Ghz} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:46:33.979" endtime="20210622 21:46:33.980"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:46:33.980" level="INFO">Analyser Channel IDs are ['11']</msg>
+<status status="PASS" starttime="20210622 21:46:33.980" endtime="20210622 21:46:33.980"/>
+</kw>
+<msg timestamp="20210622 21:46:33.981" level="INFO">${5Ghz_ChannelID_Analyser} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:46:32.852" endtime="20210622 21:46:33.981"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:46:33.981" level="INFO">Length is 1</msg>
+<msg timestamp="20210622 21:46:33.981" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 1</msg>
+<status status="PASS" starttime="20210622 21:46:33.981" endtime="20210622 21:46:33.981"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:46:33.982" level="INFO">ChannelIDs are ['11'] and Length of ChannelIDs is 1</msg>
+<status status="PASS" starttime="20210622 21:46:33.981" endtime="20210622 21:46:33.982"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:46:33.982" endtime="20210622 21:46:33.982"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:47:03.986" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:46:33.982" endtime="20210622 21:47:03.986"/>
+</kw>
+<status status="PASS" starttime="20210622 21:46:32.852" endtime="20210622 21:47:03.986"/>
+</iter>
+<iter>
+<var name="${VAR}">11</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:47:03.987" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:47:03.992" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:47:04.519" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:47:03.987" endtime="20210622 21:47:04.519"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:47:04.520" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:47:04.524" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:47:05.084" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:47:05.084" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:47:04.520" endtime="20210622 21:47:05.084"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:47:05.086" level="INFO">
+  
+&gt; SSID 3 : owl
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 92:19:b5:6e:3f:38
+           Signal             : 75%  
+           Radio type         : 802.11n
+           Channel            : 11 
+           Basic rates (Mbps) : 6.5 16 19.5 117
+           Other rates (Mbps) : 18 19.5 24 36 39 48 54 156
+  
+  SSID 4 : Ziggo26361
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 70:54:d2:a4:51:73
+           Signal             : 65%  
+
+</msg>
+<status status="PASS" starttime="20210622 21:47:05.084" endtime="20210622 21:47:05.086"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:47:05.087" level="INFO">${Analyser_ChannelID_5Ghz} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:47:05.086" endtime="20210622 21:47:05.087"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:47:05.088" level="INFO">Analyser Channel IDs are ['11']</msg>
+<status status="PASS" starttime="20210622 21:47:05.087" endtime="20210622 21:47:05.088"/>
+</kw>
+<msg timestamp="20210622 21:47:05.089" level="INFO">${5Ghz_ChannelID_Analyser} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:47:03.987" endtime="20210622 21:47:05.089"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:47:05.089" level="INFO">Length is 1</msg>
+<msg timestamp="20210622 21:47:05.089" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 1</msg>
+<status status="PASS" starttime="20210622 21:47:05.089" endtime="20210622 21:47:05.089"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:47:05.090" level="INFO">ChannelIDs are ['11'] and Length of ChannelIDs is 1</msg>
+<status status="PASS" starttime="20210622 21:47:05.089" endtime="20210622 21:47:05.090"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:47:05.090" endtime="20210622 21:47:05.091"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:47:35.102" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:47:05.091" endtime="20210622 21:47:35.103"/>
+</kw>
+<status status="PASS" starttime="20210622 21:47:03.986" endtime="20210622 21:47:35.103"/>
+</iter>
+<iter>
+<var name="${VAR}">12</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:47:35.105" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:47:35.120" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:47:35.679" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:47:35.104" endtime="20210622 21:47:35.679"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:47:35.680" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:47:35.683" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:47:36.229" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:47:36.229" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:47:35.679" endtime="20210622 21:47:36.229"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:47:36.231" level="INFO"/>
+<status status="PASS" starttime="20210622 21:47:36.230" endtime="20210622 21:47:36.231"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:47:36.232" level="INFO">${Analyser_ChannelID_5Ghz} = []</msg>
+<status status="PASS" starttime="20210622 21:47:36.231" endtime="20210622 21:47:36.232"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:47:36.232" level="INFO">Analyser Channel IDs are []</msg>
+<status status="PASS" starttime="20210622 21:47:36.232" endtime="20210622 21:47:36.232"/>
+</kw>
+<msg timestamp="20210622 21:47:36.233" level="INFO">${5Ghz_ChannelID_Analyser} = []</msg>
+<status status="PASS" starttime="20210622 21:47:35.103" endtime="20210622 21:47:36.233"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:47:36.233" level="INFO">Length is 0</msg>
+<msg timestamp="20210622 21:47:36.233" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 0</msg>
+<status status="PASS" starttime="20210622 21:47:36.233" endtime="20210622 21:47:36.233"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:47:36.234" level="INFO">ChannelIDs are [] and Length of ChannelIDs is 0</msg>
+<status status="PASS" starttime="20210622 21:47:36.233" endtime="20210622 21:47:36.234"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:47:36.234" endtime="20210622 21:47:36.234"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:48:06.242" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:47:36.234" endtime="20210622 21:48:06.242"/>
+</kw>
+<status status="PASS" starttime="20210622 21:47:35.103" endtime="20210622 21:48:06.242"/>
+</iter>
+<iter>
+<var name="${VAR}">13</var>
+<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
+<var>${5Ghz_ChannelID_Analyser}</var>
+<kw name="Run Process" library="Process">
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:48:06.243" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:48:06.247" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:48:06.800" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20210622 21:48:06.243" endtime="20210622 21:48:06.801"/>
+</kw>
+<kw name="Run Process" library="Process">
+<var>${result}</var>
+<arg>C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe</arg>
+<arg>${cmd}</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<msg timestamp="20210622 21:48:06.801" level="INFO">Starting process:
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe "netsh wlan show network mode=bssid | Select-String -Pattern \"owl\" -Context 1,16"</msg>
+<msg timestamp="20210622 21:48:06.805" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20210622 21:48:07.323" level="INFO">Process completed.</msg>
+<msg timestamp="20210622 21:48:07.324" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<status status="PASS" starttime="20210622 21:48:06.801" endtime="20210622 21:48:07.324"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result.stdout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:48:07.325" level="INFO">
+  
+&gt; SSID 13 : owl
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 92:19:b5:6e:3f:38
+           Signal             : 78%  
+           Radio type         : 802.11n
+           Channel            : 11 
+           Basic rates (Mbps) : 6.5 16 19.5 117
+           Other rates (Mbps) : 18 19.5 24 36 39 48 54 156
+  
+  SSID 14 : Sitecom90806C
+      Network type            : Infrastructure
+      Authentication          : WPA2-Personal
+      Encryption              : CCMP 
+      BSSID 1                 : 00:0c:f6:90:80:6c
+           Signal             : 41%  
+
+</msg>
+<status status="PASS" starttime="20210622 21:48:07.324" endtime="20210622 21:48:07.325"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${Analyser_ChannelID_5Ghz}</var>
+<arg>${result.stdout}</arg>
+<arg>Channel.*: (\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20210622 21:48:07.327" level="INFO">${Analyser_ChannelID_5Ghz} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:48:07.325" endtime="20210622 21:48:07.327"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:48:07.327" level="INFO">Analyser Channel IDs are ['11']</msg>
+<status status="PASS" starttime="20210622 21:48:07.327" endtime="20210622 21:48:07.327"/>
+</kw>
+<msg timestamp="20210622 21:48:07.327" level="INFO">${5Ghz_ChannelID_Analyser} = ['11']</msg>
+<status status="PASS" starttime="20210622 21:48:06.243" endtime="20210622 21:48:07.327"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${5Ghz_ChannelID_Analyser_Length}</var>
+<arg>${5Ghz_ChannelID_Analyser}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210622 21:48:07.328" level="INFO">Length is 1</msg>
+<msg timestamp="20210622 21:48:07.328" level="INFO">${5Ghz_ChannelID_Analyser_Length} = 1</msg>
+<status status="PASS" starttime="20210622 21:48:07.328" endtime="20210622 21:48:07.328"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210622 21:48:07.329" level="INFO">ChannelIDs are ['11'] and Length of ChannelIDs is 1</msg>
+<status status="PASS" starttime="20210622 21:48:07.329" endtime="20210622 21:48:07.329"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 2</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210622 21:48:07.330" endtime="20210622 21:48:07.330"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210622 21:48:37.336" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20210622 21:48:07.331" endtime="20210622 21:48:37.336"/>
+</kw>
+<status status="PASS" starttime="20210622 21:48:06.242" endtime="20210622 21:48:37.336"/>
+</iter>
+<status status="PASS" starttime="20210622 21:41:21.407" endtime="20210622 21:48:37.336"/>
 </for>
 <kw name="List Should Contain Value" library="Collections">
 <arg>${5Ghz_ChannelID_Analyser}</arg>
 <arg>${5GHz_Channel}</arg>
 <doc>Fails if the ``value`` is not found from ``list``.</doc>
-<status status="NOT RUN" starttime="20210622 16:09:18.784" endtime="20210622 16:09:18.784"/>
+<msg timestamp="20210622 21:48:37.337" level="FAIL">[ 11 ] does not contain value '140'.</msg>
+<status status="FAIL" starttime="20210622 21:48:37.336" endtime="20210622 21:48:37.337"/>
 </kw>
-<status status="FAIL" starttime="20210622 16:07:23.517" endtime="20210622 16:09:18.785"/>
+<status status="FAIL" starttime="20210622 21:37:57.095" endtime="20210622 21:48:37.337"/>
 </kw>
-<status status="FAIL" starttime="20210622 16:07:04.976" endtime="20210622 16:09:18.785">Resolving variable '${Analyser_ChannelID_5Ghz[1]}' failed: IndexError: list index out of range</status>
+<status status="FAIL" starttime="20210622 21:37:41.803" endtime="20210622 21:48:37.338">[ 11 ] does not contain value '140'.</status>
 </test>
-<test id="s1-t3" name="Verify setting 5Ghz ChannelID 44 with Bandwith 20 MHz">
+<test id="s1-t2" name="Verify setting 5Ghz ChannelID 36 with Bandwith 20 MHz">
 <kw name="Login to DUT" library="SW2CommonFunction" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${HOME_PAGE}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210622 16:09:18.789" level="INFO">Opening browser 'firefox' to base url 'http://192.168.2.8/login.htm'.</msg>
-<msg timestamp="20210622 16:09:18.804" level="INFO">Firefox driver log is always forced to to: D:\Personal\Automation\KPN\WiFi\result\geckodriver-114.log</msg>
-<status status="PASS" starttime="20210622 16:09:18.789" endtime="20210622 16:09:27.359"/>
+<msg timestamp="20210622 21:48:37.342" level="INFO">Opening browser 'firefox' to base url 'http://192.168.2.10/login.htm'.</msg>
+<msg timestamp="20210622 21:48:37.361" level="INFO">Firefox driver log is always forced to to: D:\Personal\Automation\KPN\WiFi\result\geckodriver-84.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="FAIL" starttime="20210622 21:48:43.938" endtime="20210622 21:48:43.938"/>
+</kw>
+<msg timestamp="20210622 21:48:43.938" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<status status="FAIL" starttime="20210622 21:48:37.342" endtime="20210622 21:48:43.984"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210622 16:09:27.359" endtime="20210622 16:09:27.364"/>
+<status status="NOT RUN" starttime="20210622 21:48:43.985" endtime="20210622 21:48:43.985"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:09:29.377" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:09:27.365" endtime="20210622 16:09:29.377"/>
+<status status="NOT RUN" starttime="20210622 21:48:43.985" endtime="20210622 21:48:43.985"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${Password}</arg>
 <arg>${Password_value}</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20210622 16:09:29.377" level="INFO">Sending key(s) ('Qwerty1!',) to //input[@name='ui_pws'] element.</msg>
-<msg timestamp="20210622 16:09:29.674" level="INFO">Sending keys Qwerty1!</msg>
-<status status="PASS" starttime="20210622 16:09:29.377" endtime="20210622 16:09:29.696"/>
+<status status="NOT RUN" starttime="20210622 21:48:43.985" endtime="20210622 21:48:43.986"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:09:31.705" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:09:29.697" endtime="20210622 16:09:31.705"/>
+<status status="NOT RUN" starttime="20210622 21:48:43.986" endtime="20210622 21:48:43.986"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:09:31.706" level="INFO">Clicking element '//div[@id='btn_loginbtn']'.</msg>
-<status status="PASS" starttime="20210622 16:09:31.705" endtime="20210622 16:09:31.952"/>
+<status status="NOT RUN" starttime="20210622 21:48:43.986" endtime="20210622 21:48:43.986"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:09:33.966" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:09:31.953" endtime="20210622 16:09:33.966"/>
+<status status="NOT RUN" starttime="20210622 21:48:43.986" endtime="20210622 21:48:43.987"/>
 </kw>
 <kw name="Select Frame" library="SeleniumLibrary">
 <arg>id:frm_main2</arg>
 <doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20210622 16:09:33.967" level="INFO">Selecting frame 'id:frm_main2'.</msg>
-<status status="PASS" starttime="20210622 16:09:33.966" endtime="20210622 16:09:33.991"/>
+<status status="NOT RUN" starttime="20210622 21:48:43.987" endtime="20210622 21:48:43.987"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${Status}</arg>
 <arg>10s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210622 16:09:33.991" endtime="20210622 16:09:34.001"/>
+<status status="NOT RUN" starttime="20210622 21:48:43.987" endtime="20210622 21:48:43.987"/>
 </kw>
-<status status="PASS" starttime="20210622 16:09:18.788" endtime="20210622 16:09:34.002"/>
+<status status="FAIL" starttime="20210622 21:48:37.342" endtime="20210622 21:48:43.988"/>
 </kw>
-<kw name="Verify 5Ghz ChannelID scenarios">
-<arg>44</arg>
-<arg>4</arg>
-<arg>1</arg>
-<tag>5GhzChannelIDSet</tag>
-<tag>Funtional</tag>
-<tag>SW2</tag>
-<tag>WiFi</tag>
-<doc>This Test case is to verify setting different channel and Bandwith in SW2</doc>
-<kw name="Go to Settings Page" library="SW2SettingPage">
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20210622 16:09:34.005" endtime="20210622 16:09:34.010"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>name:topFrame</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20210622 16:09:34.011" level="INFO">Selecting frame 'name:topFrame'.</msg>
-<status status="PASS" starttime="20210622 16:09:34.010" endtime="20210622 16:09:34.021"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Settings_Tab}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:09:34.021" level="INFO">Clicking element '//div[@id='id_nav_1']'.</msg>
-<status status="PASS" starttime="20210622 16:09:34.021" endtime="20210622 16:09:34.249"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:09:36.254" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:09:34.249" endtime="20210622 16:09:36.254"/>
-</kw>
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20210622 16:09:36.254" endtime="20210622 16:09:36.258"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>id:frm_main2</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20210622 16:09:36.259" level="INFO">Selecting frame 'id:frm_main2'.</msg>
-<status status="PASS" starttime="20210622 16:09:36.259" endtime="20210622 16:09:36.268"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>${Wireless Settings}</arg>
-<arg>5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20210622 16:09:36.268" endtime="20210622 16:09:36.277"/>
-</kw>
-<status status="PASS" starttime="20210622 16:09:34.005" endtime="20210622 16:09:36.277"/>
-</kw>
-<kw name="Set 5Ghz Channel ID with value" library="SW2SettingPage">
-<arg>${ChannelID5_index}</arg>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${5Ghz_ChannelID_dropdown}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:09:36.278" level="INFO">Clicking element '//tbody/tr[@id='wireless_5ghz']/td[@class='tdTextTa_20']/div[1]'.</msg>
-<status status="PASS" starttime="20210622 16:09:36.278" endtime="20210622 16:09:36.515"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//tr[@id='wireless_5ghz']//li[${item label}]/a</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:09:36.516" level="INFO">Clicking element '//tr[@id='wireless_5ghz']//li[4]/a'.</msg>
-<status status="PASS" starttime="20210622 16:09:36.515" endtime="20210622 16:09:36.754"/>
-</kw>
-<status status="PASS" starttime="20210622 16:09:36.277" endtime="20210622 16:09:36.754"/>
-</kw>
-<kw name="Set 5Ghz Bandwith with value" library="SW2SettingPage">
-<arg>${5GHz_Bandwidth}</arg>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${5Ghz_Bandwidth_dropdown}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:09:36.755" level="INFO">Clicking element '//table[3]/tbody[1]/tr[4]/td[2]/div[1]'.</msg>
-<status status="PASS" starttime="20210622 16:09:36.755" endtime="20210622 16:09:36.982"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//table[3]/tbody/tr[4]/td[2]/div/ul/li[${item label}]/a</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:09:36.982" level="INFO">Clicking element '//table[3]/tbody/tr[4]/td[2]/div/ul/li[1]/a'.</msg>
-<status status="PASS" starttime="20210622 16:09:36.982" endtime="20210622 16:09:37.209"/>
-</kw>
-<status status="PASS" starttime="20210622 16:09:36.754" endtime="20210622 16:09:37.210"/>
-</kw>
-<kw name="Save the WiFi setting" library="SW2SettingPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${WLAN_save_setting}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:09:37.210" level="INFO">Clicking element '//span[@class='ButtonMiddle tapurple']'.</msg>
-<status status="PASS" starttime="20210622 16:09:37.210" endtime="20210622 16:09:37.437"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210622 16:09:39.453" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20210622 16:09:37.437" endtime="20210622 16:09:39.453"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${WLAN_save_setting_Popup}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210622 16:09:39.454" level="INFO">Clicking element '//body//div[@id='msgbox']//div//div//div[1]'.</msg>
-<status status="PASS" starttime="20210622 16:09:39.453" endtime="20210622 16:09:39.713"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>15s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="FAIL" starttime="20210622 16:09:39.713" endtime="20210622 16:09:49.575"/>
-</kw>
-<status status="FAIL" starttime="20210622 16:09:37.210" endtime="20210622 16:09:49.575"/>
-</kw>
-<kw name="Logout from DUT" library="SW2CommonFunction">
-<status status="NOT RUN" starttime="20210622 16:09:49.576" endtime="20210622 16:09:49.576"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>90s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20210622 16:09:49.577" endtime="20210622 16:09:49.577"/>
-</kw>
-<for flavor="IN">
-<var>${VAR}</var>
-<value>@{Loop}</value>
-<iter>
-<var name="${VAR}">${VAR}</var>
-<kw name="Fetch the Channel IDs from Windows Analyser" library="CommonWindowsFunction">
-<var>${5Ghz_ChannelID_Analyser}</var>
-<status status="NOT RUN" starttime="20210622 16:09:49.578" endtime="20210622 16:09:49.578"/>
-</kw>
-<kw name="Get Length" library="BuiltIn">
-<var>${5Ghz_ChannelID_Analyser_Length}</var>
-<arg>${5Ghz_ChannelID_Analyser}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="NOT RUN" starttime="20210622 16:09:49.578" endtime="20210622 16:09:49.578"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20210622 16:09:49.578" endtime="20210622 16:09:49.578"/>
-</kw>
-<kw name="Exit For Loop If" library="BuiltIn">
-<arg>${5Ghz_ChannelID_Analyser_Length} &gt;= 1</arg>
-<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="NOT RUN" starttime="20210622 16:09:49.579" endtime="20210622 16:09:49.579"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>30s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20210622 16:09:49.579" endtime="20210622 16:09:49.579"/>
-</kw>
-<status status="NOT RUN" starttime="20210622 16:09:49.577" endtime="20210622 16:09:49.579"/>
-</iter>
-<status status="NOT RUN" starttime="20210622 16:09:49.577" endtime="20210622 16:09:49.579"/>
-</for>
-<kw name="List Should Contain Value" library="Collections">
-<arg>${5Ghz_ChannelID_Analyser}</arg>
-<arg>${5GHz_Channel}</arg>
-<doc>Fails if the ``value`` is not found from ``list``.</doc>
-<status status="NOT RUN" starttime="20210622 16:09:49.579" endtime="20210622 16:09:49.579"/>
-</kw>
-<status status="FAIL" starttime="20210622 16:09:34.004" endtime="20210622 16:09:49.580"/>
-</kw>
-<status status="FAIL" starttime="20210622 16:09:18.787" endtime="20210622 16:09:49.594">Execution terminated by signal</status>
+<status status="FAIL" starttime="20210622 21:48:37.340" endtime="20210622 21:48:43.988">Setup failed:
+Execution terminated by signal</status>
 </test>
-<test id="s1-t4" name="Verify setting 5Ghz ChannelID 48 with Bandwith 20 MHz">
+<test id="s1-t3" name="Verify setting 5Ghz ChannelID 40 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.596" endtime="20210622 16:09:49.598">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:44.180" endtime="20210622 21:48:44.186">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t5" name="Verify setting 5Ghz ChannelID 52 with Bandwith 20 MHz">
+<test id="s1-t4" name="Verify setting 5Ghz ChannelID 44 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.613" endtime="20210622 16:09:49.615">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:44.269" endtime="20210622 21:48:44.272">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t6" name="Verify setting 5Ghz ChannelID 56 with Bandwith 20 MHz">
+<test id="s1-t5" name="Verify setting 5Ghz ChannelID 48 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.619" endtime="20210622 16:09:49.620">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:44.313" endtime="20210622 21:48:44.323">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t7" name="Verify setting 5Ghz ChannelID 60 with Bandwith 20 MHz">
+<test id="s1-t6" name="Verify setting 5Ghz ChannelID 52 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.638" endtime="20210622 16:09:49.641">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:44.390" endtime="20210622 21:48:44.395">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t8" name="Verify setting 5Ghz ChannelID 64 with Bandwith 20 MHz">
+<test id="s1-t7" name="Verify setting 5Ghz ChannelID 56 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.652" endtime="20210622 16:09:49.653">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:44.439" endtime="20210622 21:48:44.446">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t9" name="Verify setting 5Ghz ChannelID 100 with Bandwith 20 MHz">
+<test id="s1-t8" name="Verify setting 5Ghz ChannelID 60 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.664" endtime="20210622 16:09:49.665">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:44.511" endtime="20210622 21:48:44.522">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t10" name="Verify setting 5Ghz ChannelID 104 with Bandwith 20 MHz">
+<test id="s1-t9" name="Verify setting 5Ghz ChannelID 64 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.668" endtime="20210622 16:09:49.670">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:44.554" endtime="20210622 21:48:44.564">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t11" name="Verify setting 5Ghz ChannelID 108 with Bandwith 20 MHz">
+<test id="s1-t10" name="Verify setting 5Ghz ChannelID 100 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.683" endtime="20210622 16:09:49.684">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:44.645" endtime="20210622 21:48:44.675">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t12" name="Verify setting 5Ghz ChannelID 112 with Bandwith 20 MHz">
+<test id="s1-t11" name="Verify setting 5Ghz ChannelID 104 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.686" endtime="20210622 16:09:49.687">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:44.850" endtime="20210622 21:48:44.856">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t13" name="Verify setting 5Ghz ChannelID 116 with Bandwith 20 MHz">
+<test id="s1-t12" name="Verify setting 5Ghz ChannelID 108 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.699" endtime="20210622 16:09:49.699">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:44.926" endtime="20210622 21:48:44.928">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t14" name="Verify setting 5Ghz ChannelID 120 with Bandwith 20 MHz">
+<test id="s1-t13" name="Verify setting 5Ghz ChannelID 112 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.701" endtime="20210622 16:09:49.702">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:44.950" endtime="20210622 21:48:44.954">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t15" name="Verify setting 5Ghz ChannelID 124 with Bandwith 20 MHz">
+<test id="s1-t14" name="Verify setting 5Ghz ChannelID 116 with Bandwith 20 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.703" endtime="20210622 16:09:49.704">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:45.051" endtime="20210622 21:48:45.079">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t16" name="Verify setting 5Ghz ChannelID 128 with Bandwith 20 MHz">
+<test id="s1-t15" name="Verify setting 5Ghz ChannelID 36 with Bandwith 20/40 MHz ">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.714" endtime="20210622 16:09:49.714">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:45.409" endtime="20210622 21:48:45.433">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t17" name="Verify setting 5Ghz ChannelID 132 with Bandwith 20 MHz">
+<test id="s1-t16" name="Verify setting 5Ghz ChannelID 40 with Bandwith 20/40 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.716" endtime="20210622 16:09:49.717">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:45.583" endtime="20210622 21:48:45.588">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t18" name="Verify setting 5Ghz ChannelID 136 with Bandwith 20 MHz">
+<test id="s1-t17" name="Verify setting 5Ghz ChannelID 44 with Bandwith 20/40 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.719" endtime="20210622 16:09:49.720">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:45.687" endtime="20210622 21:48:45.702">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t19" name="Verify setting 5Ghz ChannelID 140 with Bandwith 20 MHz">
+<test id="s1-t18" name="Verify setting 5Ghz ChannelID 48 with Bandwith 20/40 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.730" endtime="20210622 16:09:49.731">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:45.800" endtime="20210622 21:48:45.826">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t20" name="Verify setting 5Ghz ChannelID 36 with Bandwith 20/40 MHz ">
+<test id="s1-t19" name="Verify setting 5Ghz ChannelID 52 with Bandwith 20/40 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.733" endtime="20210622 16:09:49.734">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:45.906" endtime="20210622 21:48:45.908">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t21" name="Verify setting 5Ghz ChannelID 40 with Bandwith 20/40 MHz">
+<test id="s1-t20" name="Verify setting 5Ghz ChannelID 56 with Bandwith 20/40 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.736" endtime="20210622 16:09:49.736">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:45.962" endtime="20210622 21:48:45.967">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t22" name="Verify setting 5Ghz ChannelID 44 with Bandwith 20/40 MHz">
+<test id="s1-t21" name="Verify setting 5Ghz ChannelID 60 with Bandwith 20/40 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.744" endtime="20210622 16:09:49.746">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:45.998" endtime="20210622 21:48:46.000">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t23" name="Verify setting 5Ghz ChannelID 48 with Bandwith 20/40 MHz">
+<test id="s1-t22" name="Verify setting 5Ghz ChannelID 64 with Bandwith 20/40 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.748" endtime="20210622 16:09:49.748">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:46.022" endtime="20210622 21:48:46.027">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t24" name="Verify setting 5Ghz ChannelID 52 with Bandwith 20/40 MHz">
+<test id="s1-t23" name="Verify setting 5Ghz ChannelID 100 with Bandwith 20/40 MHz">
 <tag>robot:exit</tag>
-<status status="FAIL" starttime="20210622 16:09:49.751" endtime="20210622 16:09:49.755">Test execution stopped due to a fatal error.</status>
+<status status="FAIL" starttime="20210622 21:48:46.038" endtime="20210622 21:48:46.040">Test execution stopped due to a fatal error.</status>
 </test>
-<test id="s1-t25" name="Verify setting 5Ghz ChannelID 56 with Bandwith 20/40 MHz">
+<test id="s1-t24" name="Verify setting 5Ghz ChannelID 104 with Bandwith 20/40 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.050" endtime="20210622 21:48:46.051">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t25" name="Verify setting 5Ghz ChannelID 108 with Bandwith 20/40 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.054" endtime="20210622 21:48:46.056">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t26" name="Verify setting 5Ghz ChannelID 112 with Bandwith 20/40 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.061" endtime="20210622 21:48:46.080">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t27" name="Verify setting 5Ghz ChannelID 116 with Bandwith 20/40 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.087" endtime="20210622 21:48:46.098">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t28" name="Verify setting 5Ghz ChannelID 36 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.111" endtime="20210622 21:48:46.112">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t29" name="Verify setting 5Ghz ChannelID 40 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.115" endtime="20210622 21:48:46.118">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t30" name="Verify setting 5Ghz ChannelID 44 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.123" endtime="20210622 21:48:46.125">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t31" name="Verify setting 5Ghz ChannelID 48 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.131" endtime="20210622 21:48:46.132">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t32" name="Verify setting 5Ghz ChannelID 52 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.137" endtime="20210622 21:48:46.139">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t33" name="Verify setting 5Ghz ChannelID 56 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.144" endtime="20210622 21:48:46.146">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t34" name="Verify setting 5Ghz ChannelID 60 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.151" endtime="20210622 21:48:46.158">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t35" name="Verify setting 5Ghz ChannelID 64 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.170" endtime="20210622 21:48:46.172">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t36" name="Verify setting 5Ghz ChannelID 100 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.177" endtime="20210622 21:48:46.178">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t37" name="Verify setting 5Ghz ChannelID 104 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.208" endtime="20210622 21:48:46.211">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t38" name="Verify setting 5Ghz ChannelID 108 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.217" endtime="20210622 21:48:46.219">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t39" name="Verify setting 5Ghz ChannelID 112 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.223" endtime="20210622 21:48:46.226">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t40" name="Verify setting 5Ghz ChannelID 116 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.230" endtime="20210622 21:48:46.231">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t41" name="Verify setting 5Ghz ChannelID 120 with Bandwith 20 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.234" endtime="20210622 21:48:46.235">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t42" name="Verify setting 5Ghz ChannelID 124 with Bandwith 20 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.238" endtime="20210622 21:48:46.241">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t43" name="Verify setting 5Ghz ChannelID 128 with Bandwith 20 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.262" endtime="20210622 21:48:46.263">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t44" name="Verify setting 5Ghz ChannelID 132 with Bandwith 20 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.267" endtime="20210622 21:48:46.268">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t45" name="Verify setting 5Ghz ChannelID 136 with Bandwith 20 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.295" endtime="20210622 21:48:46.297">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t46" name="Verify setting 5Ghz ChannelID 140 with Bandwith 20 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.314" endtime="20210622 21:48:46.319">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t47" name="Verify setting 5Ghz ChannelID 120 with Bandwith 20/40 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.322" endtime="20210622 21:48:46.323">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t48" name="Verify setting 5Ghz ChannelID 124 with Bandwith 20/40 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.326" endtime="20210622 21:48:46.328">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t49" name="Verify setting 5Ghz ChannelID 128 with Bandwith 20/40 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.378" endtime="20210622 21:48:46.385">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t50" name="Verify setting 5Ghz ChannelID 132 with Bandwith 20/40 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.395" endtime="20210622 21:48:46.397">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t51" name="Verify setting 5Ghz ChannelID 136 with Bandwith 20/40 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.400" endtime="20210622 21:48:46.401">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t52" name="Verify setting 5Ghz ChannelID 140 with Bandwith 20/40 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.409" endtime="20210622 21:48:46.411">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t53" name="Verify setting 5Ghz ChannelID 120 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.416" endtime="20210622 21:48:46.419">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t54" name="Verify setting 5Ghz ChannelID 124 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.432" endtime="20210622 21:48:46.439">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t55" name="Verify setting 5Ghz ChannelID 128 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.443" endtime="20210622 21:48:46.445">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t56" name="Verify setting 5Ghz ChannelID 132 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.448" endtime="20210622 21:48:46.454">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t57" name="Verify setting 5Ghz ChannelID 136 with Bandwith 20/40/80 MHz">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20210622 21:48:46.467" endtime="20210622 21:48:46.469">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20210622 21:37:41.373" endtime="20210622 21:48:46.478"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="57" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="55" skip="0">robot:exit</stat>
+</tag>
+<suite>
+<stat pass="0" fail="57" skip="0" id="s1" name="Sw2 WLAN 5GHzChannelID">Sw2 WLAN 5GHzChannelID</stat>
+</suite>
+</statistics>
 <errors>
-<msg timestamp="20210622 16:09:49.802" level="ERROR">Execution stopped by user.</msg>
+<msg timestamp="20210622 21:48:43.938" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
 </errors>
 </robot>

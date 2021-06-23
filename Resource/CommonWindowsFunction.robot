@@ -4,7 +4,7 @@ Library    Collections
 Library  String
 
 *** Variables ***
-${SSID}  jacquesSW2
+${SSID}  owl
 ${disconnect_cmd}  netsh wlan disconnect
 ${cmd}  netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,16
 ${disable_WiFi_Adaptor_cmd}  netsh interface set interface "Wi-Fi" disable
@@ -28,8 +28,10 @@ Fetch the Channel IDs from Windows Analyser
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${cmd}  shell=True
     log  ${result.stdout}
     ${Analyser_ChannelID_5Ghz}=  String.get regexp matches  ${result.stdout}  Channel.*: (\\d+)  1
-    log  Analyser Channel IDs are ${Analyser_ChannelID_5Ghz[0]} and ${Analyser_ChannelID_5Ghz[1]}
-    [return]  ${Analyser_ChannelID_5Ghz[0]}  ${Analyser_ChannelID_5Ghz[1]}
+    log  Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}
+    # log  Analyser Channel IDs are ${Analyser_ChannelID_5Ghz[0]} and ${Analyser_ChannelID_5Ghz[1]}
+    # [return]  ${Analyser_ChannelID_5Ghz[0]}  ${Analyser_ChannelID_5Ghz[1]}
+    [return]  ${Analyser_ChannelID_5Ghz}
     # close all connection
 
 Fetch the 2.4GHz Channel IDs from Windows Analyser
@@ -38,6 +40,6 @@ Fetch the 2.4GHz Channel IDs from Windows Analyser
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${cmd}  shell=True
     log  ${result.stdout}
     ${Analyser_ChannelID_5Ghz}=  String.get regexp matches  ${result.stdout}  Channel.*: (\\d+)  1
-    log  Analyser Channel IDs are ${Analyser_ChannelID_5Ghz[0]} and ${Analyser_ChannelID_5Ghz[1]}
-    [return]  ${Analyser_ChannelID_5Ghz[0]}  ${Analyser_ChannelID_5Ghz[1]}
+    log  Analyser Channel IDs are ${Analyser_ChannelID_5Ghz} 
+    [return]  ${Analyser_ChannelID_5Ghz} 
     # close all connection
