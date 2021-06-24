@@ -61,9 +61,7 @@ Set 2.4Ghz Channel ID with value
     [Arguments]    ${item label}
     click element  ${2.4Ghz_ChannelID_dropdown}
     click element  //*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[${item label}]/a
-    # click element  ${WLAN_save_setting}
-    # Capture page screenshot  ChannelID_${item label}.png
-    # sleep  15s
+
 
 
 Set 5Ghz Channel ID with value
@@ -84,7 +82,23 @@ Set 5Ghz Bandwith with value
     click element  //*[@id="tr_bandwidth_both"]/td[2]/div[2]/ul/li[${item label}]/a
 
 
+Set 2.4Ghz Channel ID to Auto
+    Login to DUT
+    Go to WLAN Page
+    click element  ${2.4Ghz_ChannelID_dropdown}
+    click element  //*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[1]/a
+    Save the WiFi setting
+    Logout from DUT
+
+Set 5Ghz Channel ID to Auto
+    Login to DUT
+    Go to WLAN Page
+    click element  ${5Ghz_ChannelID_dropdown}
+    click element  //*[@id="tr_wchan_both"]/td[2]/div[2]/ul/li[1]/a
+    Save the WiFi setting
+    Logout from DUT
+
 Save the WiFi setting
     click element  ${WLAN_save_setting}
-    Capture page screenshot  ${TEST_NAME}.png
+    # Capture page screenshot  ${TEST_NAME}.png
     sleep  15s

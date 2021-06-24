@@ -52,6 +52,23 @@ Set 5Ghz Bandwith with value
     click element  ${5Ghz_Bandwidth_dropdown}
     click element  //table[3]/tbody/tr[4]/td[2]/div/ul/li[${item label}]/a
 
+
+Set 2.4Ghz Channel ID to Auto
+    Login to DUT
+    Go to WLAN Page
+    click element  ${2.4Ghz_ChannelID_dropdown}
+    click element  //tr[@id='wireless_24ghz']//li[1]/a
+    Save the WiFi setting
+    Logout from DUT
+
+Set 5Ghz Channel ID to Auto
+    Login to DUT
+    Go to WLAN Page
+    click element  ${5Ghz_ChannelID_dropdown}
+    click element  //tr[@id='wireless_5ghz']//li[1]/a
+    Save the WiFi setting
+    Logout from DUT
+
 Save the WiFi setting
     click element  ${WLAN_save_setting}
     sleep  2s

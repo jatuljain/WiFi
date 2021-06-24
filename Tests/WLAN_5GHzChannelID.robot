@@ -10,11 +10,12 @@ Library  DataDriver  ../TestData/TestData5GHz.csv
 
 Test Setup  Login to DUT
 # Test Teardown  Logout from DUT
+Suite Teardown  Set 5Ghz Channel ID to Auto
+
 Test Template  Verify 5Ghz ChannelID scenarios
 
 
 *** Variables ***
-# @{Loop}=  1  2  3 
 ${5Ghz_ChannelID_Analyser}  0
 
 
@@ -51,4 +52,8 @@ Verify 5Ghz ChannelID scenarios
       # EXIT For Loop If  ${5Ghz_ChannelID_Analyser_Length} >= 2
       sleep  30s
     END
-    # list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5Ghz_ChannelID_Console}
+    list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5Ghz_ChannelID_Console}
+    ${Connection_status}=  Connect to SSID
+    Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
+    ${Ping_Status}=  Ping to Gateway
+    Should Be True   "Reply from.*bytes=32 time<1ms TTL=64"  "${Ping_Status}"

@@ -11,7 +11,7 @@ Library  DataDriver  ../TestData/TestData24GHz.csv
 Test Setup  Login to DUT
 # Test Teardown  Logout from DUT
 Test Template  Verify 2.4Ghz ChannelID scenarios
-
+Suite Teardown  Set 2.4Ghz Channel ID to Auto
 
 *** Variables ***
 ${2.4Ghz_ChannelID_Analyser}  0
@@ -47,6 +47,8 @@ Verify 2.4Ghz ChannelID scenarios
       # EXIT For Loop If  ${2.4Ghz_ChannelID_Analyser_Length} >= 2
       sleep  30s
     END
-    # list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${2.4Ghz_ChannelID_Console}
-    Connect to SSID
-    
+    list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${2.4Ghz_ChannelID_Console}
+    ${Connection_status}=  Connect to SSID
+    Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
+    ${Ping_Status}=  Ping to Gateway
+    Should Be True   "Reply from.*bytes=32 time<1ms TTL=64"  "${Ping_Status}"

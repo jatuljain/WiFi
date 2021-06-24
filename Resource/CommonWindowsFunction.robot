@@ -48,7 +48,9 @@ Fetch the 2.4GHz Channel IDs from Windows Analyser
 Connect to SSID
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Connect_SSID}  shell=True
     log  ${result.stdout}
+    [Return]  ${result.stdout}
 
 Ping to Gateway
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${ping_gateway}  shell=True
     log  ${result.stdout}
+    [return]  ${result.stdout} 
