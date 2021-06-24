@@ -15,7 +15,7 @@ Test Template  Verify setting SSID
 
 
 *** Test Cases *** 
-Verify setting SSID ${SSID}
+Change the name of the Wi-Fi network (SSID) ${SSID}
 
 
 *** Keywords ***
