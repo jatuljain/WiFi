@@ -13,7 +13,7 @@ ${2.4Ghz_ChannelID_Value}  //tr[@id='wireless_24ghz']//li[1]/a
 ${WPA Encryption}  //select[@id='cypher_suite_24g']
 ${5Ghz_Channel}  //select[@name='wchan_5g_both']
 ${wlan_page}  Restore WiFi Defaults
-${ssid_name_2.4G}  wl_ssid_24g
+${ssid_name_2.4G}  ORIGESSID
 ${ssid_password_2.4G}  sharedkey_24g
 
 
@@ -28,6 +28,16 @@ Go to Settings Page
     unselect frame 
     select frame  id:frm_main2
     wait until page contains  ${Wireless Settings}  5s
+
+Get the SSID name
+    current frame should contain  Channel
+    ${current_ssid}  get element attribute  ${ssid_name_2.4G}  value
+    log  ${current_ssid} is Current ssid
+    [return]  ${current_ssid}
+
+Set the SSID name
+    [Arguments]    ${ssid}
+    Input Text  ${ssid_name_2.4G}  ${ssid}
 
 
 Set 2.4Ghz Channel ID with value

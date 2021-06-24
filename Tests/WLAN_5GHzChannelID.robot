@@ -1,5 +1,4 @@
-Documentation  TestCase to WLAN 5GHz ChannelID Test cases
-
+Documentation  TestCase to Verify 5GHz ChannelIDs updated through V10A
 
 ***Settings***
 Resource   ../Resource/Telnet.robot

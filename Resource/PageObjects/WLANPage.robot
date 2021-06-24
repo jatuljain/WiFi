@@ -45,7 +45,13 @@ Get the SSID name
     current frame should contain  Channel
     ${current_ssid}  get element attribute  ${ssid_name_2.4G}  value
     log  ${current_ssid} is Current ssid
-    
+    [return]  ${current_ssid}
+
+Set the SSID name
+    [Arguments]    ${ssid}
+    Input Text  ${ssid_name_2.4G}  ${ssid}
+
+  
 Get the wifi Password
     ${current_ssid_password} =  get element attribute  ${ssid_password_2.4G}  value
     log  ${current_ssid_password} is Current ssid Password

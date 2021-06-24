@@ -1,4 +1,4 @@
-Documentation  TestCase to WLAN ChannelID Test cases
+Documentation  TestCase to Verify 5GHz ChannelIDs updated through SuperWiFi2
 
 
 ***Settings***

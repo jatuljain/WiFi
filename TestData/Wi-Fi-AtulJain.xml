@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<WLANProfile xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
+	<name>AtulJain</name>
+	<SSIDConfig>
+		<SSID>
+			<hex>4174756C4A61696E</hex>
+			<name>AtulJain</name>
+		</SSID>
+	</SSIDConfig>
+	<connectionType>ESS</connectionType>
+	<connectionMode>auto</connectionMode>
+	<MSM>
+		<security>
+			<authEncryption>
+				<authentication>WPA2PSK</authentication>
+				<encryption>AES</encryption>
+				<useOneX>false</useOneX>
+			</authEncryption>
+			<sharedKey>
+				<keyType>passPhrase</keyType>
+				<protected>true</protected>
+				<keyMaterial>01000000D08C9DDF0115D1118C7A00C04FC297EB010000005A72C99AEE957E4799C8F77ADEEF30AC00000000020000000000106600000001000020000000F1F60A71F38A425C0DBE57F4FE6730E0F68644BC1182CED5BE5E54CE1DB9BE1A000000000E80000000020000200000006204F8B972CA6FABD798DF07C842CA08BE6E9141915597DF0D2A6C902E98005910000000817B68C6BEDD881568CF4CD91D1C828040000000FAE321969A4E75F3C6143C6948CF00A0AEBADD582FB4ADEEF16F804E3F595402EC5BAA5EE9B1A9B7B7DEF36A0D1C699B9B752FC77D4F91084375D1663ADD01FA</keyMaterial>
+			</sharedKey>
+		</security>
+	</MSM>
+	<MacRandomization xmlns="http://www.microsoft.com/networking/WLAN/profile/v3">
+		<enableRandomization>false</enableRandomization>
+	</MacRandomization>
+</WLANProfile>
