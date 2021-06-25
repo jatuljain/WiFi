@@ -6,25 +6,26 @@ Resource   ../Resource/Telnet.robot
 Resource  ../Resource/PageObjects/WLANPage.robot
 Resource  ../Resource/CommonFunction.robot
 Resource  ../Resource/CommonWindowsFunction.robot
-Library  DataDriver  ../TestData/TestDataSSID.csv
+Library  DataDriver  ../TestData/TestDataPassword.csv
 
 Test Setup  Login to DUT
 Suite Teardown  Cleanup
-Suite Setup  Fetch the Initial SSID
 
-Test Template  Verify setting SSID
+Test Template  Verify setting SSID Password
 
 
 *** Test Cases *** 
-Change the name of the Wi-Fi network (SSID) ${SSID}
+Change the WiFi Password Characters of the Wi-Fi network ${SSID_Password}
 
 
 *** Keywords ***
-Verify setting SSID
-    [Documentation]  This Test case is to verify setting SSID
+Verify setting SSID Password
+    [Documentation]  This Test case is to verify WiFi Password
     [Arguments]  ${SSID}
     [Tags]  Funtional  WiFi
     Go to WLAN Page
+    ${Orginal_ssid}=  Get the SSID name
+    Set Global Variable  ${Orginal_ssid}
     Set the SSID name  ${SSID}
     Save the WiFi setting
     Logout from DUT
@@ -34,7 +35,7 @@ Verify setting SSID
     # Close All Connections
     # Should Be Equal As Strings  ${SSID}  ${SSID_Console}
     FOR  ${VAR}  IN RANGE    10
-        # Add WiFi Profile  ${SSID}
+        Add WiFi Profile
         ${Connection_status}=  Connect to SSID  ${SSID}
         ${status}=    Run Keyword And Return Status   Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
       EXIT For Loop If  ${status}
@@ -46,13 +47,6 @@ Verify setting SSID
     Should Be True   "Reply from.*bytes=32 time<1ms TTL=64"  "${Ping_Status}"
 
 
-
-Fetch the Initial SSID
-    Login to DUT
-    Go to WLAN Page
-    ${Orginal_ssid}=  Get the SSID name
-    Set Global Variable  ${Orginal_ssid}
-    Logout from DUT
 
 Cleanup
     Login to DUT

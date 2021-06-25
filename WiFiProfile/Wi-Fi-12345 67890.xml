@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <WLANProfile xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
-	<name>AtulJain</name>
+	<name>12345 67890</name>
 	<SSIDConfig>
 		<SSID>
-			<hex>4174756C4A61696E</hex>
-			<name>AtulJain</name>
+			<hex>3132333435203637383930</hex>
+			<name>12345 67890</name>
 		</SSID>
 	</SSIDConfig>
 	<connectionType>ESS</connectionType>

@@ -3,17 +3,19 @@ Library           Process
 Library    Collections
 Library  String
 
+
 *** Variables ***
-${SSID}  AtulJain
+# ${SSID}  AtulJain
 ${disconnect_cmd}  netsh wlan disconnect
-${cmd}  netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,16
+# ${cmd}  netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,16
 ${disable_WiFi_Adaptor_cmd}  netsh interface set interface "Wi-Fi" disable
 ${enable_WiFi_Adaptor_cmd}  netsh interface set interface "Wi-Fi" enable
-${Connect_SSID}  netsh wlan connect name="${SSID}" ssid="${SSID}" interface="Wi-Fi"
+# ${Connect_SSID}  netsh wlan connect name="${SSID}" ssid="${SSID}" interface="Wi-Fi"
 ${ping_gateway}  ping 192.168.2.254
-${profile_name}  Wi-Fi-AtulJain.xml
-${export_profile_cmd}  netsh wlan export profile name="${profile_name}"
-${add_profile_cmd}  netsh wlan add profile filename=\"WiFiProfile\\${profile_name}"
+# ${profile_name}  Wi-Fi-AtulJain.xml
+# ${profile_name}  Wi-Fi-${SSID}.xml
+# ${export_profile_cmd}  netsh wlan export profile name="${profile_name}"
+# ${add_profile_cmd}  netsh wlan add profile filename=\"WiFiProfile\\${profile_name}"
 
 *** Keywords ***
 Disable the WiFi Adaptor
@@ -26,6 +28,8 @@ Enable the WiFi Adaptor
 
 
 Fetch the Channel IDs from Windows Analyser
+    [Arguments]    ${SSID}
+    ${cmd}=  Set Variable   netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,16
     Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${cmd}  shell=True
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${cmd}  shell=True
     log  ${result.stdout}
@@ -34,6 +38,8 @@ Fetch the Channel IDs from Windows Analyser
     [return]  ${Analyser_ChannelID_5Ghz}
 
 Fetch the 2.4GHz Channel IDs from Windows Analyser
+    [Arguments]    ${SSID}
+    ${cmd}=  Set Variable   netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,16
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${cmd}  shell=True
     log  ${result.stdout}
     ${Analyser_ChannelID_5Ghz}=  String.get regexp matches  ${result.stdout}  Channel.*: (\\d+)  1
@@ -42,17 +48,23 @@ Fetch the 2.4GHz Channel IDs from Windows Analyser
 
 
 Export WiFi Profile
+    [Arguments]    ${SSID}
+    ${profile_name}=  Set Variable  Wi-Fi-${SSID}.xml
+    ${export_profile_cmd}=  Set Variable   netsh wlan export profile name="${profile_name}"
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${export_profile_cmd}  shell=True
     log  ${result.stdout}
 
 Add WiFi Profile
+    [Arguments]    ${SSID}
+    ${profile_name}=  Set Variable    Wi-Fi-${SSID}.xml
+    ${add_profile_cmd}=  Set Variable    netsh wlan add profile filename=\"WiFiProfile\\${profile_name}"
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${add_profile_cmd}  shell=True
     log  ${result.stdout}
 
 Connect to SSID
     [Arguments]    ${SSID}
-    Add WiFi Profile    
-    Set Variable  ${Connect_SSID}  netsh wlan connect name="${SSID}" ssid="${SSID}" interface="Wi-Fi"
+    Add WiFi Profile   ${SSID}
+    ${Connect_SSID}=  Set Variable    netsh wlan connect name="${SSID}" ssid="${SSID}" interface="Wi-Fi"
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Connect_SSID}  shell=True
     log  ${result.stdout}
     [Return]  ${result.stdout}

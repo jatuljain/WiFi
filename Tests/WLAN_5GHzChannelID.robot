@@ -10,6 +10,7 @@ Library  DataDriver  ../TestData/TestData5GHz.csv
 Test Setup  Login to DUT
 # Test Teardown  Logout from DUT
 Suite Teardown  Set 5Ghz Channel ID to Auto
+Suite Setup  Fetch the Initial SSID
 
 Test Template  Verify 5Ghz ChannelID scenarios
 
@@ -43,7 +44,7 @@ Verify 5Ghz ChannelID scenarios
       sleep  180s
     END
     FOR  ${VAR}  IN RANGE    14
-      ${5Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser
+      ${5Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser  ${Orginal_ssid}
       ${5Ghz_ChannelID_Analyser_Length}  Get Length  ${5Ghz_ChannelID_Analyser}
       log  ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}
       ${status}=    Run Keyword And Return Status  list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5Ghz_ChannelID_Console}
@@ -52,7 +53,16 @@ Verify 5Ghz ChannelID scenarios
       sleep  30s
     END
     list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5Ghz_ChannelID_Console}
-    ${Connection_status}=  Connect to SSID
+    ${Connection_status}=  Connect to SSID  ${Orginal_ssid}
     Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
     ${Ping_Status}=  Ping to Gateway
     Should Be True   "Reply from.*bytes=32 time<1ms TTL=64"  "${Ping_Status}"
+
+
+
+Fetch the Initial SSID
+    Login to DUT
+    Go to WLAN Page
+    ${Orginal_ssid}=  Get the SSID name
+    Set Global Variable  ${Orginal_ssid}
+    Logout from DUT

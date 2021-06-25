@@ -10,6 +10,7 @@ Library  DataDriver  ../TestData/TestData24GHz.csv
 Test Setup  Login to DUT
 # Test Teardown  Logout from DUT
 Suite Teardown  Set 2.4Ghz Channel ID to Auto
+Suite Setup  Fetch the Initial SSID
 
 Test Template  Verify 2.4Ghz ChannelID scenarios
 
@@ -40,7 +41,7 @@ Verify 2.4Ghz ChannelID scenarios
     # Should be equal  ${2.4Ghz_ChannelID_Console}  ${24GHz_Channel}
     sleep  60s
     FOR  ${VAR}  IN RANGE    10
-      ${2.4Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser
+      ${2.4Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser  ${Orginal_ssid}
       ${2.4Ghz_ChannelID_Analyser_Length}  Get Length  ${2.4Ghz_ChannelID_Analyser}
       log  ChannelIDs are ${2.4Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${2.4Ghz_ChannelID_Analyser_Length}
       ${status}=    Run Keyword And Return Status  list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${24GHz_Channel}
@@ -49,7 +50,16 @@ Verify 2.4Ghz ChannelID scenarios
       sleep  30s
     END
     list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${24GHz_Channel}
-    ${Connection_status}=  Connect to SSID
+    ${Connection_status}=  Connect to SSID  ${Orginal_ssid}
     Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
     ${Ping_Status}=  Ping to Gateway
     Should Be True   "Reply from.*bytes=32 time<1ms TTL=64"  "${Ping_Status}"
+
+
+
+Fetch the Initial SSID
+    Login to DUT
+    Go to Settings Page
+    ${Orginal_ssid}=  Get the SSID name
+    Set Global Variable  ${Orginal_ssid}
+    Logout from DUT
