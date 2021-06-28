@@ -34,13 +34,11 @@ Verify setting SSID
     # Close All Connections
     # Should Be Equal As Strings  ${SSID}  ${SSID_Console}
     FOR  ${VAR}  IN RANGE    10
-        # Add WiFi Profile  ${SSID}
         ${Connection_status}=  Connect to SSID  ${SSID}
         ${status}=    Run Keyword And Return Status   Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
       EXIT For Loop If  ${status}
       sleep  30s
     END
-    # ${Connection_status}=  Connect to SSID
     Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
     ${Ping_Status}=  Ping to Gateway
     Should Be True   "Reply from.*bytes=32 time<1ms TTL=64"  "${Ping_Status}"

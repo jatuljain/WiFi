@@ -55,6 +55,12 @@ Set the SSID name
 Get the wifi Password
     ${current_ssid_password} =  get element attribute  ${ssid_password_2.4G}  value
     log  ${current_ssid_password} is Current ssid Password
+    [return]  ${current_ssid_password}
+
+Set the wifi Password
+    [Arguments]   ${ssid_password}  
+    Input Text  ${ssid_password_2.4G}  ${ssid_password}
+
 
 Set the 2.4Ghz Channel ID to 1
     click element  ${2.4Ghz_ChannelID_dropdown}

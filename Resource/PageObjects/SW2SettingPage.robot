@@ -14,7 +14,7 @@ ${WPA Encryption}  //select[@id='cypher_suite_24g']
 ${5Ghz_Channel}  //select[@name='wchan_5g_both']
 ${wlan_page}  Restore WiFi Defaults
 ${ssid_name_2.4G}  ORIGESSID
-${ssid_password_2.4G}  sharedkey_24g
+${ssid_password_2.4G}  PreSharedKeyID
 
 
 
@@ -38,6 +38,15 @@ Get the SSID name
 Set the SSID name
     [Arguments]    ${ssid}
     Input Text  ${ssid_name_2.4G}  ${ssid}
+
+Get the wifi Password
+    ${current_ssid_password} =  get element attribute  ${ssid_password_2.4G}  value
+    log  ${current_ssid_password} is Current ssid Password
+    [return]  ${current_ssid_password}
+    
+Set the wifi Password
+    [Arguments]    ${ssid_password}  
+    Input Text  ${ssid_password_2.4G}  ${ssid_password}  
 
 
 Set 2.4Ghz Channel ID with value
