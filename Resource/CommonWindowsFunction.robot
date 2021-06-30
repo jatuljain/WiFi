@@ -81,15 +81,16 @@ Get the MAC address for Wi-Fi LAN devices from Windows
     log  ${result.stdout}
     @{LAN_MAC_cmd}=  String.get regexp matches  ${result.stdout}  Physical Address.*: (.*)\n  1
     # ${Updated_Mac} =	Replace String Using Regexp	 ${LAN_MAC_cmd}  :  -
-    ${Updated_Mac}=  Create List 
-    FOR  ${MAC}  IN  @{LAN_MAC_cmd}
-        # ${MAC_type}  Evaluate    type(${MAC})
-        # log  type is ${MAC_type}
-        ${Updated_MAC_Val} =	Replace String Using Regexp	 ${MAC}  :  -
-        log  Updated MAC is ${Updated_MAC_Val}
-        Append To List	${Updated_Mac}  ${Updated_MAC_Val}
-    END
-    [return]  ${Updated_Mac} 
+    # ${Updated_Mac}=  Create List 
+    # FOR  ${MAC}  IN  @{LAN_MAC_cmd}
+    #     # ${MAC_type}  Evaluate    type(${MAC})
+    #     # log  type is ${MAC_type}
+    #     ${Updated_MAC_Val} =	Replace String Using Regexp	 ${MAC}  :  -
+    #     log  Updated MAC is ${Updated_MAC_Val}
+    #     Append To List	${Updated_Mac}  ${Updated_MAC_Val}
+    # END
+    # [return]  ${Updated_Mac} 
+    [return]  ${LAN_MAC_cmd} 
 
 
 # Pass the list of MAC address and change it
