@@ -8,7 +8,6 @@ Resource  ../Resource/CommonWindowsFunction.robot
 Library  DataDriver  ../TestData/TestData5GHz.csv
 
 Test Setup  Login to DUT
-# Test Teardown  Logout from DUT
 Suite Teardown  Set 5Ghz Channel ID to Auto
 Suite Setup  Fetch the Initial SSID
 

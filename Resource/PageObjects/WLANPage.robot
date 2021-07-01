@@ -18,6 +18,12 @@ ${wlan_page}  Restore WiFi Defaults
 ${ssid_name_2.4G}  wl_ssid_24g
 ${ssid_password_2.4G}  sharedkey_24g
 
+${SSID_Broadcast_Visible_on}  //tbody/tr[3]/td[2]/div
+# ${SSID_Broadcast_Visible_off}  .switch_button_24g.switch_off
+${SSID_Broadcast_Visible_off}   //tbody/tr[3]/td[2]/div
+${ENABLE_WIFI}=  ENABLE_WIFI
+
+
 
 *** Keywords ***
 Go to WLAN Page
@@ -27,6 +33,7 @@ Go to WLAN Page
     select frame  id:frm_main2
     current frame should contain  ${wlan_page}
     # wait until page contains  ${wlan_page}  10s
+
 
 Get the 2.4Ghz channel id from GUI
     current frame should contain  Channel
@@ -112,5 +119,12 @@ Set 5Ghz Channel ID to Auto
 
 Save the WiFi setting
     click element  ${WLAN_save_setting}
+    Handle Alert
     # Capture page screenshot  ${TEST_NAME}.png
     sleep  15s
+
+Enable SSID Broadcast
+    click element  ${SSID_Broadcast_Visible_on}
+
+Disable SSID Broadcast
+    click Element  ${SSID_Broadcast_Visible_off}

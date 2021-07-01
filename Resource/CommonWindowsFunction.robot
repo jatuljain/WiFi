@@ -103,3 +103,10 @@ Change the MAC Address type
         Append To List	${Updated_Mac_List}  ${Updated_MAC_GUI}
     END
     [return]  ${Updated_Mac_List}
+
+Check SSID Broadcast
+    [Arguments]    ${SSID}
+    ${Broadcast_SSID}=  Set Variable    netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,16
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Broadcast_SSID}  shell=True
+    log  ${result.stdout}
+    [Return]  ${result.stdout}
