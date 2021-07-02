@@ -27,6 +27,7 @@ ${ENABLE_WIFI}=  ENABLE_WIFI
 
 *** Keywords ***
 Go to WLAN Page
+    unselect frame
     Click Element  ${WLAN_Tab}
     sleep  5s
     wait until page contains  Access Points

@@ -16,7 +16,9 @@ ${wlan_page}  Restore WiFi Defaults
 ${ssid_name_2.4G}  ORIGESSID
 ${ssid_password_2.4G}  PreSharedKeyID
 
-
+${SSID_Broadcast_Dropdown}  //tbody/tr[2]/td[2]/div/div/a
+${Main_SSID_Disable}  //table[1]/tbody/tr[2]/td[2]/div/ul/li[2]
+${Main_SSID_Enable}  //table[1]/tbody/tr[2]/td[2]/div/ul/li[1]
 
 ***Keywords***
 
@@ -92,4 +94,15 @@ Save the WiFi setting
     click element  ${WLAN_save_setting}
     sleep  2s
     Click element  ${WLAN_save_setting_Popup}
-    sleep  15s
+    sleep  20s
+
+
+Disable SSID Broadcast
+    click element  ${SSID_Broadcast_Dropdown}
+    click element  ${Main_SSID_Disable}
+
+Enable SSID Broadcast
+    click element  ${SSID_Broadcast_Dropdown}
+    click element  ${Main_SSID_Enable}
+
+    
