@@ -2,11 +2,12 @@ Documentation  TestCase to Verify WLAN SSID through SuperWiFi2
 
 
 ***Settings***
-Resource   ../Resource/Telnet.robot
-Resource  ../Resource/PageObjects/SW2SettingPage.robot
-Resource  ../Resource/SW2CommonFunction.robot
-Resource  ../Resource/CommonWindowsFunction.robot
-Library  DataDriver  ../TestData/TestDataSSID.csv
+Resource   ../../Resource/Telnet.robot
+Resource  ../../Resource/PageObjects/SW2SettingPage.robot
+Resource  ../../Resource/SW2CommonFunction.robot
+Resource  ../../Resource/CommonWindowsFunction.robot
+Library  DataDriver  ../../TestData/TestDataSSID.csv
+Default Tags   SW2   Funtional  WiFi
 
 Test Setup  Login to DUT
 Suite Teardown  Cleanup
@@ -17,12 +18,10 @@ Test Template  Verify setting SSID
 *** Test Cases *** 
 Change the name of the Wi-Fi network (SSID) ${SSID}
 
-
 *** Keywords ***
 Verify setting SSID
     [Documentation]  This Test case is to verify setting SSID through SuperWiFi2
     [Arguments]  ${SSID}
-    [Tags]  Funtional  WiFi
     Go to Settings Page
     ${Orginal_ssid}=  Get the SSID name
     Set Global Variable  ${Orginal_ssid}

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation  TestCase to check Channel ID
+Documentation  TestCase to check Channel ID and SSID
 Resource  ../Resource/CommonFunction.robot
 Resource  ../Resource/PageObjects/WLANPage.robot
 

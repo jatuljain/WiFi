@@ -6,33 +6,30 @@ Resource   ../Resource/Telnet.robot
 Resource  ../Resource/PageObjects/WLANPage.robot
 Resource  ../Resource/CommonFunction.robot
 Resource  ../Resource/CommonWindowsFunction.robot
-Library  DataDriver  ../TestData/TestDataSSID.csv
+Library  DataDriver  ../TestData/TestDataPassword.csv
 
 Test Setup  Login to DUT
+Suite Setup   Fetch the Initial SSID
 Suite Teardown  Cleanup
-Suite Setup  Fetch the Initial SSID
+Default Tags   V10A   Funtional  WiFi  
 
-Test Template  Verify setting SSID
+Test Template  Verify setting SSID Password
 
 
-*** Test Cases *** 
-Change the name of the Wi-Fi network (SSID) ${SSID}
+*** Test Cases ***
+[Documentation]  This Test case is to verify WiFi Password
+Change the WiFi Password Characters of the Wi-Fi network to ${SSID_Password}
 
 
 *** Keywords ***
-Verify setting SSID
-    [Documentation]  This Test case is to verify setting SSID
-    [Arguments]  ${SSID}
-    [Tags]  Funtional  WiFi
+Verify setting SSID Password
+    [Arguments]  ${SSID}  ${SSID_Password}
     Go to WLAN Page
     Set the SSID name  ${SSID}
+    Set the wifi Password  ${SSID_Password}
     Save the WiFi setting
     Logout from DUT
-    # Telnet to DUT Console
-    # ${SSID_Console}=  Get the SSID from console
-    # log  Channel ID from Console is ${SSID_Console}
-    # Close All Connections
-    # Should Be Equal As Strings  ${SSID}  ${SSID_Console}
+
     FOR  ${VAR}  IN RANGE    10
         ${Connection_status}=  Connect to SSID  ${SSID}
         ${status}=    Run Keyword And Return Status   Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
@@ -45,16 +42,20 @@ Verify setting SSID
 
 
 
-Fetch the Initial SSID
+Fetch the Initial SSID 
     Login to DUT
     Go to WLAN Page
     ${Orginal_ssid}=  Get the SSID name
     Set Global Variable  ${Orginal_ssid}
+    ${Orginal_password}=  Get the wifi Password
+    Set Global Variable  ${Orginal_password}
     Logout from DUT
+
 
 Cleanup
     Login to DUT
     Go to WLAN Page
     Set the SSID name  ${Orginal_ssid}
+    Set the wifi Password  ${Orginal_password}
     Save the WiFi setting
     Logout from DUT

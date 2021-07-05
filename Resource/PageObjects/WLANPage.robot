@@ -120,7 +120,7 @@ Set 5Ghz Channel ID to Auto
 
 Save the WiFi setting
     click element  ${WLAN_save_setting}
-    Handle Alert
+    # Handle Alert
     # Capture page screenshot  ${TEST_NAME}.png
     sleep  15s
 

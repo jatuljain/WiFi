@@ -12,7 +12,8 @@ Test Teardown  Logout from DUT
 Test Template  Verify 2.4Ghz ChannelID scenarios
 
 
-*** Test Cases ***            
+*** Test Cases *** 
+[Tags]  V10A  Funtional  WiFi  ChannelIDSet
 Verify setting 2.4GHz ChannelID ${24GHz_Channel} with Bandwith ${24GHz_BandwidthValue} 
 
 
@@ -21,7 +22,6 @@ Verify setting 2.4GHz ChannelID ${24GHz_Channel} with Bandwith ${24GHz_Bandwidth
 Verify 2.4Ghz ChannelID scenarios
     [Documentation]  This Test case is to verify setting different channel and different Bandwith
     [Arguments]  ${24GHz_Channel}  ${ChannelID_index}  ${24GHz_Bandwidth}
-    [Tags]  Funtional  WiFi  ChannelIDSet
     Go to WLAN Page
     Set 2.4Ghz Channel ID with value  ${ChannelID_index}
     Set 2.4Ghz Bandwith with value  ${24GHz_Bandwidth}
