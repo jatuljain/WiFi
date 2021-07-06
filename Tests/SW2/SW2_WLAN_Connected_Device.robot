@@ -6,7 +6,7 @@ Resource   ../../Resource/CommonWindowsFunction.robot
 Resource   ../../Resource/SW2CommonFunction.robot
 
 Test Setup  Login to DUT
-Test Teardown  Cleanup
+Test Teardown  Run Keyword And Ignore Error  Cleanup
 
 
 

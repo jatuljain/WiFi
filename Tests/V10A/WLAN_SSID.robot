@@ -10,7 +10,7 @@ Library  DataDriver  ../TestData/TestDataSSID.csv
 Default Tags   V10A   Funtional  WiFi  
 
 Test Setup  Login to DUT
-Suite Teardown  Cleanup
+Suite Teardown  Run Keyword And Ignore Error  Cleanup
 Suite Setup  Fetch the Initial SSID
 
 Test Template  Verify setting SSID

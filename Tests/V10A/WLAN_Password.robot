@@ -10,7 +10,7 @@ Library  DataDriver  ../TestData/TestDataPassword.csv
 
 Test Setup  Login to DUT
 Suite Setup   Fetch the Initial SSID
-Suite Teardown  Cleanup
+Suite Teardown  Run Keyword And Ignore Error  Cleanup
 Default Tags   V10A   Funtional  WiFi  
 
 Test Template  Verify setting SSID Password

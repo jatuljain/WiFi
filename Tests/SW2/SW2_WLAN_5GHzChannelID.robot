@@ -11,7 +11,7 @@ Default Tags   SW2   Funtional  WiFi  5GhzChannelIDSet
 
 Test Setup  Login to DUT
 # Test Teardown  Logout from DUT
-Suite Teardown  Set 5Ghz Channel ID to Auto
+Suite Teardown  Run Keyword And Ignore Error  Set 5Ghz Channel ID to Auto
 Suite Setup  Fetch the Initial SSID
 
 Test Template  Verify 5Ghz ChannelID scenarios

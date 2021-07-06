@@ -10,7 +10,7 @@ Library  DataDriver  ../../TestData/TestDataSSID.csv
 Default Tags   SW2   Funtional  WiFi
 
 Test Setup  Login to DUT
-Suite Teardown  Cleanup
+Suite Teardown  Run Keyword And Ignore Error  Cleanup
 
 Test Template  Verify setting SSID
 

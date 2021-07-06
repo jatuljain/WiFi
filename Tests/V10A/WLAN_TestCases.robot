@@ -2,15 +2,17 @@ Documentation  TestCase to WLAN features
 
 ***Settings***
 Resource   ../../Resource/Telnet.robot
-Resource  ../../Resource/PageObjects/WLANPage.robot
-Resource  ../../Resource/PageObjects/WLANGuestNetwork.robot
-Resource  ../../Resource/CommonFunction.robot
+# Resource  ../../Resource/PageObjects/WLANPage.robot
+# Resource  ../../Resource/PageObjects/WLANGuestNetwork.robot
+Resource  ../../Resource/PageObjects/SW2SettingPage.robot
+Resource  ../../Resource/SW2CommonFunction.robot
+Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
 
 # Suite Setup  Login to DUT
 # Suite Teardown  Logout from DUT
 
 Test Setup  Login to DUT
-Test Teardown  Logout from DUT
+Test Teardown  Run Keyword And Ignore Error  Logout from DUT
 
 ***Test Cases***
 
@@ -47,12 +49,20 @@ Verify WLAN 5GHz Channel ID from GUI and Console should match
 #     Set the 2.4Ghz Channel ID with value  3
 #     # Set the 2.4Ghz Channel ID to 1
 
-Verify Guest Network Status
-    [Documentation]  This Test case is to verify Guest Network Status
-    [Tags]  V10A  Funtional  WiFi  GuestNetwork
-    Go to WLAN Page
-    Go to WLAN Guest Page
-    # Get the Guest Network Status
-    Disable Guest Network
-    # Enable Guest Network
-    Save Guest WiFi Network Settings
+# Verify Guest Network Status
+#     [Documentation]  This Test case is to verify Guest Network Status
+#     [Tags]  V10A  Funtional  WiFi  GuestNetwork
+#     Go to WLAN Page
+#     Go to WLAN Guest Page
+#     # Get the Guest Network Status
+#     Disable Guest Network
+#     # Enable Guest Network
+#     Save Guest WiFi Network Settings
+
+
+Verify Restart DUT
+    [Documentation]  This Test case is to verify Restart Funtional of DUT
+    [Tags]  V10A  Funtional  WiFi  DUTRestart
+    Go to System Page
+    Click on Restart and Factory Recovery
+    Click on Restart

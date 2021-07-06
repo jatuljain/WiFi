@@ -10,7 +10,7 @@ Library  DataDriver  ../../TestData/TestDataPassword.csv
 Default Tags   SW2   Funtional  WiFi
 
 Suite Setup  Fetch the Initial SSID
-Test Setup  Login to DUT
+Test Setup  Run Keyword And Ignore Error  Login to DUT
 Suite Teardown  Cleanup
 
 Test Template  Verify setting SSID Password

@@ -12,7 +12,7 @@ Library  DataDriver  ../../TestData/TestData24GHz.csv
 Test Setup  Login to DUT
 # Test Teardown  Logout from DUT
 Test Template  Verify 2.4Ghz ChannelID scenarios
-Suite Teardown  Set 2.4Ghz Channel ID to Auto
+Suite Teardown  Run Keyword And Ignore Error  Set 2.4Ghz Channel ID to Auto
 Suite Setup  Fetch the Initial SSID
 Default Tags   V10A   Funtional  WiFi  24GhzChannelIDSet
 
@@ -59,7 +59,7 @@ Fetch the Initial SSID
     Go to WLAN Page
     ${Orginal_ssid}=  Get the SSID name
     Set Global Variable  ${Orginal_ssid}
-    Go to WLAN Guest Page
-    Disable Guest Network
-    Save Guest WiFi Network Settings
+    # Go to WLAN Guest Page
+    # Disable Guest Network
+    # Save Guest WiFi Network Settings
     Logout from DUT

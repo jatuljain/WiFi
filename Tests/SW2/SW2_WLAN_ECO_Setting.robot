@@ -10,7 +10,7 @@ Resource  ../../Resource/SW2CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 
 Test Setup  Login to DUT
-Suite Teardown  Cleanup
+Suite Teardown  Run Keyword And Ignore Error  Cleanup
 Suite Setup  Fetch the Initial SSID
 
 
