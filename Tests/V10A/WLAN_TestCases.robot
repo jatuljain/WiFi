@@ -3,6 +3,7 @@ Documentation  TestCase to WLAN features
 ***Settings***
 Resource   ../../Resource/Telnet.robot
 Resource  ../../Resource/PageObjects/WLANPage.robot
+Resource  ../../Resource/PageObjects/WLANGuestNetwork.robot
 Resource  ../../Resource/CommonFunction.robot
 
 # Suite Setup  Login to DUT
@@ -45,3 +46,13 @@ Verify WLAN 5GHz Channel ID from GUI and Console should match
 #     Go to WLAN Page
 #     Set the 2.4Ghz Channel ID with value  3
 #     # Set the 2.4Ghz Channel ID to 1
+
+Verify Guest Network Status
+    [Documentation]  This Test case is to verify Guest Network Status
+    [Tags]  V10A  Funtional  WiFi  GuestNetwork
+    Go to WLAN Page
+    Go to WLAN Guest Page
+    # Get the Guest Network Status
+    Disable Guest Network
+    # Enable Guest Network
+    Save Guest WiFi Network Settings

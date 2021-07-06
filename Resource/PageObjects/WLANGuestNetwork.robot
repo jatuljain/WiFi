@@ -23,13 +23,24 @@ Go to WLAN Guest Page
     current frame should contain  ${Guest_Network_Page}
 
 Disable Guest Network
-    Click WiFi Guest Edit button
-    Disable Guest SSID Broadcast
+    ${current_GuestNetwork_Status}=  Get the Guest Network Status
+    ${status}=    Get Regexp Matches    ${current_GuestNetwork_Status}   switch_off
+    IF  ${status}
+        log   Guest Network is already disabled
+    ELSE
+        # Click WiFi Guest Edit button
+        Disable Guest SSID Broadcast
+    END
 
 Enable Guest Network
-    Click WiFi Guest Edit button
-    Enable Guest SSID Broadcast
-
+    ${current_GuestNetwork_Status}=  Get the Guest Network Status
+    ${status}=    Get Regexp Matches    ${current_GuestNetwork_Status}   switch_on
+    IF  ${status} 
+        log   Guest Network is already Enabled
+    ELSE
+        # Click WiFi Guest Edit button
+        Enable Guest SSID Broadcast
+    END
 
 Save Guest WiFi Network Settings
     click element  ${Guest_SSID_SaveSetting}
@@ -45,3 +56,11 @@ Enable Guest SSID Broadcast
 
 Disable Guest SSID Broadcast
     click Element  ${Guest_SSID_ToggleBUtton}
+
+
+Get the Guest Network Status
+    Click WiFi Guest Edit button
+    ${current_GuestNetwork_Status} =  get element attribute  ${Guest_SSID_ToggleBUtton}  class
+    log  ${current_GuestNetwork_Status} is Current Guest Network Status
+    [return]  ${current_GuestNetwork_Status}
+

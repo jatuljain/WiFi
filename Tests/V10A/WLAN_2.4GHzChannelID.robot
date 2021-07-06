@@ -4,6 +4,7 @@ Documentation  TestCase to Verify 2.4GHz ChannelIDs updated through V10A
 ***Settings***
 Resource   ../../Resource/Telnet.robot
 Resource  ../../Resource/PageObjects/WLANPage.robot
+Resource  ../../Resource/PageObjects/WLANGuestNetwork.robot
 Resource  ../../Resource/CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 Library  DataDriver  ../../TestData/TestData24GHz.csv
@@ -16,9 +17,6 @@ Suite Setup  Fetch the Initial SSID
 Default Tags   V10A   Funtional  WiFi  24GhzChannelIDSet
 
 
-
-# *** Variables ***
-# ${2.4Ghz_ChannelID_Analyser}  0
 
 *** Test Cases ***
 Verify setting 2.4Ghz ChannelID ${24GHz_Channel} with Bandwith ${24GHz_BandwidthValue} 
@@ -61,4 +59,7 @@ Fetch the Initial SSID
     Go to WLAN Page
     ${Orginal_ssid}=  Get the SSID name
     Set Global Variable  ${Orginal_ssid}
+    Go to WLAN Guest Page
+    Disable Guest Network
+    Save Guest WiFi Network Settings
     Logout from DUT
