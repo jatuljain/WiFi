@@ -5,6 +5,8 @@ Library  Screenshot  screenshot_module | pillow
 *** Variables ***
 ${WLAN_Tab}  //a[normalize-space()='WLAN']
 ${2.4Ghz_Channel}  //select[@name='wchan_24g_both']
+${Authentication_Method}  //select[@name='security_type_24g']
+${Authentication_dropdown}  //tbody/tr[1]/td/table[2]/tbody/tr[5]/td[2]/div
 ${2.4Ghz_ChannelID_dropdown}  //tbody/tr[@id='tr_wchan_both']/td[@class='tdText']/div[1]
 ${5Ghz_ChannelID_dropdown}  //tbody/tr[@id='tr_wchan_both']/td[@class='tdText']/div[2]
 ${2.4Ghz_Bandwidth_dropdown}  //tbody/tr[@id='tr_bandwidth_both']/td[@class='tdText']/div[1]
@@ -22,6 +24,8 @@ ${SSID_Broadcast_Visible_on}  //tbody/tr[3]/td[2]/div
 # ${SSID_Broadcast_Visible_off}  .switch_button_24g.switch_off
 ${SSID_Broadcast_Visible_off}   //tbody/tr[3]/td[2]/div
 ${ENABLE_WIFI}=  ENABLE_WIFI
+${IGMP_Snooping_ToggelButton}=  //tbody/tr[12]/td[2]/div
+${WPS_Check}=  //tbody/tr[13]/td[2]/span[1]/a
 
 
 
@@ -36,6 +40,29 @@ Go to WLAN Page
     # wait until page contains  ${wlan_page}  10s
 
 
+Get the SSID name
+    current frame should contain  Channel
+    ${current_ssid}  get element attribute  ${ssid_name_2.4G}  value
+    log  ${current_ssid} is Current ssid
+    [return]  ${current_ssid}
+
+Set the SSID name
+    [Arguments]    ${ssid}
+    Input Text  ${ssid_name_2.4G}  ${ssid}
+
+
+Get the Authentication Method
+    current frame should contain  Channel
+    ${current_Authentication_Method}=  Get selected list value  ${Authentication_Method}
+    log  ${current_Authentication_Method} is Current Authentication_Method
+    [return]  ${current_Authentication_Method}
+
+Set the Authentication Method
+    [Arguments]    ${Authentication}
+    click element  ${Authentication_dropdown}
+    click element  //tbody/tr[5]/td[2]/div/ul/li[${Authentication}]/a
+
+
 Get the 2.4Ghz channel id from GUI
     current frame should contain  Channel
     ${current_2.4Ghz_Channel}=  Get selected list value  ${2.4Ghz_Channel}
@@ -48,16 +75,6 @@ Get the 5Ghz channel id from GUI
     ${current_5Ghz_Channel}=  Get selected list value  ${5Ghz_Channel}
     log  ${current_5Ghz_Channel} is Current 5Ghz channel
     [return]  ${current_5Ghz_Channel}
-
-Get the SSID name
-    current frame should contain  Channel
-    ${current_ssid}  get element attribute  ${ssid_name_2.4G}  value
-    log  ${current_ssid} is Current ssid
-    [return]  ${current_ssid}
-
-Set the SSID name
-    [Arguments]    ${ssid}
-    Input Text  ${ssid_name_2.4G}  ${ssid}
 
   
 Get the wifi Password
@@ -117,6 +134,65 @@ Set 5Ghz Channel ID to Auto
     click element  //*[@id="tr_wchan_both"]/td[2]/div[2]/ul/li[1]/a
     Save the WiFi setting
     Logout from DUT
+
+
+Get the IGPM Snooping Status
+    ${IGMP_Snooping_Status} =  get element attribute  ${IGMP_Snooping_ToggelButton}  class
+    log  ${IGMP_Snooping_Status} is Current IGMP Snooping Status
+    [return]  ${IGMP_Snooping_Status}
+
+Set the IGPM Snooping ON
+    ${IGMP_Snooping_Status}=  Get the IGPM Snooping Status
+    ${status}=    Get Regexp Matches    ${IGMP_Snooping_Status}   switch_on
+    IF  ${status}
+        log   IGMP Snooping is already enabled
+    ELSE
+        Enable IGMP Snooping Status
+    END
+Set the IGPM Snooping OFF
+    ${IGMP_Snooping_Status}=  Get the IGPM Snooping Status
+    ${status}=    Get Regexp Matches    ${IGMP_Snooping_Status}   switch_off
+    IF  ${status}
+        log   IGMP Snooping is already Disabled
+    ELSE
+        Disable IGMP Snooping Status
+    END
+
+Enable IGMP Snooping Status
+    click Element  ${IGMP_Snooping_ToggelButton}
+
+Disable IGMP Snooping Status
+    click Element  ${IGMP_Snooping_ToggelButton}
+
+
+Get WPS Status
+    ${WPS_Check_Status} =  get element attribute  ${WPS_Check}  class
+    log  ${WPS_Check_Status} is Current WPS Status
+    [return]  ${WPS_Check_Status}
+
+Set the WPS ON
+    ${WPS_Status}=  Get WPS Status
+    ${status}=    Get Regexp Matches    ${WPS_Status}   arcTransformChecked
+    IF  ${status}
+        log   WPS is already enabled
+    ELSE
+        Enable WPS
+    END
+Set the WPS OFF
+    ${WPS_Status}=  Get WPS Status
+    ${status}=    Get Regexp Matches    ${WPS_Status}   arcTransformChecked
+    IF  ${status}
+        Disable WPS
+    ELSE
+        log   WPS is already Disabled
+    END
+
+Enable WPS
+    click Element  ${WPS_Check}
+
+Disable WPS
+    click Element  ${WPS_Check}
+
 
 Save the WiFi setting
     click element  ${WLAN_save_setting}

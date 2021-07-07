@@ -2,11 +2,13 @@ Documentation  TestCase to WLAN features
 
 ***Settings***
 Resource   ../../Resource/Telnet.robot
-# Resource  ../../Resource/PageObjects/WLANPage.robot
-# Resource  ../../Resource/PageObjects/WLANGuestNetwork.robot
-Resource  ../../Resource/PageObjects/SW2SettingPage.robot
-Resource  ../../Resource/SW2CommonFunction.robot
-Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
+Resource  ../../Resource/PageObjects/WLANPage.robot
+Resource  ../../Resource/PageObjects/WLANGuestNetwork.robot
+Resource  ../../Resource/CommonFunction.robot
+
+# Resource  ../../Resource/PageObjects/SW2SettingPage.robot
+# Resource  ../../Resource/SW2CommonFunction.robot
+# Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
 
 # Suite Setup  Login to DUT
 # Suite Teardown  Logout from DUT
@@ -60,9 +62,28 @@ Verify WLAN 5GHz Channel ID from GUI and Console should match
 #     Save Guest WiFi Network Settings
 
 
-Verify Restart DUT
+# Verify Restart DUT
+#     [Documentation]  This Test case is to verify Restart Funtional of DUT
+#     [Tags]  SW2  Funtional  WiFi  DUTRestart
+#     Go to System Page
+#     Click on Restart and Factory Recovery
+#     Click on Restart
+
+Verify WLAN Page Details
     [Documentation]  This Test case is to verify Restart Funtional of DUT
-    [Tags]  V10A  Funtional  WiFi  DUTRestart
-    Go to System Page
-    Click on Restart and Factory Recovery
-    Click on Restart
+    [Tags]  V10A  Funtional  WiFi  WLANPage
+    Go to WLAN Page
+    ${Orginal_ssid}=  Get the SSID name
+    Set Global Variable  ${Orginal_ssid}
+    ${Orginal_password}=  Get the wifi Password
+    Set Global Variable  ${Orginal_password}
+    ${Authentication_Method}=  Get the Authentication Method
+    Set Global Variable  ${Authentication_Method}
+    Set the Authentication Method  2
+    Get the IGPM Snooping Status
+    Get WPS Status
+    Set the IGPM Snooping OFF
+    Set the WPS OFF
+    Save the WiFi setting
+    Logout from DUT
+

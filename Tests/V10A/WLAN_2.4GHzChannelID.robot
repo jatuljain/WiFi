@@ -43,7 +43,6 @@ Verify 2.4Ghz ChannelID scenarios
       log  ChannelIDs are ${2.4Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${2.4Ghz_ChannelID_Analyser_Length}
       ${status}=    Run Keyword And Return Status  list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${2.4Ghz_ChannelID_Console}
       EXIT For Loop If  ${status}
-      # EXIT For Loop If  ${2.4Ghz_ChannelID_Analyser_Length} >= 2
       sleep  30s
     END
     list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${2.4Ghz_ChannelID_Console}
