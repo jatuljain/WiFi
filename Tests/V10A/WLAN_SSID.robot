@@ -2,11 +2,11 @@ Documentation  TestCase to Verify WLAN SSID
 
 
 ***Settings***
-Resource   ../Resource/Telnet.robot
-Resource  ../Resource/PageObjects/WLANPage.robot
-Resource  ../Resource/CommonFunction.robot
-Resource  ../Resource/CommonWindowsFunction.robot
-Library  DataDriver  ../TestData/TestDataSSID.csv
+Resource   ../../Resource/Telnet.robot
+Resource  ../../Resource/PageObjects/WLANPage.robot
+Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/CommonWindowsFunction.robot
+Library  DataDriver  ../../TestData/TestDataSSID.csv
 Default Tags   V10A   Funtional  WiFi  
 
 Test Setup  Login to DUT
