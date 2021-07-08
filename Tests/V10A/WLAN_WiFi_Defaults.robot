@@ -2,11 +2,11 @@ Documentation  TestCase to Verify WLAN SSID
 
 
 ***Settings***
-Resource   ../Resource/Telnet.robot
-Resource  ../Resource/PageObjects/WLANPage.robot
-Resource  ../Resource/CommonFunction.robot
-Resource  ../Resource/CommonWindowsFunction.robot
-Library  DataDriver  ../TestData/TestDataPassword.csv
+Resource   ../../Resource/Telnet.robot
+Resource  ../../Resource/PageObjects/WLANPage.robot
+Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/CommonWindowsFunction.robot
+Library  DataDriver  ../../TestData/TestDataPassword.csv
 
 Test Setup  Login to DUT
 Suite Setup   Fetch the Initial SSID
