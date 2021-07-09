@@ -49,7 +49,6 @@ Verify 5Ghz ChannelID scenarios
       log  ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}
       ${status}=    Run Keyword And Return Status  list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5Ghz_ChannelID_Console}
       EXIT For Loop If  ${status}
-      # EXIT For Loop If  ${5Ghz_ChannelID_Analyser_Length} >= 2
       sleep  30s
     END
     list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5Ghz_ChannelID_Console}
