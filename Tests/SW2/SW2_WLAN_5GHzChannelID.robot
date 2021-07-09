@@ -17,12 +17,9 @@ Suite Setup  Fetch the Initial SSID
 Test Template  Verify 5Ghz ChannelID scenarios
 
 
-# *** Variables ***
-# ${5Ghz_ChannelID_Analyser}  0
-
 *** Test Cases ***
 Verify setting 5Ghz ChannelID ${5GHz_Channel} with Bandwith ${5GHz_BandwidthValue} 
-[Documentation]  This Test case is to verify setting different channel and Bandwith in SW2 
+    [Documentation]  This Test case is to verify setting different channel and Bandwith in SW2 
 
 
 

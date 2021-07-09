@@ -16,14 +16,9 @@ Suite Setup  Fetch the Initial SSID
 Test Template  Verify 5Ghz ChannelID scenarios
 
 
-# *** Variables ***
-# ${5Ghz_ChannelID_Analyser}  0
-
-
-*** Test Cases *** 
-[Documentation]  This Test case is to verify setting different channel and Bandwith
+*** Test Cases ***            
 Verify setting 5GHz ChannelID ${5GHz_Channel} with Bandwith ${5GHz_BandwidthValue} 
-
+    [Documentation]  This Test case is to verify setting different channel and Bandwith for V10A
 
 *** Keywords ***
 Verify 5Ghz ChannelID scenarios

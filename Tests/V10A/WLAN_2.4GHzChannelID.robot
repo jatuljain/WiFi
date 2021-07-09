@@ -20,7 +20,7 @@ Default Tags   V10A   Funtional  WiFi  24GhzChannelIDSet
 
 *** Test Cases ***
 Verify setting 2.4Ghz ChannelID ${24GHz_Channel} with Bandwith ${24GHz_BandwidthValue} 
-[Documentation]  This Test case is to verify setting different channel and Bandwith
+  [Documentation]  This Test case is to verify setting different channel and Bandwith
 
 
 *** Keywords ***

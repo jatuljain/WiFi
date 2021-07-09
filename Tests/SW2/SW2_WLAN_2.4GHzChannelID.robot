@@ -19,7 +19,7 @@ Test Template  Verify 2.4Ghz ChannelID scenarios
 
 *** Test Cases *** 
 Verify setting 2.4Ghz ChannelID ${24GHz_Channel} with Bandwith ${24GHz_BandwidthValue} 
-[Documentation]  This Test case is to verify setting different channel and Bandwith in SW2
+    [Documentation]  This Test case is to verify setting different channel and Bandwith in SW2
 
 
 
