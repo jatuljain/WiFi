@@ -2,7 +2,8 @@ Documentation  TestCase to WLAN features
 
 ***Settings***
 Resource   ../../Resource/Telnet.robot
-Resource  ../../Resource/PageObjects/WLANPage.robot
+Resource  ../../Resource/PageObjects/V10A/AdministrationPage.robot
+Resource  ../../Resource/PageObjects/V10A/RebootPage.robot
 Resource  ../../Resource/PageObjects/WLANGuestNetwork.robot
 Resource  ../../Resource/CommonFunction.robot
 
@@ -80,10 +81,19 @@ Verify WLAN Page Details
     ${Authentication_Method}=  Get the Authentication Method
     Set Global Variable  ${Authentication_Method}
     Set the Authentication Method  2
-    Get the IGPM Snooping Status
+    Get the IGMP Snooping Status
     Get WPS Status
-    Set the IGPM Snooping OFF
+    Set the IGMP Snooping OFF
     Set the WPS OFF
     Save the WiFi setting
     Logout from DUT
+
+Verify WLAN Page Details
+    [Documentation]  This Test case is to verify Restart Funtional of DUT
+    [Tags]  V10A  Funtional  WiFi
+    Go to Administration Page
+    Go to Reboot Page
+    Reboot the DUT
+    
+
 

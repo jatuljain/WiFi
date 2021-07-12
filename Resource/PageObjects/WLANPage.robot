@@ -14,7 +14,10 @@ ${5Ghz_Bandwidth_dropdown}  //tbody/tr[@id='tr_bandwidth_both']/td[@class='tdTex
 ${WLAN_save_setting}  //*[@id="save"]/span[2]
 ${2.4Ghz_ChannelID_Value}  //*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[2]/a
 # ${2.4Ghz_ChannelID_Value}  //*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[2]/a
-${WPA Encryption}  //select[@id='cypher_suite_24g']
+${WPA_Encryption}  //select[@id='cypher_suite_24g']
+${WPA_Encryption_dropdown}  //tbody/tr[6]/td[2]/div
+                    # //select[@name='cypher_suite_24g']
+${WPA_Encryption_AES}  //tbody/tr[6]/td[2]/div/ul/li/a
 ${5Ghz_Channel}  //select[@name='wchan_5g_both']
 ${wlan_page}  Restore WiFi Defaults
 ${ssid_name_2.4G}  wl_ssid_24g
@@ -27,7 +30,7 @@ ${ENABLE_WIFI}=  ENABLE_WIFI
 ${IGMP_Snooping_ToggelButton}=  //tbody/tr[12]/td[2]/div
 ${WPS_Check}=  //tbody/tr[13]/td[2]/span[1]/a
 
-
+${Authentication_ID}  
 
 *** Keywords ***
 Go to WLAN Page
@@ -59,8 +62,23 @@ Get the Authentication Method
 
 Set the Authentication Method
     [Arguments]    ${Authentication}
+    IF  '${Authentication}' == 'wpa2'
+        ${Authentication_ID}  Set Variable  2
+    ELSE
+        ${Authentication_ID}  Set Variable  1
+    END
     click element  ${Authentication_dropdown}
-    click element  //tbody/tr[5]/td[2]/div/ul/li[${Authentication}]/a
+    click element  //tbody/tr[5]/td[2]/div/ul/li[${Authentication_ID}]/a
+
+Get the Encryption Type
+    ${current_WPA_Encryption}=  Get selected list value  ${WPA_Encryption}
+    log  ${current_WPA_Encryption} is Current WPA Encryption
+    [return]  ${current_WPA_Encryption}
+
+Set the Encryption Type
+    [Arguments]    ${WPA_Encryption}
+    click element  ${WPA_Encryption_dropdown}
+    click element  ${WPA_Encryption_AES}
 
 
 Get the 2.4Ghz channel id from GUI
@@ -136,21 +154,34 @@ Set 5Ghz Channel ID to Auto
     Logout from DUT
 
 
-Get the IGPM Snooping Status
+Get the IGMP Snooping Status
     ${IGMP_Snooping_Status} =  get element attribute  ${IGMP_Snooping_ToggelButton}  class
     log  ${IGMP_Snooping_Status} is Current IGMP Snooping Status
     [return]  ${IGMP_Snooping_Status}
 
-Set the IGPM Snooping ON
-    ${IGMP_Snooping_Status}=  Get the IGPM Snooping Status
+
+Set the IGMP Snooping
+    [Arguments]    ${igmp}
+    ${status}=    Get Regexp Matches    ${igmp}   switch_on
+    IF  ${status}
+        Set the IGMP Snooping ON
+    ELSE
+        Set the IGMP Snooping OFF
+    END
+
+
+Set the IGMP Snooping ON
+    ${IGMP_Snooping_Status}=  Get the IGMP Snooping Status
     ${status}=    Get Regexp Matches    ${IGMP_Snooping_Status}   switch_on
     IF  ${status}
         log   IGMP Snooping is already enabled
     ELSE
         Enable IGMP Snooping Status
     END
-Set the IGPM Snooping OFF
-    ${IGMP_Snooping_Status}=  Get the IGPM Snooping Status
+
+
+Set the IGMP Snooping OFF
+    ${IGMP_Snooping_Status}=  Get the IGMP Snooping Status
     ${status}=    Get Regexp Matches    ${IGMP_Snooping_Status}   switch_off
     IF  ${status}
         log   IGMP Snooping is already Disabled
@@ -170,6 +201,15 @@ Get WPS Status
     log  ${WPS_Check_Status} is Current WPS Status
     [return]  ${WPS_Check_Status}
 
+
+Set the WPS
+    [Arguments]    ${WPS}
+    IF  '${WPS}' == 'arcTransformChecked'
+       Set the WPS ON
+    ELSE
+       Set the WPS OFF
+    END
+    
 Set the WPS ON
     ${WPS_Status}=  Get WPS Status
     ${status}=    Get Regexp Matches    ${WPS_Status}   arcTransformChecked
@@ -178,6 +218,7 @@ Set the WPS ON
     ELSE
         Enable WPS
     END
+
 Set the WPS OFF
     ${WPS_Status}=  Get WPS Status
     ${status}=    Get Regexp Matches    ${WPS_Status}   arcTransformChecked

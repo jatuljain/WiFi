@@ -1,10 +1,6 @@
 *** Settings ***
 Library			SeleniumLibrary
 
-# Suite Teardown    Close All Browsers
-
-#Test Setup  Open Chrome
-
 
 *** Variables ***
 ${Topology Overview}  Topology Overview
