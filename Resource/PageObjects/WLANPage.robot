@@ -54,7 +54,7 @@ Set the SSID name
     Input Text  ${ssid_name_2.4G}  ${ssid}
 
 
-Get the Authentication Method
+Get the Authentication Method  ## To get Security Mode
     current frame should contain  Channel
     ${current_Authentication_Method}=  Get selected list value  ${Authentication_Method}
     log  ${current_Authentication_Method} is Current Authentication_Method
@@ -236,6 +236,7 @@ Disable WPS
 
 
 Save the WiFi setting
+    wait until page contains  Save settings  60s
     click element  ${WLAN_save_setting}
     Run Keyword And Ignore Error  Handle Alert
     # Capture page screenshot  ${TEST_NAME}.png
