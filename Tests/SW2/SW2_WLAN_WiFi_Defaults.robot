@@ -1,4 +1,4 @@
-Documentation  TestCase to Verify WLAN Setting Post reboot
+Documentation  TestCase to Verify WLAN Setting Post Reboot if configured settings are preserved for SW2
 
 
 ***Settings***
