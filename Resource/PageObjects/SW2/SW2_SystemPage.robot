@@ -1,3 +1,6 @@
+***Settings***
+Resource  SW2_System_Reboot_FactoryRecoveryPage.robot
+
 *** Variables ***
 ${System_Tab}  //div[@id='id_nav_2']
 ${Restart}  Restart
@@ -18,21 +21,3 @@ Go to System Page
     select frame  id:frm_main2
     wait until page contains  ${System_Information}  5s
 
-
-Reboot the DUT
-    unselect frame
-    select frame  id:frm_main2
-    Click element  ${Restart_Button}
-    Handle Alert
-    Handle Alert
-    Sleep  120s
-
-
-Click on Restart and Factory Recovery Tab
-    unselect frame
-    select frame  name:leftFrame
-    Click Element  ${Restart_And_FacrotyRecovery_Tab}
-    unselect frame
-    select frame  id:frm_main2
-    wait until page contains  ${Factory_Reset}
-    

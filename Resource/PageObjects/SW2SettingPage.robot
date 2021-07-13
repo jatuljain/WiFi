@@ -22,21 +22,24 @@ ${SSID_Broadcast_Dropdown}  //tbody/tr[2]/td[2]/div/div/a
 ${Main_SSID_Disable}  //table[1]/tbody/tr[2]/td[2]/div/ul/li[2]
 ${Main_SSID_Enable}  //table[1]/tbody/tr[2]/td[2]/div/ul/li[1]
 
+${Authentication_dropdown}  //tbody/tr[@class='security_mode']/td[@class='tdTextTa_20']/div[1]
 ${Authentication_Method}  //select[@name='securitymode']
 
 
-${WPS_Check}=  //select[@name='wirewps']
+${WPS_Check}  //select[@name='wirewps']
 ${WPS_dropdown}  //tbody/tr[7]/td[2]/div/div/span
 
 
-${Compatibility_Mode_Check}=  //select[@name='wireldpc']
+${Compatibility_Mode_Check}  //select[@name='wireldpc']
 ${Compatibility_Mode_dropdown}  //tbody/tr[8]/td[2]/div/div/span
 
 
 
-# ${2.4GHz_Mode}  //select[@name='mode_24g']
+${2.4GHzMode_dropdown}  //tbody/tr/td/table[3]/tbody/tr[1]/td[2]/div
 ${2.4GHz_Mode}  //table[3]/tbody/tr[1]/td[2]/div/div/span
 # ${5GHz_Mode}   //select[@name='mode_5g']
+
+${5GHzMode_dropdown}  //tbody/tr/td/table[3]/tbody/tr[2]/td[2]/div
 ${5GHz_Mode}   //table[3]/tbody/tr[2]/td[2]/div/div/span
 
 
@@ -80,13 +83,19 @@ Get the Authentication Method  ## To get Security Mode
 
 Set the Authentication Method
     [Arguments]    ${Authentication}
-    IF  '${Authentication}' == 'wpa2'
-        ${Authentication_ID}  Set Variable  2
-    ELSE
+    IF  '${Authentication}' == 'wpa2wpa3'
         ${Authentication_ID}  Set Variable  1
+    ELSE IF  '${Authentication}' == 'wpa3'
+        ${Authentication_ID}  Set Variable  2
+    ELSE IF  '${Authentication}' == 'wpa2'
+        ${Authentication_ID}  Set Variable  3    
+    ELSE IF  '${Authentication}' == 'wpawpa2'
+        ${Authentication_ID}  Set Variable  4
+    ELSE IF  '${Authentication}' == 'open'
+        ${Authentication_ID}  Set Variable  5
     END
     click element  ${Authentication_dropdown}
-    click element  //tbody/tr[5]/td[2]/div/ul/li[${Authentication_ID}]/a
+    click element  //table[1]/tbody/tr[3]/td[2]/div/ul/li[${Authentication_ID}]/a
 
 Get 2.4GHz Mode  
     # ${current_2.4GHz_Mode}=  Get selected list value  ${2.4GHz_Mode}
@@ -94,30 +103,39 @@ Get 2.4GHz Mode
     log  ${current_2.4GHz_Mode} is Current 2.4GHz Mode
     [return]  ${current_2.4GHz_Mode}
 
-Set the 2.4GHz Mode 
-    [Arguments]    ${Authentication}
-    IF  '${Authentication}' == 'wpa2'
-        ${Authentication_ID}  Set Variable  2
-    ELSE
-        ${Authentication_ID}  Set Variable  1
+Set 2.4GHz Mode 
+    [Arguments]    ${Mode}
+    IF  '${Mode}' == 'b/g/n'
+        ${Mode_ID}  Set Variable  1
+    ELSE IF  '${Mode}' == 'n/ax'
+        ${Mode_ID}  Set Variable  2
+    ELSE IF  '${Mode}' == 'g/n/ax'
+        ${Mode_ID}  Set Variable  3    
+    ELSE IF  '${Mode}' == 'b/g/n/ax'
+        ${Mode_ID}  Set Variable  4
     END
-    click element  ${Authentication_dropdown}
-    click element  //tbody/tr[5]/td[2]/div/ul/li[${Authentication_ID}]/a
+    click element  ${2.4GHzMode_dropdown}
+    click element  //table[3]/tbody/tr[1]/td[2]/div/ul/li[${Mode_ID}]/a
 
 Get 5GHz Mode  
     ${current_5GHz_Mode}=  Get Text  ${5GHz_Mode}
     log  ${current_5GHz_Mode} is Current 5GHz Mode
     [return]  ${current_5GHz_Mode}
 
-Set the 5GHz Mode 
-    [Arguments]    ${Authentication}
-    IF  '${Authentication}' == 'wpa2'
-        ${Authentication_ID}  Set Variable  2
-    ELSE
-        ${Authentication_ID}  Set Variable  1
+Set 5GHz Mode 
+    [Arguments]    ${Mode}
+    IF  '${Mode}' == 'n/ac'
+        ${Mode_ID}  Set Variable  1
+    ELSE IF  '${Mode}' == 'an/ac'
+        ${Mode_ID}  Set Variable  2
+    ELSE IF  '${Mode}' == 'n/ac/ax'
+        ${Mode_ID}  Set Variable  3    
+    ELSE IF  '${Mode}' == 'an/ac/ax'
+        ${Mode_ID}  Set Variable  4
     END
-    click element  ${Authentication_dropdown}
-    click element  //tbody/tr[5]/td[2]/div/ul/li[${Authentication_ID}]/a
+    click element  ${5GHzMode_dropdown}
+    click element  //table[3]/tbody/tr[2]/td[2]/div/ul/li[${Mode_ID}]/a
+
 
 
 Get the Encryption Type
@@ -156,10 +174,84 @@ Set 2.4Ghz Channel ID with value
     click element  ${2.4Ghz_ChannelID_dropdown}
     click element  //tr[@id='wireless_24ghz']//li[${item label}]/a
 
+Set 2.4Ghz Channel ID
+    [Arguments]    ${ChannelID}
+    IF  '${ChannelID}' == 'Auto'
+        ${ChannelID_ID}  Set Variable  1
+    ELSE IF  '${ChannelID}' == '1'
+        ${ChannelID_ID}  Set Variable  2
+    ELSE IF  '${ChannelID}' == '2'
+        ${ChannelID_ID}  Set Variable  3        
+    ELSE IF  '${ChannelID}' == '3'
+        ${ChannelID_ID}  Set Variable  4
+    ELSE IF  '${ChannelID}' == '4'
+        ${ChannelID_ID}  Set Variable  5        
+    ELSE IF  '${ChannelID}' == '5'
+        ${ChannelID_ID}  Set Variable  6
+    ELSE IF  '${ChannelID}' == '6'
+        ${ChannelID_ID}  Set Variable  7        
+    ELSE IF  '${ChannelID}' == '7'
+        ${ChannelID_ID}  Set Variable  8
+    ELSE IF  '${ChannelID}' == '8'
+        ${ChannelID_ID}  Set Variable  9
+    ELSE IF  '${ChannelID}' == '9'
+        ${ChannelID_ID}  Set Variable  10
+    ELSE IF  '${ChannelID}' == '10'
+        ${ChannelID_ID}  Set Variable  11        
+    ELSE IF  '${ChannelID}' == '11'
+        ${ChannelID_ID}  Set Variable  12
+    ELSE IF  '${ChannelID}' == '12'
+        ${ChannelID_ID}  Set Variable  13       
+    ELSE IF  '${ChannelID}' == '13'
+        ${ChannelID_ID}  Set Variable  14
+    END
+    click element  ${2.4Ghz_ChannelID_dropdown}
+    click element  //tr[@id='wireless_24ghz']//li[${ChannelID_ID}]/a
+
 Set 5Ghz Channel ID with value
     [Arguments]    ${item label}
     click element  ${5Ghz_ChannelID_dropdown}
     click element  //tr[@id='wireless_5ghz']//li[${item label}]/a
+
+Set 5Ghz Channel ID
+    [Arguments]    ${ChannelID}
+    IF  '${ChannelID}' == 'Auto'
+        ${ChannelID_ID}  Set Variable  1
+    ELSE IF  '${ChannelID}' == '36'
+        ${ChannelID_ID}  Set Variable  2
+    ELSE IF  '${ChannelID}' == '40'
+        ${ChannelID_ID}  Set Variable  3        
+    ELSE IF  '${ChannelID}' == '44'
+        ${ChannelID_ID}  Set Variable  4
+    ELSE IF  '${ChannelID}' == '48'
+        ${ChannelID_ID}  Set Variable  5        
+    ELSE IF  '${ChannelID}' == '52'
+        ${ChannelID_ID}  Set Variable  6
+    ELSE IF  '${ChannelID}' == '56'
+        ${ChannelID_ID}  Set Variable  7        
+    ELSE IF  '${ChannelID}' == '60'
+        ${ChannelID_ID}  Set Variable  8
+    ELSE IF  '${ChannelID}' == '64'
+        ${ChannelID_ID}  Set Variable  9
+    ELSE IF  '${ChannelID}' == '100'
+        ${ChannelID_ID}  Set Variable  10
+    ELSE IF  '${ChannelID}' == '104'
+        ${ChannelID_ID}  Set Variable  11        
+    ELSE IF  '${ChannelID}' == '108'
+        ${ChannelID_ID}  Set Variable  12
+    ELSE IF '${ChannelID}' == '112'
+        ${ChannelID_ID}  Set Variable  13       
+    ELSE IF  '${ChannelID}' == '116'
+        ${ChannelID_ID}  Set Variable  14
+    ELSE IF  '${ChannelID}' == '120'
+        ${ChannelID_ID}  Set Variable  15       
+    ELSE IF  '${ChannelID}' == '124'
+        ${ChannelID_ID}  Set Variable  16
+    ELSE IF  '${ChannelID}' == '128'
+        ${ChannelID_ID}  Set Variable  17
+    END
+    click element  ${5Ghz_ChannelID_dropdown}
+    click element  //tr[@id='wireless_5ghz']//li[${ChannelID_ID}]/a
 
 
 Get 2.4Ghz Bandwith
@@ -173,6 +265,18 @@ Set 2.4Ghz Bandwith with value
     click element  ${2.4Ghz_Bandwidth_dropdown}
     click element  //table[3]/tbody/tr[3]/td[2]/div/ul/li[${item label}]/a
 
+Set 2.4Ghz Bandwith
+    [Arguments]    ${Bandwith}
+    IF  '${Bandwith}' == '20MHz'
+        ${Bandwith_ID}  Set Variable  1
+    ELSE IF  '${Bandwith}' == '20/40MHz'
+        ${Bandwith_ID}  Set Variable  2
+    ELSE IF  '${Bandwith}' == '40MHz'
+        ${Bandwith_ID}  Set Variable  3    
+    END
+    click element  ${2.4Ghz_Bandwidth_dropdown}
+    click element  //table[3]/tbody/tr[3]/td[2]/div/ul/li[${Bandwith_ID}]/a
+
 
 Get 5Ghz Bandwith
     ${current_5GHz_Bandwith}=  Get Text  ${5GHz_Bandwith}
@@ -185,6 +289,20 @@ Set 5Ghz Bandwith with value
     [Arguments]    ${item label}
     click element  ${5Ghz_Bandwidth_dropdown}
     click element  //table[3]/tbody/tr[4]/td[2]/div/ul/li[${item label}]/a
+
+Set 5Ghz Bandwith
+    [Arguments]    ${Bandwith}
+    IF  '${Bandwith}' == '20MHz'
+        ${Bandwith_ID}  Set Variable  1
+    ELSE IF  '${Bandwith}' == '20/40MHz'
+        ${Bandwith_ID}  Set Variable  2
+    ELSE IF  '${Bandwith}' == '20/40/80MHz'
+        ${Bandwith_ID}  Set Variable  3      
+    ELSE IF  '${Bandwith}' == '160MHz'
+        ${Bandwith_ID}  Set Variable  4    
+    END
+    click element  ${5Ghz_Bandwidth_dropdown}
+    click element  //table[3]/tbody/tr[4]/td[2]/div/ul/li[${Bandwith_ID}]/a
 
 
 Set 2.4Ghz Channel ID to Auto
@@ -224,15 +342,15 @@ Get WPS Status
     log  ${current_WPS_Check} is Current Authentication_Method
     [return]  ${current_WPS_Check}
 
-Set the WPS
+Set WPS
     [Arguments]    ${WPS}
     IF  '${WPS}' == '1'
-       Set the WPS ON
+       Set the WPS Enable
     ELSE
-       Set the WPS OFF
+       Set the WPS Disable
     END
     
-Set the WPS ON
+Set the WPS Enable
     ${WPS_Status}=  Get WPS Status
     # ${status}=    Get Regexp Matches    ${WPS_Status}   arcTransformChecked
     IF  ${WPS_Status}
@@ -241,7 +359,7 @@ Set the WPS ON
         Enable WPS
     END
 
-Set the WPS OFF
+Set the WPS Disable
     ${WPS_Status}=  Get WPS Status
     # ${status}=    Get Regexp Matches    ${WPS_Status}   arcTransformChecked
     IF  ${WPS_Status}
@@ -266,3 +384,22 @@ Get Compatibility Mode Status
     ${current_Compatibility_Mode_Check}=  Get Text  ${Compatibility_Mode_dropdown}
     log  ${current_Compatibility_Mode_Check} is Current Compatibility Mode
     [return]  ${current_Compatibility_Mode_Check}
+
+Set Compatibility Mode Status
+    [Arguments]    ${Compatibility}
+    IF  '${Compatibility}' == '1'
+       Set the Compatibility Enable
+    ELSE
+       Set the Compatibility Disable
+    END
+    
+
+Set the Compatibility Enable
+    click element  ${Compatibility_Mode_dropdown}
+    click element  //table[3]/tbody/tr[8]/td[2]/div/ul/li[1]
+
+
+Set the Compatibility Disable
+    click element  ${Compatibility_Mode_dropdown}
+    click element  //table[3]/tbody/tr[8]/td[2]/div/ul/li[2]
+
