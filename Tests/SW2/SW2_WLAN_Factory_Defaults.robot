@@ -5,62 +5,59 @@ Documentation  TestCase to Verify WLAN Setting Post Factory Reset if configured 
 Resource  ../../Resource/PageObjects/SW2SettingPage.robot
 Resource  ../../Resource/SW2CommonFunction.robot
 Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
+Library  DataDriver  ../../TestData/TestDataFactoryReset.csv
 
+Default Tags   SW2  Funtional  WiFi  FactoryReset
 
 Test Setup  Login to DUT
 Suite Setup   Fetch the Initial WLAN details
 Suite Teardown  Run Keyword And Ignore Error  Cleanup
 
-*** Variables ***
-${Factory_ssid}  Schanshoek9
-${Factory_Authentication_Method}  wpa2
-${Factory_password}  schanshoek2705
-${Factory_WPS}  1
-${Factory_2.4GHz_Mode}  g/n/ax
-${Factory_5GHz_Mode}  an/ac/ax     
-${Factory_2.4GHz_Bandwith}  20MHz
-${Factory_5GHz_Bandwith}  160MHz
-${Factory_2.4GHz_ChannelID}  Auto
-${Factory_5GHz_ChannelID}  Auto
-${Factory_Compatibility_Mode}  Disabled
+Test Template  Facrory Reset and verify WLAN settings are set to Defaults
+
 
 
 *** Test Cases ***
-Facrory Resett and verify WLAN settings are set to Defaults
-    [Tags]  SW2  Funtional  WiFi  FactoryReset
+Facrory Reset and verify WLAN settings are set to Defaults for SW2
+
+
+
+
+*** Keywords ***
+Facrory Reset and verify WLAN settings are set to Defaults
+    [Arguments]  ${Factory_ssid}  ${Factory_Authentication_Method}  ${Factory_password}  ${Factory_WPS}  ${Factory_24GHz_Mode}  ${Factory_5GHz_Mode}  ${Factory_24GHz_Bandwith}  ${Factory_5GHz_Bandwith}  ${Factory_24GHz_ChannelID}  ${Factory_5GHz_ChannelID}  ${Factory_Compatibility_Mode}
     Go to System Page
     Click on Restart and Factory Recovery Tab
     Factory Reset the DUT
     Close All Browsers
     Factory Reset Login to DUT
     Go to Settings Page
-    ${Post_reboot_ssid}=  Get the SSID name
-    ${Post_reboot_Authentication_Method}=  Get the Authentication Method
-    ${Post_reboot_password}=  Get the wifi Password
-    ${Post_reboot_WPS}=   Get WPS Status
-    ${Post_2.4GHz_Mode}=   Get 2.4GHz Mode 
-    ${Post_5GHz_Mode}=   Get 5GHz Mode     
-    ${Post_2.4GHz_Bandwith}=   Get 2.4GHz Bandwith 
-    ${Post_5GHz_Bandwith}=   Get 5GHz Bandwith     
-    ${Post_2.4GHz_ChannelID}=   Get 2.4GHz Channel ID 
-    ${Post_5GHz_ChannelID}=   Get 5GHz Channel ID 
-    ${Post_Compatibility_Mode}=   Get Compatibility Mode Status
-    Should be equal  ${Post_reboot_ssid}  ${Factory_ssid}
-    Should be equal  ${Post_reboot_Authentication_Method}  ${Factory_Authentication_Method}
-    Should be equal  ${Post_reboot_password}  ${Factory_password}
-    Should be equal  ${Post_2.4GHz_Mode}  ${Factory_2.4GHz_Mode}
-    Should be equal  ${Post_5GHz_Mode}  ${Factory_5GHz_Mode}
-    Should be equal  ${Post_2.4GHz_Bandwith}  ${Factory_2.4GHz_Bandwith}
-    Should be equal  ${Post_5GHz_Bandwith}  ${Factory_5GHz_Bandwith}    
-    Should be equal  ${Post_2.4GHz_ChannelID}  ${Factory_2.4GHz_ChannelID}
-    Should be equal  ${Post_5GHz_ChannelID}  ${Factory_5GHz_ChannelID}
-    Should be equal  ${Post_reboot_WPS}  ${Factory_WPS}
-    Should be equal  ${Post_Compatibility_Mode}  ${Factory_Compatibility_Mode}
+    ${Post_fr_ssid}=  Get the SSID name
+    ${Post_fr_Authentication_Method}=  Get the Authentication Method
+    ${Post_fr_password}=  Get the wifi Password
+    ${Post_fr_WPS}=   Get WPS Status
+    ${Post_fr_2.4GHz_Mode}=   Get 2.4GHz Mode 
+    ${Post_fr_5GHz_Mode}=   Get 5GHz Mode     
+    ${Post_fr_2.4GHz_Bandwith}=   Get 2.4GHz Bandwith 
+    ${Post_fr_5GHz_Bandwith}=   Get 5GHz Bandwith     
+    ${Post_fr_2.4GHz_ChannelID}=   Get 2.4GHz Channel ID 
+    ${Post_fr_5GHz_ChannelID}=   Get 5GHz Channel ID 
+    ${Post_fr_Compatibility_Mode}=   Get Compatibility Mode Status
+    Should be equal  ${Post_fr_ssid}  ${Factory_ssid}
+    Should be equal  ${Post_fr_Authentication_Method}  ${Factory_Authentication_Method}
+    Should be equal  ${Post_fr_password}  ${Factory_password}
+    Should be equal  ${Post_fr_2.4GHz_Mode}  ${Factory_24GHz_Mode}
+    Should be equal  ${Post_fr_5GHz_Mode}  ${Factory_5GHz_Mode}
+    Should be equal  ${Post_fr_2.4GHz_Bandwith}  ${Factory_24GHz_Bandwith}
+    Should be equal  ${Post_fr_5GHz_Bandwith}  ${Factory_5GHz_Bandwith}    
+    Should be equal  ${Post_fr_2.4GHz_ChannelID}  ${Factory_24GHz_ChannelID}
+    Should be equal  ${Post_fr_5GHz_ChannelID}  ${Factory_5GHz_ChannelID}
+    Should be equal  ${Post_fr_WPS}  ${Factory_WPS}
+    Should be equal  ${Post_fr_Compatibility_Mode}  ${Factory_Compatibility_Mode}
     Logout from DUT
 
 
 
-*** Keywords ***
 Fetch the Initial WLAN details 
     Login to DUT
     Go to Settings Page
