@@ -7,7 +7,7 @@ Resource  ../../Resource/PageObjects/WLANPage.robot
 Resource  ../../Resource/CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 Library  DataDriver  ../../TestData/TestDataSSID.csv
-Default Tags   V10A   Funtional  WiFi  
+Default Tags   V10A   Funtional  WiFi  WiFiSSID
 
 Test Setup  Login to DUT
 Suite Teardown  Run Keyword And Ignore Error  Cleanup
@@ -17,8 +17,8 @@ Test Template  Verify setting SSID
 
 
 *** Test Cases *** 
-[Documentation]  This Test case is to verify setting SSID
 Change the name of the Wi-Fi network (SSID) ${SSID}
+    [Documentation]  This Test case is to verify setting SSID
 
 
 *** Keywords ***

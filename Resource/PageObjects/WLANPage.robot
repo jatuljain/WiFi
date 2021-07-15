@@ -32,6 +32,9 @@ ${WPS_Check}=  //tbody/tr[13]/td[2]/span[1]/a
 
 ${Authentication_ID}  
 
+
+${Cancel_Button}  cancel
+
 *** Keywords ***
 Go to WLAN Page
     unselect frame
@@ -239,8 +242,11 @@ Save the WiFi setting
     wait until page contains  Save settings  60s
     click element  ${WLAN_save_setting}
     Run Keyword And Ignore Error  Handle Alert
-    # Capture page screenshot  ${TEST_NAME}.png
-    sleep  15s
+    sleep  10s
+    # Wait Until Page Does Not Contain  Waiting for WLAN synchronization  80s
+    # wait until Element Is Not Visible  Save settings  65s
+    wait until Element Is Visible  ${Cancel_Button}  65s
+    sleep  2s
 
 Enable SSID Broadcast
     click element  ${SSID_Broadcast_Visible_on}
