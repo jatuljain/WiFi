@@ -1,13 +1,14 @@
-Documentation  TestCase to Verify WLAN Setting Post Factory Reset if configured settings are defaulted SW2
-                In this Test will do Factory Reset of SW2 and check the Default values
+Documentation  TestCase to Verify WLAN Setting Post Factory Reset if configured settings are defaulted V10A
+                In this Test will do Factory Reset of V10A and check the Default values
 
 ***Settings***
 Resource  ../../Resource/PageObjects/WLANPage.robot
 Resource  ../../Resource/CommonFunction.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
+Resource  ../../Resource/PageObjects/V10A/AdministrationPage.robot
 Library  DataDriver  ../../TestData/V10A_TestDataFactoryReset.csv
 
-Default Tags   SW2  Funtional  WiFi  FactoryReset
+Default Tags   V10A  Funtional  WiFi  FactoryReset
 
 Test Setup  Login to DUT
 Suite Setup   Fetch the Initial WLAN details
@@ -18,7 +19,7 @@ Test Template  Facrory Reset and verify WLAN settings are set to Defaults
 
 
 *** Test Cases ***
-Facrory Reset and verify WLAN settings are set to Defaults for SW2
+Facrory Reset and verify WLAN settings are set to Defaults for V10A
 
 
 
@@ -26,12 +27,12 @@ Facrory Reset and verify WLAN settings are set to Defaults for SW2
 *** Keywords ***
 Facrory Reset and verify WLAN settings are set to Defaults
     [Arguments]  ${Factory_ssid}  ${Factory_Authentication_Method}  ${Factory_password}  ${Factory_WPS}  ${Factory_24GHz_Mode}  ${Factory_5GHz_Mode}  ${Factory_24GHz_Bandwith}  ${Factory_5GHz_Bandwith}  ${Factory_24GHz_ChannelID}  ${Factory_5GHz_ChannelID}  ${Factory_Compatibility_Mode}
-    Go to System Page
-    Click on Restart and Factory Recovery Tab
+    Go to Administration Page
+    Go to Restore Save Upload Setting Page
     Factory Reset the DUT
     Close All Browsers
     Factory Reset Login to DUT
-    Go to Settings Page
+    Go to WLAN Page
     ${Post_fr_ssid}=  Get the SSID name
     ${Post_fr_Authentication_Method}=  Get the Authentication Method
     ${Post_fr_password}=  Get the wifi Password
@@ -40,9 +41,8 @@ Facrory Reset and verify WLAN settings are set to Defaults
     ${Post_fr_5GHz_Mode}=   Get 5GHz Mode     
     ${Post_fr_2.4GHz_Bandwith}=   Get 2.4GHz Bandwith 
     ${Post_fr_5GHz_Bandwith}=   Get 5GHz Bandwith     
-    ${Post_fr_2.4GHz_ChannelID}=   Get 2.4GHz Channel ID 
-    ${Post_fr_5GHz_ChannelID}=   Get 5GHz Channel ID 
-    ${Post_fr_Compatibility_Mode}=   Get Compatibility Mode Status
+    ${Post_fr_2.4GHz_ChannelID}=   Get the 2.4Ghz Channel ID from GUI  
+    ${Post_fr_5GHz_ChannelID}=   Get the 5Ghz Channel ID from GUI
     Should be equal  ${Post_fr_ssid}  ${Factory_ssid}
     Should be equal  ${Post_fr_Authentication_Method}  ${Factory_Authentication_Method}
     Should be equal  ${Post_fr_password}  ${Factory_password}
@@ -53,14 +53,13 @@ Facrory Reset and verify WLAN settings are set to Defaults
     Should be equal  ${Post_fr_2.4GHz_ChannelID}  ${Factory_24GHz_ChannelID}
     Should be equal  ${Post_fr_5GHz_ChannelID}  ${Factory_5GHz_ChannelID}
     Should be equal  ${Post_fr_WPS}  ${Factory_WPS}
-    Should be equal  ${Post_fr_Compatibility_Mode}  ${Factory_Compatibility_Mode}
     Logout from DUT
 
 
 
 Fetch the Initial WLAN details 
     Login to DUT
-    Go to Settings Page
+    Go to WLAN Page
     ${Original_ssid}=  Get the SSID name
     Set Global Variable  ${Original_ssid}
     ${Original_Authentication_Method}=  Get the Authentication Method
@@ -75,21 +74,21 @@ Fetch the Initial WLAN details
     Set Global Variable  ${Original_2.4GHz_Bandwith}
     ${Original_5GHz_Bandwith}=   Get 5GHz Bandwith 
     Set Global Variable  ${Original_5GHz_Bandwith}    
-    ${Original_2.4GHz_ChannelID}=   Get 2.4GHz Channel ID 
+    ${Original_2.4GHz_ChannelID}=   Get the 2.4Ghz Channel ID from GUI 
     Set Global Variable  ${Original_2.4GHz_ChannelID}
-    ${Original_5GHz_ChannelID}=   Get 5GHz Channel ID 
+    ${Original_5GHz_ChannelID}=   Get the 5Ghz Channel ID from GUI
     Set Global Variable  ${Original_5GHz_ChannelID}
     ${Original_WPS}=   Get WPS Status
     Set Global Variable  ${Original_WPS}
-    ${Original_Compatibility_Mode}=   Get Compatibility Mode Status
-    Set Global Variable  ${Original_Compatibility_Mode}
+    # ${Original_Compatibility_Mode}=   Get Compatibility Mode Status
+    # Set Global Variable  ${Original_Compatibility_Mode}
     Logout from DUT
 
 
 
 Cleanup
     Login to DUT
-    Go to Settings Page
+    Go to WLAN Page
     Set the SSID name  ${Original_ssid}
     Set the Authentication Method  ${Original_Authentication_Method}
     Set the wifi Password  ${Original_password}
@@ -100,7 +99,7 @@ Cleanup
     Set 2.4Ghz Channel ID  ${Original_2.4GHz_ChannelID}
     Set 5Ghz Channel ID  ${Original_5GHz_ChannelID}
     Set WPS  ${Original_WPS}
-    Set Compatibility Mode Status  ${Original_Compatibility_Mode}
+    # Set Compatibility Mode Status  ${Original_Compatibility_Mode}
     Save the WiFi setting
     Logout from DUT
 

@@ -15,7 +15,7 @@ Login to DUT
     Sleep  2s
     Click Element  ${Login_button}
     Sleep  2s
-    Wait Until Page Contains Element  //title[normalize-space()='Overview']  10s
+    Wait Until Page Contains Element  ${Overview_Text}  10s
     select frame  id:frm_main2
     wait until page contains  ${Status}  10s
 
@@ -34,7 +34,7 @@ Factory Reset Login to DUT
     press keys  ${ReType_New_Password}  ${Password_value}
     Click Element  ${Modify_Password}
     Sleep  10s
-    Wait Until Page Contains Element  //title[normalize-space()='Overview']  10s
+    Wait Until Page Contains Element  ${Overview_Text}  10s
     select frame  id:frm_main2
     wait until page contains  ${Status}  10s
 

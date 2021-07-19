@@ -1,7 +1,10 @@
+***Settings ***
+Resource  Restore_Save_Upload.robot
+Resource  PasswordSetting.resource
+
 *** Variables ***
 ${Administration_Tab}  //a[normalize-space()='Administration']
 ${Administration_Content}  Router Login Name
-
 
 
 

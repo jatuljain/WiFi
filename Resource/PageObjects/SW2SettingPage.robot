@@ -249,6 +249,12 @@ Set 5Ghz Channel ID
         ${ChannelID_ID}  Set Variable  16
     ELSE IF  '${ChannelID}' == '128'
         ${ChannelID_ID}  Set Variable  17
+    ELSE IF  '${ChannelID}' == '132'
+        ${ChannelID_ID}  Set Variable  18
+    ELSE IF  '${ChannelID}' == '136'
+        ${ChannelID_ID}  Set Variable  19
+    ELSE IF  '${ChannelID}' == '140'
+        ${ChannelID_ID}  Set Variable  20
     END
     click element  ${5Ghz_ChannelID_dropdown}
     click element  //tr[@id='wireless_5ghz']//li[${ChannelID_ID}]/a

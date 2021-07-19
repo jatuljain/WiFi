@@ -21,4 +21,5 @@ ${ReType_New_Password}  //input[@name='ui_retype_pws']
 ${Default_Language_Tab}  //div[@class='nav_lang']
 ${English_Language}  //html/body/div/a[1]/div
 ${Modify_Password}  //tbody/tr[6]/td[1]/div/a/span[2]
+${Overview_Text}  //title[normalize-space()='Overview']
 # ${English_Language}  //html/body/div/a[1]/div

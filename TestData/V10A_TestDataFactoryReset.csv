@@ -1,2 +1,2 @@
 ${Factory_ssid};${Factory_Authentication_Method};${Factory_password};${Factory_WPS};${Factory_24GHz_Mode};${Factory_5GHz_Mode};${Factory_24GHz_Bandwith};${Factory_5GHz_Bandwith};${Factory_24GHz_ChannelID};${Factory_5GHz_ChannelID};${Factory_Compatibility_Mode}
-Schanshoek9;wpa2;schanshoek2705;1;g/n/ax;an/ac/ax;20MHz;160MHz;Auto;Auto;Disabled
+VRV95170D0365;wpa2;C4XUpvXpWLm3;1;b/g/n;a/n/ac;20 MHz;20/40/80 MHz;Auto all;Auto all;Disabled

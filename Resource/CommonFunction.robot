@@ -19,6 +19,18 @@ Login to DUT
     wait until page contains  ${Topology Overview}  15s
 
 
+Factory Reset Login to DUT
+	Open Browser			${HOME_PAGE} 	${BROWSER}
+    Maximize Browser Window
+    Sleep  2s
+    Click Element  ${Login_button}
+    Sleep  5s
+    wait until page contains  ${Topology Overview}  15s
+    Go to Administration Page
+    Reset the Password
+    
+
+
 Logout from DUT
     unselect frame
     Click Element  ${Logout_button}
