@@ -12,7 +12,9 @@ ${disable_WiFi_Adaptor_cmd}  netsh interface set interface "Wi-Fi" disable
 ${enable_WiFi_Adaptor_cmd}  netsh interface set interface "Wi-Fi" enable
 # ${Connect_SSID}  netsh wlan connect name="${SSID}" ssid="${SSID}" interface="Wi-Fi"
 ${ping_gateway}  ping 192.168.2.254
-${LAN_MAC_cmd}  ipconfig /all | Select-String -Pattern "Wi-Fi" -Context 1,10
+${WiFi_LAN_MAC_cmd}  ipconfig /all | Select-String -Pattern "Wireless LAN adapter Wi-Fi" -Context 1,10
+${LAN_MAC_cmd}  ipconfig /all | Select-String -Pattern "Ethernet adapter Ethernet" -Context 1,10
+# ${LAN_MAC_cmd}  ipconfig /all | Select-String -Pattern "Ethernet adapter Ethernet" -Context 1,10   |  findstr "Physical"
 # ${profile_name}  Wi-Fi-AtulJain.xml
 # ${profile_name}  Wi-Fi-${SSID}.xml
 # ${export_profile_cmd}  netsh wlan export profile name="${profile_name}"
@@ -70,16 +72,24 @@ Connect to SSID
     log  ${result.stdout}
     [Return]  ${result.stdout}
 
+
+Get IP from with WiFi Interface
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${WiFi_LAN_MAC_cmd}  shell=True
+    log  ${result.stdout}
+    @{WiFi_LAN_IP_cmd}=  String.get regexp matches  ${result.stdout}  IPv4 Address.*: ([0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}).*\n  1
+    [return]  ${WiFi_LAN_IP_cmd}[0] 
+
 Ping to Gateway
-    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${ping_gateway}  shell=True
+    ${WiFi_Client_IP}=  Get IP from with WiFi Interface  
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${ping_gateway} -S ${WiFi_Client_IP}  shell=True
     log  ${result.stdout}
     [return]  ${result.stdout} 
 
 
 Get the MAC address for Wi-Fi LAN devices from Windows
-    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${LAN_MAC_cmd}  shell=True
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${WiFi_LAN_MAC_cmd}  shell=True
     log  ${result.stdout}
-    @{LAN_MAC_cmd}=  String.get regexp matches  ${result.stdout}  Physical Address.*: (.*)\n  1
+    @{WiFi_LAN_MAC_cmd}=  String.get regexp matches  ${result.stdout}  Physical Address.*: (.*)\n  1
     # ${Updated_Mac} =	Replace String Using Regexp	 ${LAN_MAC_cmd}  :  -
     # ${Updated_Mac}=  Create List 
     # FOR  ${MAC}  IN  @{LAN_MAC_cmd}
@@ -90,6 +100,13 @@ Get the MAC address for Wi-Fi LAN devices from Windows
     #     Append To List	${Updated_Mac}  ${Updated_MAC_Val}
     # END
     # [return]  ${Updated_Mac} 
+    [return]  ${WiFi_LAN_MAC_cmd}[-1] 
+
+
+Get the MAC address for LAN devices from Windows
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${LAN_MAC_cmd}  shell=True
+    log  ${result.stdout}
+    @{LAN_MAC_cmd}=  String.get regexp matches  ${result.stdout}  Physical Address.*: (.*)\n  1
     [return]  ${LAN_MAC_cmd} 
 
 

@@ -1,4 +1,4 @@
-Documentation  TestCase to Verify Connected Devices
+Documentation  TestCase to Verify WiFi Connected Devices
 
 ***Settings***
 Resource   ../../Resource/PageObjects/ConnectedDevices.robot
@@ -23,14 +23,11 @@ Test Teardown  Cleanup
 
 
 Check Wifi connected devices 
-    [Documentation]  This Test case is to verify Connected Devices
-    # [Arguments]  ${SSID}
-    [Tags]  Funtional  WiFi  V10A
+    [Documentation]  This Test case is to verify WiFi Connected Devices
+    [Tags]  Funtional  WiFi  V10A  WiFiConnectedDevices
     Go to Connected Devices Page
     ${Connected_Devices_Mac_Address_GUI}=  Get the MAC Address of WiFi Connected Devices list
-    ${Connected_Devices_Mac_Address_GUI}=  Change the MAC Address type  ${Connected_Devices_Mac_Address_GUI}
     ${Connected_Devices_Mac_Address_Console}=  Get the MAC address for Wi-Fi LAN devices from Windows
-    # Should Contain Match  ${Connected_Devices_Mac_Address_Console}  ${Connected_Devices_Mac_Address_GUI}
     List Should Contain Sub List  ${Connected_Devices_Mac_Address_Console}  ${Connected_Devices_Mac_Address_GUI}
 
 

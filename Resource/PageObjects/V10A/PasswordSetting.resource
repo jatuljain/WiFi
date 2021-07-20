@@ -44,10 +44,31 @@ Reset the Password
     # Click Element  ${Login_button}
     Run Keyword And Ignore Error  Change the device login password
 
+
+Update the Password
+    [Arguments]    ${Old_Password_Value}
+    set selenium speed  0.25s
+    unselect frame
+    select frame  id:frm_main2
+    press keys  ${Old_Password}  ${Old_Password_Value}
+    press keys  ${UserNew_Password}  ${Admin_Password_value}
+    press keys  ${UserCon_Password}  ${Admin_Password_value}
+    click element  ${Save_Setting}
+    sleep  6s
+
+Update the timeout
+    [Arguments]    ${new_timeout_value}
+    set selenium speed  0.25s
+    unselect frame
+    select frame  id:frm_main2
+    Clear Element Text  ${timeout}
+    press keys  ${timeout}  ${new_timeout_value}
+    click element  ${Save_Setting}
+    sleep  6s
+
 Change the device login password
     press keys  ${UserNew_Password_PostFR}  ${Password_value}
     press keys  ${UserNew_Password_Retype_PostFR}  ${Password_value}
     click element  ${Modify}
     sleep  5s
     wait until page contains  ${Topology Overview}  15s
-    # Click Element  ${Login_button}

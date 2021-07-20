@@ -6,6 +6,7 @@ Resource  ../../Resource/PageObjects/V10A/AdministrationPage.robot
 Resource  ../../Resource/PageObjects/V10A/RebootPage.robot
 Resource  ../../Resource/PageObjects/WLANGuestNetwork.robot
 Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/CommonWindowsFunction.robot
 
 # Resource  ../../Resource/PageObjects/SW2SettingPage.robot
 # Resource  ../../Resource/SW2CommonFunction.robot
@@ -14,8 +15,8 @@ Resource  ../../Resource/CommonFunction.robot
 # Suite Setup  Login to DUT
 # Suite Teardown  Logout from DUT
 
-Test Setup  Login to DUT
-Test Teardown  Run Keyword And Ignore Error  Logout from DUT
+# Test Setup  Login to DUT
+# Test Teardown  Run Keyword And Ignore Error  Logout from DUT
 
 ***Test Cases***
 
@@ -97,3 +98,6 @@ Verify WLAN Page Details
     
 
 
+Verify Ping to Gateway
+    [Tags]  V10A  Funtional  WiFi  PingtoGateway
+    Ping to Gateway
