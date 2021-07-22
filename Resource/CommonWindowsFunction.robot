@@ -20,6 +20,8 @@ ${LAN_MAC_cmd}  ipconfig /all | Select-String -Pattern "Ethernet adapter Etherne
 # ${export_profile_cmd}  netsh wlan export profile name="${profile_name}"
 # ${add_profile_cmd}  netsh wlan add profile filename=\"WiFiProfile\\${profile_name}"
 
+# ${WiFi_Count_BSSID}   netsh wlan show all | Select-String -Pattern "TC-6" -Context 1,65
+
 *** Keywords ***
 Disable the WiFi Adaptor
     ${disable_result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${disable_WiFi_Adaptor_cmd}  shell=True
@@ -127,3 +129,14 @@ Check SSID Broadcast
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Broadcast_SSID}  shell=True
     log  ${result.stdout}
     [Return]  ${result.stdout}
+
+
+Fetch BSSID Broadcast
+    [Arguments]    ${SSID}
+    ${Broadcast_SSID}=  Set Variable    netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,65
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Broadcast_SSID}  shell=True
+    log  ${result.stdout}
+    ${total_bssid}=  Get Lines Matching Regexp  ${result.stdout}  BSSID  1
+    log  ${total_bssid}
+    ${total_bssid_count}=  Get Line Count  ${total_bssid}
+    [Return]  ${total_bssid_count}

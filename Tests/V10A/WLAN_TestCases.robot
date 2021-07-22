@@ -20,6 +20,11 @@ Resource  ../../Resource/CommonWindowsFunction.robot
 
 ***Test Cases***
 
+Verify total BSSID
+    [Tags]  V10A  Funtional  WiFi2.4  WiFi  Test
+    ${Count}=  Fetch BSSID Broadcast  owl
+
+
 Verify WLAN 2.4GHz Channel ID from GUI and Console should match
     [Documentation]  This Test case is to verify 2.4Ghz Channel ID from GUI and Console
     [Tags]  V10A  Funtional  WiFi2.4  WiFi
