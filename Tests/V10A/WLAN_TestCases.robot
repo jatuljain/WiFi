@@ -12,8 +12,8 @@ Resource  ../../Resource/CommonWindowsFunction.robot
 # Resource  ../../Resource/SW2CommonFunction.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
 
-# Suite Setup  Login to DUT
-# Suite Teardown  Logout from DUT
+Suite Setup  Login to DUT
+Suite Teardown  Logout from DUT
 
 # Test Setup  Login to DUT
 # Test Teardown  Run Keyword And Ignore Error  Logout from DUT
@@ -22,7 +22,15 @@ Resource  ../../Resource/CommonWindowsFunction.robot
 
 Verify total BSSID
     [Tags]  V10A  Funtional  WiFi2.4  WiFi  Test
-    ${Count}=  Fetch BSSID Broadcast  owl
+    ${BroadCasted_Count}=  Fetch BSSID Broadcast  owl
+    ${BroadCasted_Count}  Get length  ${BroadCasted_Count}
+    ${CountofSW2}=  Get total SuperWifi2 count
+    ${CountofSW1}=  Get total SuperWifi1 count
+    ${CountofV10A}=  Get total V10A count
+    ${CountofExperiaWiFi}=  Get total ExperiaWiFi count
+    ${Total_APs}=  Evaluate       ${CountofSW2} + ${CountofSW1} + ${CountofV10A} + ${CountofExperiaWiFi}
+    log  Total APs are ${Total_APs}
+    Should Be True	${Total_APs} == ${BroadCasted_Count}
 
 
 Verify WLAN 2.4GHz Channel ID from GUI and Console should match

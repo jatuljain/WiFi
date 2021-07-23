@@ -136,7 +136,27 @@ Fetch BSSID Broadcast
     ${Broadcast_SSID}=  Set Variable    netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,65
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Broadcast_SSID}  shell=True
     log  ${result.stdout}
-    ${total_bssid}=  Get Lines Matching Regexp  ${result.stdout}  BSSID  1
-    log  ${total_bssid}
-    ${total_bssid_count}=  Get Line Count  ${total_bssid}
-    [Return]  ${total_bssid_count}
+    ${output}=  Replace String Using Regexp  ${result.stdout}  \n  \t
+    log   ${output}
+    ${ssid}=  Get Regexp Matches  ${output}   (${SSID}.*?) SSID   1
+    log  ${ssid}
+    ${ssid}=    Catenate    @{ssid} 
+    ${total_bssid}=  Get Regexp Matches   ${ssid}  ([0-9a-fA-F]:?){12}  
+    [Return]  ${total_bssid}
+
+    # ${total_bssid}=  Get Regexp Matches  ${ssid}  BSSID(.*)Other  
+    # log  ${total_bssid}
+    # ${ssid}=  Convert To String  ${ssid}
+    # ${ssid}=  Split String  ${ssid}  \n
+    # ${total_bssid}=  Get Regexp Matches   ${ssid}  (BSSID.*?)\t.*Signal  
+    # ${total_bssunid}=  Replace String Using Regexp  ${total_bssid}  \t  \n
+    # log  ${total_bssid}
+    # ${total_bssid}=  Get Lines Matching Regexp  ${ssid}  (BSSID.*?)Signal      1
+    # log  ${total_bssid}
+    # ${total_bssid_count}=  Get Line Count  ${total_bssid}
+
+    # [Return]  ${total_bssid_count}
+    # ${total_bssid}=  Get Lines Matching Regexp  ${result.stdout}  BSSID  1
+    # log  ${total_bssid}
+    # ${total_bssid_count}=  Get Line Count  ${total_bssid}
+    # [Return]  ${total_bssid}
