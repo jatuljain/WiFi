@@ -75,14 +75,19 @@ Connect to SSID
     [Return]  ${result.stdout}
 
 
-Get IP from with WiFi Interface
-    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${WiFi_LAN_MAC_cmd}  shell=True
-    log  ${result.stdout}
-    @{WiFi_LAN_IP_cmd}=  String.get regexp matches  ${result.stdout}  IPv4 Address.*: ([0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}).*\n  1
+Get IP from console for WiFi Interface
+    FOR  ${VAR}  IN RANGE    3
+        ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${WiFi_LAN_MAC_cmd}  shell=True
+        log  ${result.stdout}
+        ${WiFi_LAN_IP_cmd}=  String.get regexp matches  ${result.stdout}  IPv4 Address.*: ([0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}).*\n  1
+      EXIT For Loop If  ${WiFi_LAN_IP_cmd} != []
+      sleep  10s
+    END
     [return]  ${WiFi_LAN_IP_cmd}[0] 
+    
 
 Ping to Gateway
-    ${WiFi_Client_IP}=  Get IP from with WiFi Interface  
+    ${WiFi_Client_IP}=  Get IP from console for WiFi Interface  
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${ping_gateway} -S ${WiFi_Client_IP}  shell=True
     log  ${result.stdout}
     [return]  ${result.stdout} 

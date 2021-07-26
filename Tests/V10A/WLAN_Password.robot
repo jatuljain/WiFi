@@ -29,7 +29,6 @@ Verify setting SSID Password
     Set the wifi Password  ${SSID_Password}
     Save the WiFi setting
     Logout from DUT
-
     FOR  ${VAR}  IN RANGE    10
         ${Connection_status}=  Connect to SSID  ${SSID}
         ${status}=    Run Keyword And Return Status   Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
