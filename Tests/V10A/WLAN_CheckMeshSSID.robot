@@ -10,14 +10,13 @@ Resource  ../../Resource/CommonWindowsFunction.robot
 
 
 Suite Setup  Fetch the Initial WLAN details
-# Test Setup  Login to DUT
+Test Setup  Login to DUT
 
 
 ***Test Cases***
 
 Verify total BSSID
     [Tags]  V10A  Funtional  WiFi2.4  WiFi  CheckMeshSSID
-    Login to DUT
     ${CountofV10A}=  Get total V10A count
     ${CountofSW2}=  Get total SuperWifi2 count
     ${CountofSW1}=  Get total SuperWifi1 count
