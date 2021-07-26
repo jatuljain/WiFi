@@ -18,9 +18,9 @@ Suite Setup  Fetch the Initial WLAN details
 Verify total BSSID
     [Tags]  V10A  Funtional  WiFi2.4  WiFi  CheckMeshSSID
     Login to DUT
+    ${CountofV10A}=  Get total V10A count
     ${CountofSW2}=  Get total SuperWifi2 count
     ${CountofSW1}=  Get total SuperWifi1 count
-    ${CountofV10A}=  Get total V10A count
     ${CountofExperiaWiFi}=  Get total ExperiaWiFi count
     ${Total_APs}=  Evaluate       ${CountofSW2} + ${CountofSW1} + ${CountofV10A} + ${CountofExperiaWiFi}
     ${Guest_status}=    Get Regexp Matches    ${Orginal_GuestStatus}   switch_on

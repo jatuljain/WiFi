@@ -139,7 +139,7 @@ Check SSID Broadcast
 Fetch BSSID Broadcast
     [Arguments]    ${SSID}
     ${Broadcast_SSID}=  Set Variable    netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,65
-    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Broadcast_SSID}  shell=True
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Broadcast_SSID}  shell=True  stdout=${TEMPDIR}/stdout.txt
     log  ${result.stdout}
     ${output}=  Replace String Using Regexp  ${result.stdout}  \n  \t
     log   ${output}
