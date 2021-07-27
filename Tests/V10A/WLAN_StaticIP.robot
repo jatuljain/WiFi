@@ -1,6 +1,6 @@
 Documentation  TestCase to Verify LAN WiFi Connected Devices with Static IP, In this test case Fetching the initial Gateway and Subnet mask and assiging the static IP to 
 .. DUT WiFi client and checking PING to Gateway with new IP. As part of Cleanup connecting back to orinal SSID and making connectivity to DHCP
-
+.. This test case needs to be run with Administrative access
 
 ***Settings***
 Resource   ../../Resource/CommonWindowsFunction.robot
@@ -14,7 +14,7 @@ Suite Teardown  Cleanup
 
 *** Test Cases ***            
 Verify device with fixed IP DHCP Binding
-    [Tags]  V10A  Funtional  WiFi2.4  WiFi  Test
+    [Tags]  V10A  Funtional WiFi  Static_IP
     Connect to SSID  ${Orginal_ssid}
     Assign static IP to WiFi client  ${Gateway_octect}.10  ${network_mask}  ${network_gateway}
     ${Ping_Status}=  Ping to Gateway
