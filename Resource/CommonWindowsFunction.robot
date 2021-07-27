@@ -93,20 +93,11 @@ Ping to Gateway
     [return]  ${result.stdout} 
 
 
+#This function will get the MAC address of WiFi connected LAN device
 Get the MAC address for Wi-Fi LAN devices from Windows
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${WiFi_LAN_MAC_cmd}  shell=True
     log  ${result.stdout}
     @{WiFi_LAN_MAC_cmd}=  String.get regexp matches  ${result.stdout}  Physical Address.*: (.*)\n  1
-    # ${Updated_Mac} =	Replace String Using Regexp	 ${LAN_MAC_cmd}  :  -
-    # ${Updated_Mac}=  Create List 
-    # FOR  ${MAC}  IN  @{LAN_MAC_cmd}
-    #     # ${MAC_type}  Evaluate    type(${MAC})
-    #     # log  type is ${MAC_type}
-    #     ${Updated_MAC_Val} =	Replace String Using Regexp	 ${MAC}  :  -
-    #     log  Updated MAC is ${Updated_MAC_Val}
-    #     Append To List	${Updated_Mac}  ${Updated_MAC_Val}
-    # END
-    # [return]  ${Updated_Mac} 
     [return]  ${WiFi_LAN_MAC_cmd}[-1] 
 
 
@@ -117,7 +108,7 @@ Get the MAC address for LAN devices from Windows
     [return]  ${LAN_MAC_cmd} 
 
 
-# Pass the list of MAC address and change it
+# Pass the list of MAC address and change it from : tp -
 Change the MAC Address type
     [Arguments]    ${MAC_GUI}
     ${Updated_Mac_List}=  Create List 
@@ -136,6 +127,9 @@ Check SSID Broadcast
     [Return]  ${result.stdout}
 
 
+
+
+# This function will fetch all the BSSID broadcasting for a particular SSID and returns all the MAC address for the BSSID broadcasting
 Fetch BSSID Broadcast
     [Arguments]    ${SSID}
     ${Broadcast_SSID}=  Set Variable    netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,65
@@ -149,19 +143,21 @@ Fetch BSSID Broadcast
     ${total_bssid}=  Get Regexp Matches   ${ssid}  ([0-9a-fA-F]:?){12}  
     [Return]  ${total_bssid}
 
-    # ${total_bssid}=  Get Regexp Matches  ${ssid}  BSSID(.*)Other  
-    # log  ${total_bssid}
-    # ${ssid}=  Convert To String  ${ssid}
-    # ${ssid}=  Split String  ${ssid}  \n
-    # ${total_bssid}=  Get Regexp Matches   ${ssid}  (BSSID.*?)\t.*Signal  
-    # ${total_bssunid}=  Replace String Using Regexp  ${total_bssid}  \t  \n
-    # log  ${total_bssid}
-    # ${total_bssid}=  Get Lines Matching Regexp  ${ssid}  (BSSID.*?)Signal      1
-    # log  ${total_bssid}
-    # ${total_bssid_count}=  Get Line Count  ${total_bssid}
 
-    # [Return]  ${total_bssid_count}
-    # ${total_bssid}=  Get Lines Matching Regexp  ${result.stdout}  BSSID  1
-    # log  ${total_bssid}
-    # ${total_bssid_count}=  Get Line Count  ${total_bssid}
-    # [Return]  ${total_bssid}
+Assign static IP to WiFi client
+    [Arguments]    ${IP}  ${Mask}  ${Gateway} 
+    ${Static_IP}=  Set Variable   netsh interface ip set address name= "Wi-Fi" static ${IP} ${Mask} ${Gateway} 
+    ${result}=  Run Process   C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Static_IP}  shell=True  stdout=${TEMPDIR}/stdout.txt
+    sleep  1s
+
+Assign dhcp IP to WiFi client
+    ${dhcp_IP}=  Set Variable   netsh interface ip set address name= "Wi-Fi" dhcp
+    ${result}=  Run Process   C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${dhcp_IP}  shell=True  stdout=${TEMPDIR}/stdout.txt
+    sleep  1s
+
+
+Get first three octet from IP
+    [Arguments]    ${IP}
+    @{octect} =	Split String	${IP}	.
+    ${firstthreeoctat_IP}=  Catenate   SEPARATOR=.  ${octect}[0]  ${octect}[1]   ${octect}[2]
+    [return]  ${firstthreeoctat_IP}

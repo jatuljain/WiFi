@@ -7,21 +7,31 @@ Resource  ../../Resource/PageObjects/V10A/RebootPage.robot
 Resource  ../../Resource/PageObjects/WLANGuestNetwork.robot
 Resource  ../../Resource/CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
+Resource  ../../Resource/PageObjects/V10A/Network_LAN_Page.robot
 
 # Resource  ../../Resource/PageObjects/SW2SettingPage.robot
 # Resource  ../../Resource/SW2CommonFunction.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
 
-Suite Setup  Login to DUT
-Suite Teardown  Logout from DUT
+Suite Setup  Fetch the Initial WLAN details
+# Suite Teardown  Logout from DUT
 
 # Test Setup  Login to DUT
 # Test Teardown  Run Keyword And Ignore Error  Logout from DUT
 
 ***Test Cases***
 
+
+Verify device with fixed IP DHCP Binding
+    [Tags]  V10A  Funtional  WiFi2.4  WiFi
+    Connect to SSID  ${Orginal_ssid}
+    Assign a static IP to WiFi client  192.168.2.10  255.255.255.0  192.168.2.254
+    Ping to Gateway
+
+
+
 Verify total BSSID
-    [Tags]  V10A  Funtional  WiFi2.4  WiFi  Test
+    [Tags]  V10A  Funtional  WiFi2.4  WiFi BSSID
     ${BroadCasted_Count}=  Fetch BSSID Broadcast  owl
     ${BroadCasted_Count}  Get length  ${BroadCasted_Count}
     ${CountofSW2}=  Get total SuperWifi2 count
@@ -114,3 +124,13 @@ Verify WLAN Page Details
 Verify Ping to Gateway
     [Tags]  V10A  Funtional  WiFi  PingtoGateway
     Ping to Gateway
+
+
+*** Keywords ***
+Fetch the Initial WLAN details 
+    Login to DUT
+    Go to WLAN Page
+    ${Orginal_ssid}=  Get the SSID name
+    Set Global Variable  ${Orginal_ssid}
+    Go to Network Page
+    Logout from DUT
