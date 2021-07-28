@@ -8,7 +8,7 @@ Resource   ../../Resource/CommonFunction.robot
 Resource  ../../Resource/PageObjects/V10A/Network_LAN_Page.robot
 
 Suite Setup  Fetch the Initial DUT details
-Suite Teardown  Cleanup
+Suite Teardown  Run Keyword And Ignore Error  Cleanup
 
 
 

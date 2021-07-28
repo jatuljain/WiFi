@@ -34,9 +34,9 @@ Enable the WiFi Adaptor
 
 Fetch the Channel IDs from Windows Analyser
     [Arguments]    ${SSID}
-    ${cmd}=  Set Variable   netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,16
-    Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${cmd}  shell=True
-    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${cmd}  shell=True
+    ${cmd}=  Set Variable   netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,65
+    # Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${cmd}  shell=True
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${cmd}  shell=True  stdout=${TEMPDIR}/stdout.txt
     log  ${result.stdout}
     ${Analyser_ChannelID_5Ghz}=  String.get regexp matches  ${result.stdout}  Channel.*: (\\d+)  1
     log  Analyser Channel IDs are ${Analyser_ChannelID_5Ghz}
@@ -44,8 +44,8 @@ Fetch the Channel IDs from Windows Analyser
 
 Fetch the 2.4GHz Channel IDs from Windows Analyser
     [Arguments]    ${SSID}
-    ${cmd}=  Set Variable   netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,16
-    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${cmd}  shell=True
+    ${cmd}=  Set Variable   netsh wlan show network mode=bssid | Select-String -Pattern "${SSID}" -Context 1,65
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${cmd}  shell=True  stdout=${TEMPDIR}/stdout.txt
     log  ${result.stdout}
     ${Analyser_ChannelID_5Ghz}=  String.get regexp matches  ${result.stdout}  Channel.*: (\\d+)  1
     log  Analyser Channel IDs are ${Analyser_ChannelID_5Ghz} 
