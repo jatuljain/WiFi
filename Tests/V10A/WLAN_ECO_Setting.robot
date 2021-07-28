@@ -16,8 +16,8 @@ Suite Setup  Fetch the Initial SSID
 
 *** Test Cases *** 
 ECO settings (Wifi signal off)
-    [Documentation]  This Test case is to verify ECO settings (Wifi signal off)
-    [Tags]  V10A  Funtional  WiFi
+    [Documentation]  This Test case is to verify ECO settings When WiFi Signal is Disabled it should not Broadcast (Wifi signal off)
+    [Tags]  V10A  Funtional  WiFi  EcoSetting
     Go to WLAN Page
     Disable SSID Broadcast
     Save the WiFi setting

@@ -1,5 +1,4 @@
 *** Settings ***
-# Library  SeleniumLibrary
 Library  Screenshot  screenshot_module | pillow
 Library    String
 
@@ -440,7 +439,8 @@ Disable WPS
 
 
 Save the WiFi setting
-    wait until page contains  Save settings  60s
+    # wait until page contains  Save settings  60s
+    wait until Element Is Visible  ${Cancel_Button}  60s
     click element  ${WLAN_save_setting}
     Run Keyword And Ignore Error  Handle Alert
     sleep  10s

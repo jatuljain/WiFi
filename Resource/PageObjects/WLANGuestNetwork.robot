@@ -1,5 +1,4 @@
 *** Settings ***
-# Library  SeleniumLibrary
 Library  Screenshot  screenshot_module | pillow 
 
 *** Variables ***

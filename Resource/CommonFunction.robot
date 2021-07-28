@@ -1,5 +1,4 @@
 *** Settings ***
-Library			SeleniumLibrary
 Resource  ../Resource/PageObjects/Authorization.robot
 Resource  ../Resource/PageObjects/HomePage.robot
 Resource  ../Resource/PageObjects/WLANPage.robot
