@@ -313,7 +313,7 @@ Set 5Ghz Bandwith
 
 Set 2.4Ghz Channel ID to Auto
     Login to DUT
-    Go to WLAN Page
+    Go to Settings Page
     click element  ${2.4Ghz_ChannelID_dropdown}
     click element  //tr[@id='wireless_24ghz']//li[1]/a
     Save the WiFi setting
@@ -321,7 +321,7 @@ Set 2.4Ghz Channel ID to Auto
 
 Set 5Ghz Channel ID to Auto
     Login to DUT
-    Go to WLAN Page
+    Go to Settings Page
     click element  ${5Ghz_ChannelID_dropdown}
     click element  //tr[@id='wireless_5ghz']//li[1]/a
     Save the WiFi setting
