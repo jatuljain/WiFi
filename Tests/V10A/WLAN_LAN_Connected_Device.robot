@@ -3,7 +3,7 @@ Documentation  TestCase to Verify LAN Connected Devices
 ***Settings***
 Resource   ../../Resource/PageObjects/V10A/ConnectedDevices.robot
 Resource   ../../Resource/CommonWindowsFunction.robot
-Resource   ../../Resource/CommonFunction.robot
+Resource   ../../Resource/PageObjects/V10A/CommonFunction.robot
 
 Test Setup  Login to DUT
 Test Teardown  Cleanup

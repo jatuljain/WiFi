@@ -2,8 +2,8 @@ Documentation  TestCase to Verify WLAN Setting Post Factory Reset if configured 
                 In this Test will do Factory Reset of SW2 and check the Default values
 
 ***Settings***
-Resource  ../../Resource/PageObjects/SW2SettingPage.robot
-Resource  ../../Resource/SW2CommonFunction.robot
+Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
+Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
 Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
 Library  DataDriver  ../../TestData/TestDataFactoryReset.csv
 

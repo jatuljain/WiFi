@@ -1,7 +1,7 @@
 *** Settings ***
 
 Documentation  TestCase to check Channel ID
-Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
 Resource  ../../Resource/Telnet.robot
 
 Test Setup  Telnet to DUT Console

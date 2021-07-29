@@ -4,9 +4,9 @@ Documentation  TestCase to Verify ECO settings (Wifi signal off)
 
 ***Settings***
 Resource   ../../Resource/Telnet.robot
-Resource  ../../Resource/PageObjects/SW2SettingPage.robot
-Resource  ../../Resource/PageObjects/SW2_WLANGuestNetwork.robot
-Resource  ../../Resource/SW2CommonFunction.robot
+Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
+Resource  ../../Resource/PageObjects/SW2/SW2_WLANGuestNetwork.robot
+Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 
 Test Setup  Login to DUT
@@ -16,8 +16,8 @@ Suite Setup  Fetch the Initial SSID
 
 *** Test Cases *** 
 ECO settings (Wifi signal off)
-    [Documentation]  This Test case is to verify ECO settings (Wifi signal off)
-    [Tags]  SW2   Funtional  WiFi
+    [Documentation]  This Test case is to verify ECO settings (Wifi signal off), Making SSID Broadcasting disable and checking it should not be broadcasted
+    [Tags]  SW2   Funtional  WiFi  SW2EcoSetting
     Go to Settings Page
     Disable SSID Broadcast
     Save the WiFi setting

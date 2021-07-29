@@ -5,7 +5,7 @@ Resource   ../../Resource/Telnet.robot
 Resource  ../../Resource/PageObjects/V10A/AdministrationPage.robot
 Resource  ../../Resource/PageObjects/V10A/RebootPage.robot
 Resource  ../../Resource/PageObjects/V10A/WLANGuestNetwork.robot
-Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 
 

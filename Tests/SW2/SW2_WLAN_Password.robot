@@ -3,8 +3,8 @@ Documentation  TestCase to Verify WLAN SSID through SuperWiFi2
 
 ***Settings***
 Resource   ../../Resource/Telnet.robot
-Resource  ../../Resource/PageObjects/SW2SettingPage.robot
-Resource  ../../Resource/SW2CommonFunction.robot
+Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
+Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 Library  DataDriver  ../../TestData/TestDataPassword.csv
 Default Tags   SW2   Funtional  WiFi

@@ -1,7 +1,7 @@
 *** Settings ***
-Resource  ../Resource/PageObjects/V10A/Authorization.robot
-Resource  ../Resource/PageObjects/V10A/HomePage.robot
-Resource  ../Resource/PageObjects/V10A/WLANPage.robot
+Resource  Authorization.robot
+Resource  HomePage.robot
+Resource  WLANPage.robot
 
 
 

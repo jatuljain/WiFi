@@ -4,7 +4,7 @@ Documentation  TestCase to Verify LAN WiFi Connected Devices with Static IP, In 
 
 ***Settings***
 Resource   ../../Resource/CommonWindowsFunction.robot
-Resource   ../../Resource/CommonFunction.robot
+Resource   ../../Resource/PageObjects/V10A/CommonFunction.robot
 Resource  ../../Resource/PageObjects/V10A/Network_LAN_Page.robot
 
 Suite Setup  Fetch the Initial DUT details

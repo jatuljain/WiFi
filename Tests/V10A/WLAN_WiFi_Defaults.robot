@@ -3,7 +3,7 @@ Documentation  TestCase to Verify WLAN Setting Post reboot
 
 ***Settings***
 Resource  ../../Resource/PageObjects/V10A/WLANPage.robot
-Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
 Resource  ../../Resource/PageObjects/V10A/AdministrationPage.robot
 Resource  ../../Resource/PageObjects/V10A/RebootPage.robot
 

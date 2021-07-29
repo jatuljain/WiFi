@@ -3,7 +3,7 @@ Documentation  TestCase to Verify WLAN Setting Post Factory Reset if configured 
 
 ***Settings***
 Resource  ../../Resource/PageObjects/V10A/WLANPage.robot
-Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
 Resource  ../../Resource/PageObjects/V10A/AdministrationPage.robot
 Library  DataDriver  ../../TestData/V10A_TestDataFactoryReset.csv

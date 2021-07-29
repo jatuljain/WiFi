@@ -6,7 +6,7 @@ Documentation  TestCase to Verify ECO settings (Wifi signal off)
 Resource   ../../Resource/Telnet.robot
 Resource  ../../Resource/PageObjects/V10A/WLANPage.robot
 Resource  ../../Resource/PageObjects/V10A/WLANGuestNetwork.robot
-Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 
 Test Setup  Login to DUT

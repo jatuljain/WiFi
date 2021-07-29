@@ -5,7 +5,7 @@ Documentation  TestCase to Verify 2.4GHz ChannelIDs updated through V10A
 Resource   ../../Resource/Telnet.robot
 Resource  ../../Resource/PageObjects/V10A/WLANPage.robot
 Resource  ../../Resource/PageObjects/V10A/WLANGuestNetwork.robot
-Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 Library  DataDriver  ../../TestData/TestData24GHz.csv
 

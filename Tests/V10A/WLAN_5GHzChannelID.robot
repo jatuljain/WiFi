@@ -4,7 +4,7 @@ Documentation  TestCase to Verify 5GHz ChannelIDs updated through V10A
 Resource   ../../Resource/Telnet.robot
 Resource  ../../Resource/PageObjects/V10A/WLANPage.robot
 Resource  ../../Resource/PageObjects/V10A/WLANGuestNetwork.robot
-Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 Library  DataDriver  ../../TestData/TestData5GHz.csv
 Default Tags  V10A  Funtional  WiFi  5GhzChannelIDSet           

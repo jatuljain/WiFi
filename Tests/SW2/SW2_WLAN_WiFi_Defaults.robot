@@ -2,8 +2,8 @@ Documentation  TestCase to Verify WLAN Setting Post Reboot if configured setting
 
 
 ***Settings***
-Resource  ../../Resource/PageObjects/SW2SettingPage.robot
-Resource  ../../Resource/SW2CommonFunction.robot
+Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
+Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
 Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
 
 

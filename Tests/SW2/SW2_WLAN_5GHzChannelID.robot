@@ -2,8 +2,8 @@ Documentation  TestCase to Verify 5GHz ChannelIDs updated through SuperWiFi2
 
 
 ***Settings***
-Resource  ../../Resource/PageObjects/SW2SettingPage.robot
-Resource  ../../Resource/SW2CommonFunction.robot
+Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
+Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 Library  DataDriver  ../../TestData/TestData5GHz.csv
 Default Tags   SW2   Funtional  WiFi  5GhzChannelIDSet

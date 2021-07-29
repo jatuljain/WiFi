@@ -5,12 +5,12 @@ Resource   ../../Resource/Telnet.robot
 Resource  ../../Resource/PageObjects/V10A/AdministrationPage.robot
 Resource  ../../Resource/PageObjects/V10A/RebootPage.robot
 Resource  ../../Resource/PageObjects/V10A/WLANGuestNetwork.robot
-Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 Resource  ../../Resource/PageObjects/V10A/Network_LAN_Page.robot
 
-# Resource  ../../Resource/PageObjects/SW2SettingPage.robot
-# Resource  ../../Resource/SW2CommonFunction.robot
+# Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
+# Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
 
 Suite Setup  Fetch the Initial WLAN details

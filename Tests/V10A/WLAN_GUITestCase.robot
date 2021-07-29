@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation  TestCase to check Channel ID and SSID
-Resource  ../../Resource/CommonFunction.robot
+Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
 Resource  ../../Resource/PageObjects/V10A/WLANPage.robot
 
 Library	   Telnet

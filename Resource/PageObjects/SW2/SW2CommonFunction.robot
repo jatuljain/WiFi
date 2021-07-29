@@ -1,7 +1,7 @@
 *** Settings ***
 Library			SeleniumLibrary
-Resource  ../Resource/PageObjects/SW2Authorization.robot
-Resource  ../Resource/PageObjects/SW2HomePage.robot
+Resource  SW2Authorization.robot
+Resource  SW2HomePage.robot
 
 
 

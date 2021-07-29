@@ -1,9 +1,9 @@
 Documentation  TestCase to Verify Connected Devices
 
 ***Settings***
-Resource   ../../Resource/PageObjects/SW2MyDevices.robot
+Resource   ../../Resource/PageObjects/SW2/SW2MyDevices.robot
 Resource   ../../Resource/CommonWindowsFunction.robot
-Resource   ../../Resource/SW2CommonFunction.robot
+Resource   ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
 
 Test Setup  Login to DUT
 Test Teardown  Run Keyword And Ignore Error  Cleanup
