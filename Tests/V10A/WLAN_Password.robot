@@ -11,14 +11,14 @@ Library  DataDriver  ../../TestData/TestDataPassword.csv
 Test Setup  Login to DUT
 Suite Setup   Fetch the Initial SSID
 Suite Teardown  Run Keyword And Ignore Error  Cleanup
-Default Tags   V10A   Funtional  WiFi  
+Default Tags   V10A   Funtional  WiFi  WiFiPassword
 
 Test Template  Verify setting SSID Password
 
 
 *** Test Cases ***
-[Documentation]  This Test case is to verify WiFi Password
 Change the WiFi Password Characters of the Wi-Fi network to ${SSID_Password}
+    [Documentation]  This Test case is to verify WiFi Password
 
 
 *** Keywords ***
@@ -30,7 +30,7 @@ Verify setting SSID Password
     Save the WiFi setting
     Logout from DUT
     FOR  ${VAR}  IN RANGE    10
-        ${Connection_status}=  Connect to SSID  ${SSID}
+        ${Connection_status}=  Connect to SSID with Password  ${SSID}  ${SSID_Password}
         ${status}=    Run Keyword And Return Status   Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
       EXIT For Loop If  ${status}
       sleep  30s

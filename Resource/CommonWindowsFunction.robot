@@ -66,8 +66,21 @@ Add WiFi Profile
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${add_profile_cmd}  shell=True
     log  ${result.stdout}
 
+
+# This need to be called when we have special characters in Password
+Connect to SSID with Password
+    [Arguments]    ${SSID}  ${SSID_Password}
+    Add WiFi Profile   ${SSID}
+    ${Update_Password}=  Set Variable    netsh wlan set profileparameter name="${SSID}" keyMaterial="${SSID_Password}"
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Update_Password}  shell=True
+    log  ${result.stdout}
+    ${Connect_SSID}=  Set Variable    netsh wlan connect name="${SSID}" ssid="${SSID}" interface="Wi-Fi"
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Connect_SSID}  shell=True
+    log  ${result.stdout}
+    [Return]  ${result.stdout}
+
 Connect to SSID
-    [Arguments]    ${SSID}
+    [Arguments]    ${SSID}  
     Add WiFi Profile   ${SSID}
     ${Connect_SSID}=  Set Variable    netsh wlan connect name="${SSID}" ssid="${SSID}" interface="Wi-Fi"
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${Connect_SSID}  shell=True

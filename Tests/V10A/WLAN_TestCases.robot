@@ -13,7 +13,7 @@ Resource  ../../Resource/PageObjects/V10A/Network_LAN_Page.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
 
-Suite Setup  Fetch the Initial WLAN details
+# Suite Setup  Fetch the Initial WLAN details
 # Suite Teardown  Logout from DUT
 
 # Test Setup  Login to DUT
@@ -22,16 +22,15 @@ Suite Setup  Fetch the Initial WLAN details
 ***Test Cases***
 
 
-Verify device with fixed IP DHCP Binding
-    [Tags]  V10A  Funtional  WiFi2.4  WiFi
-    Connect to SSID  ${Orginal_ssid}
-    Assign a static IP to WiFi client  192.168.2.10  255.255.255.0  192.168.2.254
+Verify Random TestCase
+    [Tags]  Test
+    Connect to SSID  LongPassword  ABCDEFGHIJKLMNOPQRSTUVWXYZ!123
+    # Assign a static IP to WiFi client  192.168.2.10  255.255.255.0  192.168.2.254
     Ping to Gateway
 
 
 
 Verify total BSSID
-    [Tags]  V10A  Funtional  WiFi2.4  WiFi BSSID
     ${BroadCasted_Count}=  Fetch BSSID Broadcast  owl
     ${BroadCasted_Count}  Get length  ${BroadCasted_Count}
     ${CountofSW2}=  Get total SuperWifi2 count
@@ -45,7 +44,6 @@ Verify total BSSID
 
 Verify WLAN 2.4GHz Channel ID from GUI and Console should match
     [Documentation]  This Test case is to verify 2.4Ghz Channel ID from GUI and Console
-    [Tags]  V10A  Funtional  WiFi2.4  WiFi
     Telnet to DUT Console
     ${2.4Ghz_ChannelID_Console}=  Get the 2.4Ghz channel id from console
     log  Channel ID from Console is ${2.4Ghz_ChannelID_Console}
@@ -58,7 +56,6 @@ Verify WLAN 2.4GHz Channel ID from GUI and Console should match
 
 Verify WLAN 5GHz Channel ID from GUI and Console should match
     [Documentation]  This Test case is to verify 5GHz Channel ID from GUI and Console
-    [Tags]  Funtional  WiFi5  WiFi
     Telnet to DUT Console
     ${5Ghz_ChannelID_Console}=  Get the 5Ghz channel id from console
     log  Channel ID from Console is ${5Ghz_ChannelID_Console}
@@ -96,7 +93,6 @@ Verify WLAN 5GHz Channel ID from GUI and Console should match
 
 Verify WLAN Page Details
     [Documentation]  This Test case is to verify Restart Funtional of DUT
-    [Tags]  V10A  Funtional  WiFi  WLANPage
     Go to WLAN Page
     ${Orginal_ssid}=  Get the SSID name
     Set Global Variable  ${Orginal_ssid}
@@ -114,7 +110,6 @@ Verify WLAN Page Details
 
 Verify WLAN Page Details
     [Documentation]  This Test case is to verify Restart Funtional of DUT
-    [Tags]  V10A  Funtional  WiFi
     Go to Administration Page
     Go to Reboot Page
     Reboot the DUT
@@ -122,7 +117,6 @@ Verify WLAN Page Details
 
 
 Verify Ping to Gateway
-    [Tags]  V10A  Funtional  WiFi  PingtoGateway
     Ping to Gateway
 
 

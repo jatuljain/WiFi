@@ -331,8 +331,12 @@ Save the WiFi setting
     click element  ${WLAN_save_setting}
     sleep  2s
     Click element  ${WLAN_save_setting_Popup}
+    sleep  2s
+    Run Keyword And Ignore Error  Handle WiFi GuestNetwork Popup
     sleep  20s
 
+Handle WiFi GuestNetwork Popup
+    Click element  ${WLAN_save_setting_Popup}
 
 Disable SSID Broadcast
     click element  ${SSID_Broadcast_Dropdown}
