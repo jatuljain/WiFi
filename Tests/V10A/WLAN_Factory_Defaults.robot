@@ -2,7 +2,7 @@ Documentation  TestCase to Verify WLAN Setting Post Factory Reset if configured 
                 In this Test will do Factory Reset of V10A and check the Default values
 
 ***Settings***
-Resource  ../../Resource/PageObjects/WLANPage.robot
+Resource  ../../Resource/PageObjects/V10A/WLANPage.robot
 Resource  ../../Resource/CommonFunction.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
 Resource  ../../Resource/PageObjects/V10A/AdministrationPage.robot

@@ -3,7 +3,7 @@ Documentation  TestCase to WLAN ChannelID Test cases
 
 ***Settings***
 Resource   ../Resource/Telnet.robot
-Resource  ../Resource/PageObjects/WLANPage.robot
+Resource  ../Resource/PageObjects/V10A/WLANPage.robot
 Resource  ../Resource/CommonFunction.robot
 Library  DataDriver  ../TestData/TestData24GHz.csv
 

@@ -3,7 +3,7 @@ Documentation  TestCase to Verify WLAN SSID
 
 ***Settings***
 Resource   ../../Resource/Telnet.robot
-Resource  ../../Resource/PageObjects/WLANPage.robot
+Resource  ../../Resource/PageObjects/V10A/WLANPage.robot
 Resource  ../../Resource/CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 Library  DataDriver  ../../TestData/TestDataPassword.csv
