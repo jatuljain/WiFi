@@ -13,8 +13,8 @@ Test Template  Verify 2.4Ghz ChannelID scenarios
 
 
 *** Test Cases *** 
-[Tags]  V10A  Funtional  WiFi  ChannelIDSet
 Verify setting 2.4GHz ChannelID ${24GHz_Channel} with Bandwith ${24GHz_BandwidthValue} 
+    [Tags]  Funtional  WiFi  ChannelIDSet
 
 
 
