@@ -98,7 +98,8 @@ Get the MAC address for Wi-Fi LAN devices from Windows
     ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${WiFi_LAN_MAC_cmd}  shell=True
     log  ${result.stdout}
     @{WiFi_LAN_MAC_cmd}=  String.get regexp matches  ${result.stdout}  Physical Address.*: (.*)\n  1
-    [return]  ${WiFi_LAN_MAC_cmd}[-1] 
+    [return]  ${WiFi_LAN_MAC_cmd} 
+    # [return]  ${WiFi_LAN_MAC_cmd}[-1] 
 
 
 Get the MAC address for LAN devices from Windows

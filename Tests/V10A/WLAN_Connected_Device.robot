@@ -1,7 +1,7 @@
 Documentation  TestCase to Verify WiFi Connected Devices
 
 ***Settings***
-Resource   ../../Resource/PageObjects/ConnectedDevices.robot
+Resource   ../../Resource/PageObjects/V10A/ConnectedDevices.robot
 Resource   ../../Resource/CommonWindowsFunction.robot
 Resource   ../../Resource/CommonFunction.robot
 
@@ -28,7 +28,7 @@ Check Wifi connected devices
     Go to Connected Devices Page
     ${Connected_Devices_Mac_Address_GUI}=  Get the MAC Address of WiFi Connected Devices list
     ${Connected_Devices_Mac_Address_Console}=  Get the MAC address for Wi-Fi LAN devices from Windows
-    List Should Contain Sub List  ${Connected_Devices_Mac_Address_Console}  ${Connected_Devices_Mac_Address_GUI}
+    List Should Contain Sub List  ${Connected_Devices_Mac_Address_GUI}  ${Connected_Devices_Mac_Address_Console}
 
 
 

@@ -1,7 +1,7 @@
 Documentation  TestCase to Verify LAN Connected Devices
 
 ***Settings***
-Resource   ../../Resource/PageObjects/ConnectedDevices.robot
+Resource   ../../Resource/PageObjects/V10A/ConnectedDevices.robot
 Resource   ../../Resource/CommonWindowsFunction.robot
 Resource   ../../Resource/CommonFunction.robot
 
