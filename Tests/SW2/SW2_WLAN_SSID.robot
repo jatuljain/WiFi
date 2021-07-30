@@ -7,7 +7,7 @@ Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
 Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 Library  DataDriver  ../../TestData/TestDataSSID.csv
-Default Tags   SW2   Funtional  WiFi
+Default Tags   SW2   Funtional  WiFi  WiFiSSID
 
 Test Setup  Login to DUT
 Suite Teardown  Run Keyword And Ignore Error  Cleanup
@@ -29,7 +29,7 @@ Verify setting SSID
     Save the WiFi setting
     Logout from DUT
     FOR  ${VAR}  IN RANGE    10
-        ${Connection_status}=  Connect to SSID  ${SSID}
+        ${Connection_status}=  Connect to SSID with Password  ${SSID}  ${Orginal_password}
         ${status}=    Run Keyword And Return Status   Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
       EXIT For Loop If  ${status}
       sleep  30s
@@ -45,5 +45,7 @@ Cleanup
     Login to DUT
     Go to Settings Page
     Set the SSID name  ${Orginal_ssid}
+    ${Orginal_password}=  Get the wifi Password
+    Set Global Variable  ${Orginal_password}    
     Save the WiFi setting
     Logout from DUT

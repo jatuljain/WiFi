@@ -34,7 +34,7 @@ Verify setting SSID
     # Close All Connections
     # Should Be Equal As Strings  ${SSID}  ${SSID_Console}
     FOR  ${VAR}  IN RANGE    10
-        ${Connection_status}=  Connect to SSID  ${SSID}
+        ${Connection_status}=  Connect to SSID with Password  ${SSID}  ${Orginal_password}
         ${status}=    Run Keyword And Return Status   Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
       EXIT For Loop If  ${status}
       sleep  30s
@@ -50,6 +50,8 @@ Fetch the Initial SSID
     Go to WLAN Page
     ${Orginal_ssid}=  Get the SSID name
     Set Global Variable  ${Orginal_ssid}
+    ${Orginal_password}=  Get the wifi Password
+    Set Global Variable  ${Orginal_password}
     Logout from DUT
 
 Cleanup
