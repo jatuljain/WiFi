@@ -15,7 +15,7 @@ Suite Teardown  Run Keyword And Ignore Error  Cleanup
 *** Test Cases ***            
 Verify device with fixed IP DHCP Binding
     [Tags]  V10A  Funtional WiFi  Static_IP
-    Connect to SSID  ${Orginal_ssid}
+    Connect to SSID with Password  ${Orginal_ssid}  ${Orginal_password}
     Assign static IP to WiFi client  ${Gateway_octect}.10  ${network_mask}  ${network_gateway}
     ${Ping_Status}=  Ping to Gateway
     Should Be True   "Reply from" in """${Ping_Status}"""
@@ -28,6 +28,8 @@ Fetch the Initial DUT details
     Go to WLAN Page
     ${Orginal_ssid}=  Get the SSID name
     Set Global Variable  ${Orginal_ssid}
+    ${Orginal_password}=  Get the wifi Password
+    Set Global Variable  ${Orginal_password}    
     Go to Network Page
     ${network_gateway}   Get the Network Gateway from GUI
     Set Global Variable  ${network_gateway}
