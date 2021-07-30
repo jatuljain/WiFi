@@ -6,6 +6,7 @@ Resource   ../../Resource/CommonWindowsFunction.robot
 Resource   ../../Resource/PageObjects/V10A/CommonFunction.robot
 
 Test Setup  Login to DUT
+Suite Setup  Connect the Initial SSID
 Test Teardown  Cleanup
 
 
@@ -33,5 +34,18 @@ Check Wifi connected devices
 
 
 ***Keywords***
+
+Connect the Initial SSID 
+    Login to DUT
+    Go to WLAN Page
+    ${Orginal_ssid}=  Get the SSID name
+    Set Global Variable  ${Orginal_ssid}
+    ${Orginal_password}=  Get the wifi Password
+    Set Global Variable  ${Orginal_password}
+    Logout from DUT
+    Connect to SSID with Password  ${Orginal_ssid}  ${Orginal_password}
+
+
+
 Cleanup
     Logout from DUT
