@@ -17,7 +17,7 @@ Check LAN connected devices
     Go to Connected Devices Page
     ${Connected_Devices_Mac_Address_GUI}=  Get the MAC Address of LAN Connected Devices list
     ${Connected_Devices_Mac_Address_Console}=  Get the MAC address for LAN devices from Windows
-    List Should Contain Sub List  ${Connected_Devices_Mac_Address_Console}  ${Connected_Devices_Mac_Address_GUI}
+    List Should Contain Sub List  ${Connected_Devices_Mac_Address_GUI}  ${Connected_Devices_Mac_Address_Console}
 
 
 

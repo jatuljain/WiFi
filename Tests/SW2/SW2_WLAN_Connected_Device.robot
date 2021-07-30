@@ -19,7 +19,6 @@ Check Wifi connected devices
     ${Connected_Devices_Mac_Address_GUI}=  Get the MAC Address of WiFi Connected Devices list
     ${Connected_Devices_Mac_Address_GUI}=  Change the MAC Address type  ${Connected_Devices_Mac_Address_GUI}
     ${Connected_Devices_Mac_Address_Console}=  Get the MAC address for Wi-Fi LAN devices from Windows
-    # Should Contain Match  ${Connected_Devices_Mac_Address_Console}  ${Connected_Devices_Mac_Address_GUI}
     List Should Contain Sub List  ${Connected_Devices_Mac_Address_GUI}  ${Connected_Devices_Mac_Address_Console} 
 
 
