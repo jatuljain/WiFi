@@ -8,6 +8,7 @@ Resource  ../../Resource/PageObjects/V10A/WLANGuestNetwork.robot
 Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 Resource  ../../Resource/PageObjects/V10A/Network_LAN_Page.robot
+Resource  ../../Resource/PageObjects/V10A/Network_UPnP_Page.robot
 
 # Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
@@ -16,17 +17,19 @@ Resource  ../../Resource/PageObjects/V10A/Network_LAN_Page.robot
 # Suite Setup  Fetch the Initial WLAN details
 # Suite Teardown  Logout from DUT
 
-# Test Setup  Login to DUT
-# Test Teardown  Run Keyword And Ignore Error  Logout from DUT
+Test Setup  Login to DUT
+Test Teardown  Run Keyword And Ignore Error  Logout from DUT
 
 ***Test Cases***
 
 
 Verify Random TestCase
     [Tags]  Test
-    Connect to SSID  LongPassword  ABCDEFGHIJKLMNOPQRSTUVWXYZ!123
-    # Assign a static IP to WiFi client  192.168.2.10  255.255.255.0  192.168.2.254
-    Ping to Gateway
+    Go to Network Page
+    Go to UPnP tab
+    Disable UPnP
+    Save UPnP Setting
+
 
 
 
