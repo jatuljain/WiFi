@@ -43,9 +43,8 @@ Facrory Reset and verify WLAN settings are set to Defaults
     ${Post_fr_5GHz_Bandwith}=   Get 5GHz Bandwith     
     ${Post_fr_2.4GHz_ChannelID}=   Get the 2.4Ghz Channel ID from GUI  
     ${Post_fr_5GHz_ChannelID}=   Get the 5Ghz Channel ID from GUI
-    Should be equal  ${Post_fr_ssid}  ${Factory_ssid}
+
     Should be equal  ${Post_fr_Authentication_Method}  ${Factory_Authentication_Method}
-    Should be equal  ${Post_fr_password}  ${Factory_password}
     Should be equal  ${Post_fr_2.4GHz_Mode}  ${Factory_24GHz_Mode}
     Should be equal  ${Post_fr_5GHz_Mode}  ${Factory_5GHz_Mode}
     Should be equal  ${Post_fr_2.4GHz_Bandwith}  ${Factory_24GHz_Bandwith}
@@ -53,6 +52,8 @@ Facrory Reset and verify WLAN settings are set to Defaults
     Should be equal  ${Post_fr_2.4GHz_ChannelID}  ${Factory_24GHz_ChannelID}
     Should be equal  ${Post_fr_5GHz_ChannelID}  ${Factory_5GHz_ChannelID}
     Should be equal  ${Post_fr_WPS}  ${Factory_WPS}
+    # Should be equal  ${Post_fr_ssid}  ${Factory_ssid}
+    # Should be equal  ${Post_fr_password}  ${Factory_password}
     Logout from DUT
 
 
