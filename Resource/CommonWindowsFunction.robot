@@ -105,6 +105,12 @@ Ping to Gateway
     log  ${result.stdout}
     [return]  ${result.stdout} 
 
+Ping to WiFi Interface Gateway
+    ${WiFi_Client_IP}=  Get IP from console for WiFi Interface  
+    ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${ping_gateway} -S ${WiFi_Client_IP}  shell=True
+    log  ${result.stdout}
+    [return]  ${result.stdout} 
+
 
 #This function will get the MAC address of WiFi connected LAN device
 Get the MAC address for Wi-Fi LAN devices from Windows
@@ -120,6 +126,13 @@ Get the MAC address for LAN devices from Windows
     log  ${result.stdout}
     @{LAN_MAC_cmd}=  String.get regexp matches  ${result.stdout}  Physical Address.*: (.*)\n  1
     [return]  ${LAN_MAC_cmd} 
+
+
+Get the MAC address octects for Wi-Fi LAN devices from Windows 
+    @{WiFi_MAC}=  Get the MAC address for Wi-Fi LAN devices from Windows  
+    @{MAC_octect} =	Split String	${WiFi_MAC}[0]	 -
+    [return]  ${MAC_octect}[0]  ${MAC_octect}[1]  ${MAC_octect}[2]  ${MAC_octect}[3]  ${MAC_octect}[4]  ${MAC_octect}[5]  
+
 
 
 # Pass the list of MAC address and change it from : tp -

@@ -36,12 +36,6 @@ Reset the Password
     Sleep  2s
     Click Element  ${Login_button}
     Sleep  2s
-    # Logout from DUT
-    # sleep  2s
-    # Open Browser			${HOME_PAGE} 	${BROWSER}
-    # Maximize Browser Window
-    # Sleep  2s
-    # Click Element  ${Login_button}
     Run Keyword And Ignore Error  Change the device login password
 
 

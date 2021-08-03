@@ -37,7 +37,7 @@ Verify setting SSID
     # ${Connection_status}=  Connect to SSID
     Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
     ${Ping_Status}=  Ping to Gateway
-    Should Be True   "Reply from.*bytes=32 time<1ms TTL=64"  "${Ping_Status}"
+    Should Be True   "Reply from" in """${Ping_Status}"""
 
 
 
