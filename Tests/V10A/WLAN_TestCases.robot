@@ -17,21 +17,32 @@ Resource  ../../Resource/PageObjects/V10A/WLAN_MAC_Filtering_Page.robot
 # Suite Setup  Fetch the Initial WLAN details
 # Suite Teardown  Logout from DUT
 
-# Test Setup  Login to DUT
-# Test Teardown  Run Keyword And Ignore Error  Logout from DUT
+Test Setup  Login to DUT
+Test Teardown  Run Keyword And Ignore Error  Logout from DUT
 
 ***Test Cases***
 
 
 Verify Random TestCase
-    [Tags]  
+    [Tags]  Test
     Go to Network Page
     ${Start_IP}=  Get the DHCP Start IP from DHCP Pool from GUI
     ${EndIP_IP}=  Get the DHCP End IP from DHCP Pool from GUI
+    Telnet to DUT Console
+    ${Orginal_ssid}=  Get the SSID from console
+    ${Orginal_password}=  Get the SSID Password from console
+    ${Connection_status}=  Connect to SSID with Password  ${Orginal_ssid}  ${Orginal_password}
+    ${IP_Console}=  Get IP from console for WiFi Interface
+    @{Start_IP_octect} =	Split String	${Start_IP}	 .
+    @{End_IP_octect} =	Split String	${EndIP_IP}	 .
+    @{Console_IP_octect} =	Split String	${IP_Console}	 .
+    should be True  ${Console_IP_octect}[3] > ${Start_IP_octect}[3] 
+    should be True  ${Console_IP_octect}[3] < ${End_IP_octect}[3] 
+
 
 
 Verify Random Disbale TestCase
-    [Tags]  Test
+    [Tags]  
     Telnet to DUT Console
     Get the SSID from console
     Get the SSID Password from console

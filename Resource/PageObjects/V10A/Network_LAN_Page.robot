@@ -18,7 +18,7 @@ ${forth_octet_StartIP}  //tbody/tr[1]/td[2]/span[7]/div/div/input
 
 ${first_octet_EndIP}  //tr[3]/td/table/tbody/tr[2]/td[2]/span[1]/div/div/input
 ${second_octet_EndIP}  //tr[3]/td/table/tbody/tr[2]/td[2]/span[3]/div/div/input
-${third_octet_EndIP}  //tr[3]/td/table/tbody/tr[2/td[2]/span[5]/div/div/input
+${third_octet_EndIP}  //tr[3]/td/table/tbody/tr[2]/td[2]/span[5]/div/div/input
 ${forth_octet_EndIP}  //tr[3]/td/table/tbody/tr[2]/td[2]/span[7]/div/div/input
 
 
