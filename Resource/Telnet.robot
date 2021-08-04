@@ -33,3 +33,20 @@ Get the SSID from console
     
     log  SSID from console is ${result_ssid[0]}
     [return]  ${result_ssid[0]}
+    
+Get the SSID Password from console
+    ${ssid_Password_console}=  Execute Command  cat /etc/config/.glbcfg |grep ARC_WLAN_5G_SSID_0_WPA_Passphrase
+    log  ${ssid_Password_console}
+    ${result_ssid}=  String.get regexp matches  ${ssid_Password_console}  =(.*)  1
+    
+    log  SSID Password from console is ${result_ssid[0]}
+    [return]  ${result_ssid[0]}  
+
+
+Get the UPnP Status from console
+    ${UPnP_console}=  Execute Command  cat /etc/config/.glbcfg |grep ARC_UPNP_Enable
+    log  ${UPnP_console}
+    ${result_upnp}=  String.get regexp matches  ${UPnP_console}  =(.*)  1
+    ${result_upnp[0]}  Strip String  ${result_upnp[0]} 
+    log  UPnP status from console is ${result_upnp[0]}
+    [return]  ${result_upnp[0]}
