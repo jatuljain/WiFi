@@ -10,6 +10,7 @@ Resource  ../../Resource/CommonWindowsFunction.robot
 Resource  ../../Resource/PageObjects/V10A/Network_LAN_Page.robot
 Resource  ../../Resource/PageObjects/V10A/Network_UPnP_Page.robot
 Resource  ../../Resource/PageObjects/V10A/WLAN_MAC_Filtering_Page.robot
+Resource  ../../Resource/PageObjects/V10A/Network_DDNS_Page.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
 # Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
@@ -26,18 +27,24 @@ Test Teardown  Run Keyword And Ignore Error  Logout from DUT
 Verify Random TestCase
     [Tags]  Test
     Go to Network Page
-    ${Start_IP}=  Get the DHCP Start IP from DHCP Pool from GUI
-    ${EndIP_IP}=  Get the DHCP End IP from DHCP Pool from GUI
-    Telnet to DUT Console
-    ${Orginal_ssid}=  Get the SSID from console
-    ${Orginal_password}=  Get the SSID Password from console
-    ${Connection_status}=  Connect to SSID with Password  ${Orginal_ssid}  ${Orginal_password}
-    ${IP_Console}=  Get IP from console for WiFi Interface
-    @{Start_IP_octect} =	Split String	${Start_IP}	 .
-    @{End_IP_octect} =	Split String	${EndIP_IP}	 .
-    @{Console_IP_octect} =	Split String	${IP_Console}	 .
-    should be True  ${Console_IP_octect}[3] > ${Start_IP_octect}[3] 
-    should be True  ${Console_IP_octect}[3] < ${End_IP_octect}[3] 
+    Go to DDNS tab
+    Enable DDNS
+    Set Account E-mail for DDNS  Test2
+    Set Password or Key for DDNS  Test2
+    Set Domain name for DDNS  Test2
+    Save DDNS Setting
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
