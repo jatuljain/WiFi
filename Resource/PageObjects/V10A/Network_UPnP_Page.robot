@@ -14,10 +14,13 @@ Go to UPnP tab
     sleep  2s
     select frame  id:frm_main2
     wait until page contains  ${UPnP_Content}  60s
+    wait until Element Is Visible  ${UPnP_Check}  60s
+
 
 
 
 Get UPnP Status
+    wait until Element Is Visible  ${UPnP_Check}  60s
     ${UPnP_Check_Status} =  get element attribute  ${UPnP_Check}  class
     ${UPnP_Check_Status}=  Convert To String  ${UPnP_Check_Status}
     ${status}=  Get Regexp Matches  ${UPnP_Check_Status}  arcTransformChecked
