@@ -1,4 +1,5 @@
 ${24GHz_Channel};${ChannelID_index};${24GHz_Bandwidth};${24GHz_BandwidthValue}
+0;1;1;20 MHz
 1;2;1;20 MHz
 2;3;1;20 MHz
 3;4;1;20 MHz
@@ -12,6 +13,7 @@ ${24GHz_Channel};${ChannelID_index};${24GHz_Bandwidth};${24GHz_BandwidthValue}
 11;12;1;20 MHz
 12;13;1;20 MHz
 13;14;1;20 MHz
+0;1;2;20/40 MHz
 1;2;2;20/40 MHz
 2;3;2;20/40 MHz
 3;4;2;20/40 MHz 

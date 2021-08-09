@@ -17,7 +17,6 @@ Suite Setup  Fetch the Initial SSID
 Default Tags   V10A   Funtional  WiFi  24GhzChannelIDSet
 
 
-
 *** Test Cases ***
 Verify setting 2.4Ghz ChannelID ${24GHz_Channel} with Bandwith ${24GHz_BandwidthValue} 
   [Documentation]  This Test case is to verify setting different channel and Bandwith
@@ -37,15 +36,17 @@ Verify 2.4Ghz ChannelID scenarios
     Close All Connections
     Should be equal  ${2.4Ghz_ChannelID_Console}  ${24GHz_Channel}
     sleep  60s
-    FOR  ${VAR}  IN RANGE    10
-      ${2.4Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser  ${Orginal_ssid}
-      ${2.4Ghz_ChannelID_Analyser_Length}  Get Length  ${2.4Ghz_ChannelID_Analyser}
-      log  ChannelIDs are ${2.4Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${2.4Ghz_ChannelID_Analyser_Length}
-      ${status}=    Run Keyword And Return Status  list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${2.4Ghz_ChannelID_Console}
-      EXIT For Loop If  ${status}
-      sleep  30s
+    IF  '${24GHz_Channel}' != '0'
+      FOR  ${VAR}  IN RANGE    10
+        ${2.4Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser  ${Orginal_ssid}
+        ${2.4Ghz_ChannelID_Analyser_Length}  Get Length  ${2.4Ghz_ChannelID_Analyser}
+        log  ChannelIDs are ${2.4Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${2.4Ghz_ChannelID_Analyser_Length}
+        ${status}=    Run Keyword And Return Status  list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${2.4Ghz_ChannelID_Console}
+        EXIT For Loop If  ${status}
+        sleep  30s
+      END
+      list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${2.4Ghz_ChannelID_Console}
     END
-    list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${2.4Ghz_ChannelID_Console}
     ${Connection_status}=  Connect to SSID  ${Orginal_ssid}
     Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
     ${Ping_Status}=  Ping to Gateway

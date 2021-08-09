@@ -38,15 +38,17 @@ Verify 5Ghz ChannelID scenarios
     ELSE  
       sleep  180s
     END
-    FOR  ${VAR}  IN RANGE    14
-      ${5Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser  ${Orginal_ssid}
-      ${5Ghz_ChannelID_Analyser_Length}  Get Length  ${5Ghz_ChannelID_Analyser}
-      log  ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}
-      ${status}=    Run Keyword And Return Status  list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5Ghz_ChannelID_Console}
-      EXIT For Loop If  ${status}
-      sleep  30s
+    IF  '${5GHz_Channel}' != '0'
+      FOR  ${VAR}  IN RANGE    14
+        ${5Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser  ${Orginal_ssid}
+        ${5Ghz_ChannelID_Analyser_Length}  Get Length  ${5Ghz_ChannelID_Analyser}
+        log  ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}
+        ${status}=    Run Keyword And Return Status  list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5Ghz_ChannelID_Console}
+        EXIT For Loop If  ${status}
+        sleep  30s
+      END
+      list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5Ghz_ChannelID_Console}
     END
-    list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5Ghz_ChannelID_Console}
     ${Connection_status}=  Connect to SSID  ${Orginal_ssid}
     Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
     ${Ping_Status}=  Ping to Gateway
@@ -59,7 +61,7 @@ Fetch the Initial SSID
     Go to WLAN Page
     ${Orginal_ssid}=  Get the SSID name
     Set Global Variable  ${Orginal_ssid}
-    Go to WLAN Guest Page
-    Disable Guest Network
-    Save Guest WiFi Network Settings
+    # Go to WLAN Guest Page
+    # Disable Guest Network
+    # Save Guest WiFi Network Settings
     Logout from DUT
