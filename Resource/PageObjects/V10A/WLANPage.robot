@@ -60,7 +60,7 @@ Go to WLAN Page
     sleep  5s
     wait until page contains  Access Points
     select frame  id:frm_main2
-    current frame should contain  ${wlan_page}
+    # current frame should contain  ${wlan_page}
     # wait until page contains  ${wlan_page}  10s
     wait until Element Is Visible  ${ssid_name_2.4G}  60s
 
