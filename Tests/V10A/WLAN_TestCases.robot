@@ -18,33 +18,15 @@ Resource  ../../Resource/PageObjects/V10A/Network_DDNS_Page.robot
 # Suite Setup  Fetch the Initial WLAN details
 # Suite Teardown  Logout from DUT
 
-Test Setup  Login to DUT
-Test Teardown  Run Keyword And Ignore Error  Logout from DUT
+# Test Setup  Login to DUT
+# Test Teardown  Run Keyword And Ignore Error  Logout from DUT
 
 ***Test Cases***
 
 
 Verify Random TestCase
     [Tags]  Test
-    Go to Network Page
-    Go to DDNS tab
-    Enable DDNS
-    Set Account E-mail for DDNS  Test2
-    Set Password or Key for DDNS  Test2
-    Set Domain name for DDNS  Test2
-    Save DDNS Setting
-
-
-
-
-
-
-
-
-
-
-
-
+    Get IP from console for WiFi Interface
 
 
 
