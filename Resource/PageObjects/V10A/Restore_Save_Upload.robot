@@ -22,4 +22,3 @@ Factory Reset the DUT
     Run Keyword And Ignore Error   Handle Alert
     Run Keyword And Ignore Error   Handle Alert
     sleep  90s
-
