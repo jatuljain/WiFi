@@ -11,7 +11,8 @@ Default Tags   SW2   Funtional  WiFi  24GhzChannelIDSet
 
 
 Test Setup  Login to DUT
-Suite Teardown  Run Keyword And Ignore Error  Set 2.4Ghz Channel ID to Auto
+# Suite Teardown  Run Keyword And Ignore Error  Set 2.4Ghz Channel ID to Auto
+Suite Teardown  Run Keyword And Ignore Error  Cleanup
 Suite Setup  Fetch the Initial SSID
 
 Test Template  Verify 2.4Ghz ChannelID scenarios
@@ -31,22 +32,18 @@ Verify 2.4Ghz ChannelID scenarios
     Set 2.4Ghz Bandwith with value  ${24GHz_Bandwidth}
     Save the WiFi setting
     Logout from DUT
-    # Telnet to DUT Console
-    # ${2.4Ghz_ChannelID_Console}=  Get the 2.4Ghz channel id from console
-    # log  Channel ID from Console is ${2.4Ghz_ChannelID_Console}
-    # Close All Connections
-    # Should be equal  ${2.4Ghz_ChannelID_Console}  ${24GHz_Channel}
     sleep  60s
-    FOR  ${VAR}  IN RANGE    10
-      ${2.4Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser  ${Orginal_ssid}
-      ${2.4Ghz_ChannelID_Analyser_Length}  Get Length  ${2.4Ghz_ChannelID_Analyser}
-      log  ChannelIDs are ${2.4Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${2.4Ghz_ChannelID_Analyser_Length}
-      ${status}=    Run Keyword And Return Status  list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${24GHz_Channel}
-      EXIT For Loop If  ${status}
-      # EXIT For Loop If  ${2.4Ghz_ChannelID_Analyser_Length} >= 2
-      sleep  30s
+    IF  '${24GHz_Channel}' != '0'
+        FOR  ${VAR}  IN RANGE    10
+            ${2.4Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser  ${Orginal_ssid}
+            ${2.4Ghz_ChannelID_Analyser_Length}  Get Length  ${2.4Ghz_ChannelID_Analyser}
+            log  ChannelIDs are ${2.4Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${2.4Ghz_ChannelID_Analyser_Length}
+            ${status}=    Run Keyword And Return Status  list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${24GHz_Channel}
+            EXIT For Loop If  ${status}
+            sleep  30s
+        END
+        list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${24GHz_Channel}
     END
-    list Should contain value  ${2.4Ghz_ChannelID_Analyser}  ${24GHz_Channel}
     ${Connection_status}=  Connect to SSID  ${Orginal_ssid}
     Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
     ${Ping_Status}=  Ping to Gateway
@@ -60,3 +57,8 @@ Fetch the Initial SSID
     ${Orginal_ssid}=  Get the SSID name
     Set Global Variable  ${Orginal_ssid}
     Logout from DUT
+
+Cleanup
+    Set 2.4Ghz Channel ID to Auto and Bandwith to Default
+
+

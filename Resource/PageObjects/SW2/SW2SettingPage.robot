@@ -311,6 +311,17 @@ Set 5Ghz Bandwith
     click element  //table[3]/tbody/tr[4]/td[2]/div/ul/li[${Bandwith_ID}]/a
 
 
+Set 2.4Ghz Channel ID to Auto and Bandwith to Default
+    Login to DUT
+    Go to Settings Page
+    click element  ${2.4Ghz_ChannelID_dropdown}
+    click element  //tr[@id='wireless_24ghz']//li[1]/a
+    click element  ${2.4Ghz_Bandwidth_dropdown}
+    click element  //table[3]/tbody/tr[3]/td[2]/div/ul/li[1]/a
+    Save the WiFi setting
+    Logout from DUT
+
+
 Set 2.4Ghz Channel ID to Auto
     Login to DUT
     Go to Settings Page
@@ -324,6 +335,16 @@ Set 5Ghz Channel ID to Auto
     Go to Settings Page
     click element  ${5Ghz_ChannelID_dropdown}
     click element  //tr[@id='wireless_5ghz']//li[1]/a
+    Save the WiFi setting
+    Logout from DUT
+
+Set 5Ghz Channel ID to Auto and Bandwith to Default
+    Login to DUT
+    Go to Settings Page
+    click element  ${5Ghz_ChannelID_dropdown}
+    click element  //tr[@id='wireless_5ghz']//li[1]/a
+    click element  ${5Ghz_Bandwidth_dropdown}
+    click element  //table[3]/tbody/tr[4]/td[2]/div/ul/li[3]/a
     Save the WiFi setting
     Logout from DUT
 

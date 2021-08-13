@@ -1,3 +1,9 @@
+############### Test case Description ########
+# Test type: WLAN SSID connectivity
+# Description: TestCase is to Verify different WLAN SSID connectivity
+# Application(s) used: Windows Utility WLAN NETSH
+# Input file(s) Used: ../../TestData/TestDataSSID.csv
+##############################################
 Documentation  TestCase to Verify WLAN SSID
 
 

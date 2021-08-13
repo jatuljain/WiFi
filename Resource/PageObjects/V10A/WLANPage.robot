@@ -351,6 +351,27 @@ Set 5Ghz Channel ID to Auto
     Logout from DUT
 
 
+Set 2.4Ghz Channel ID to Auto and Bandwith to Default
+    Login to DUT
+    Go to WLAN Page
+    click element  ${2.4Ghz_ChannelID_dropdown}
+    click element  //*[@id="tr_wchan_both"]/td[2]/div[1]/ul/li[1]/a
+    click element  ${2.4Ghz_Bandwidth_dropdown}
+    click element  //*[@id="tr_bandwidth_both"]/td[2]/div[1]/ul/li[1]/a    
+    Save the WiFi setting
+    Logout from DUT
+
+Set 5Ghz Channel ID to Auto and Bandwith to Default
+    Login to DUT
+    Go to WLAN Page
+    click element  ${5Ghz_ChannelID_dropdown}
+    click element  //*[@id="tr_wchan_both"]/td[2]/div[2]/ul/li[1]/a
+    click element  ${5Ghz_Bandwidth_dropdown}
+    click element  //*[@id="tr_bandwidth_both"]/td[2]/div[2]/ul/li[3]/a    
+    Save the WiFi setting
+    Logout from DUT
+
+
 Get the IGMP Snooping Status
     ${IGMP_Snooping_Status} =  get element attribute  ${IGMP_Snooping_ToggelButton}  class
     log  ${IGMP_Snooping_Status} is Current IGMP Snooping Status

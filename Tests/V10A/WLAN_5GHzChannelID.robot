@@ -10,7 +10,8 @@ Library  DataDriver  ../../TestData/TestData5GHz.csv
 Default Tags  V10A  Funtional  WiFi  5GhzChannelIDSet           
 
 Test Setup  Login to DUT
-Suite Teardown  Run Keyword And Ignore Error  Set 5Ghz Channel ID to Auto
+# Suite Teardown  Run Keyword And Ignore Error  Set 5Ghz Channel ID to Auto
+Suite Teardown  Run Keyword And Ignore Error  Cleanup
 Suite Setup  Fetch the Initial SSID
 
 Test Template  Verify 5Ghz ChannelID scenarios
@@ -65,3 +66,6 @@ Fetch the Initial SSID
     # Disable Guest Network
     # Save Guest WiFi Network Settings
     Logout from DUT
+
+Cleanup
+    Set 5Ghz Channel ID to Auto and Bandwith to Default

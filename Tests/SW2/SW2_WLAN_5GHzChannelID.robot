@@ -5,13 +5,14 @@ Documentation  TestCase to Verify 5GHz ChannelIDs updated through SuperWiFi2
 Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
 Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
-Library  DataDriver  ../../TestData/TestData5GHz.csv
+Library  DataDriver  ../../TestData/SW2_TestData5GHz.csv
 Default Tags   SW2   Funtional  WiFi  5GhzChannelIDSet
 
 
 Test Setup  Login to DUT
 # Test Teardown  Logout from DUT
-Suite Teardown  Run Keyword And Ignore Error  Set 5Ghz Channel ID to Auto
+# Suite Teardown  Run Keyword And Ignore Error  Set 5Ghz Channel ID to Auto
+Suite Teardown  Run Keyword And Ignore Error  Cleanup
 Suite Setup  Fetch the Initial SSID
 
 Test Template  Verify 5Ghz ChannelID scenarios
@@ -37,17 +38,19 @@ Verify 5Ghz ChannelID scenarios
       sleep  60s
     ELSE  
       sleep  180s
-    END    
-    FOR  ${VAR}  IN RANGE    14
-      ${5Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser  ${Orginal_ssid}
-      ${5Ghz_ChannelID_Analyser_Length}  Get Length  ${5Ghz_ChannelID_Analyser}
-      log  ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}
-      ${status}=    Run Keyword And Return Status  list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5GHz_Channel}
-      EXIT For Loop If  ${status}
-      # EXIT For Loop If  ${5Ghz_ChannelID_Analyser_Length} >= 2
-      sleep  30s
     END
-    list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5GHz_Channel}
+    IF  '${5GHz_Channel}' != '0'
+      FOR  ${VAR}  IN RANGE    14
+        ${5Ghz_ChannelID_Analyser}=  Fetch the Channel IDs from Windows Analyser  ${Orginal_ssid}
+        ${5Ghz_ChannelID_Analyser_Length}  Get Length  ${5Ghz_ChannelID_Analyser}
+        log  ChannelIDs are ${5Ghz_ChannelID_Analyser} and Length of ChannelIDs is ${5Ghz_ChannelID_Analyser_Length}
+        ${status}=    Run Keyword And Return Status  list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5GHz_Channel}
+        EXIT For Loop If  ${status}
+        # EXIT For Loop If  ${5Ghz_ChannelID_Analyser_Length} >= 2
+        sleep  30s
+      END
+      list Should contain value  ${5Ghz_ChannelID_Analyser}  ${5GHz_Channel}
+    END  
     ${Connection_status}=  Connect to SSID  ${Orginal_ssid}
     Should Be True      "Connection request was completed successfully" in """${Connection_status}"""
     ${Ping_Status}=  Ping to Gateway
@@ -62,3 +65,7 @@ Fetch the Initial SSID
     ${Orginal_ssid}=  Get the SSID name
     Set Global Variable  ${Orginal_ssid}
     Logout from DUT
+
+
+Cleanup
+    Set 5Ghz Channel ID to Auto and Bandwith to Default
