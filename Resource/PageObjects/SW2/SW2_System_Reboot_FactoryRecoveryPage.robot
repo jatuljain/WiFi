@@ -4,7 +4,8 @@ ${Restart}  Restart
 ${System_Information}  System Information
 ${Restart_Button}  //tbody/tr/td[2]/div/a/span[2]
 ${RestoreToFactoryDefault_Button}  //tr[2]/td/form/table[2]/tbody/tr/td/div/a/span[2]
-${Restart_And_FacrotyRecovery_Tab}  //tr[5]/td/table/tbody/tr/td/a/div/div[1]
+# ${Restart_And_FacrotyRecovery_Tab}  //tr[5]/td/table/tbody/tr/td/a/div/div[1]
+${Restart_And_FacrotyRecovery_Tab}  //div[contains(text(),'Restart / Factory recovery')]
 ${Factory_Reset}   Factory Reset
 
 

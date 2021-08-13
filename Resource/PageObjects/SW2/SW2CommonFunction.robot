@@ -55,3 +55,15 @@ Change Default Language to English
     Sleep  2s
     wait until page contains  Username  5s
     unselect frame
+
+
+Login to DUT with Updated New Password
+    [Arguments]    ${New_Password}
+    Open Browser			${HOME_PAGE} 	${BROWSER}
+    Maximize Browser Window
+    Sleep  2s
+    Change Default Language to English
+    press keys  ${Password}  ${New_Password}
+    Sleep  2s
+    Click Element  ${Login_button}
+    Sleep  5s    
