@@ -5,7 +5,7 @@ Library			SeleniumLibrary
 
 *** Variables ***
 ${BROWSER}		firefox
-${HOME_PAGE}     http://192.168.2.23/login.htm
+${HOME_PAGE}     http://192.168.2.8/login.htm
 ${Device_Type}  SW2
 ${Authorization}     Authorization
 ${Advanced}   Advanced

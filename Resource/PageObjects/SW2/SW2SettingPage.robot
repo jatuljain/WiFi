@@ -130,7 +130,7 @@ Set 5GHz Mode
         ${Mode_ID}  Set Variable  2
     ELSE IF  '${Mode}' == 'n/ac/ax'
         ${Mode_ID}  Set Variable  3    
-    ELSE IF  '${Mode}' == 'an/ac/ax'
+    ELSE IF  '${Mode}' == 'a/n/ac/ax'
         ${Mode_ID}  Set Variable  4
     END
     click element  ${5GHzMode_dropdown}
