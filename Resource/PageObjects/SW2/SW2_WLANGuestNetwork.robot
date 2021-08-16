@@ -6,6 +6,7 @@ Library  Screenshot  screenshot_module | pillow
 ${Guest_Network_Tab}  //div[contains(text(),'Guest Network')]
 ${Guest_Network_Page}  Guest Network
 ${Wireless_Guest_Dropdown}  //tbody/tr[1]/td[2]/div/div/a
+${Wireless_Guest_Status}  //tbody/tr[1]/td[2]/div/div/span
 
 ${Guest_SSID_ToggleBUtton}  //tbody/tr[2]/td[2]/div
 ${Guest_SSID_SaveSetting}  //tbody/tr/td[2]/div/a/span[2]
@@ -49,3 +50,9 @@ Enable Guest SSID Broadcast
 
 Disable Guest SSID Broadcast
     click Element  ${Guest_SSID_ToggleBUtton}
+
+Get the Guest Network Status
+    ${current_GuestNetwork_Status} =  get Text  ${Wireless_Guest_Status}
+    log  ${current_GuestNetwork_Status} is Current Guest Network Status
+    [return]  ${current_GuestNetwork_Status}
+

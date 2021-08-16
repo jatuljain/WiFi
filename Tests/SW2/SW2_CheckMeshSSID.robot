@@ -1,11 +1,9 @@
 Documentation  TestCase to WLAN features
 
 ***Settings***
-# Resource   ../../Resource/Telnet.robot
-Resource  ../../Resource/PageObjects/V10A/AdministrationPage.robot
-Resource  ../../Resource/PageObjects/V10A/RebootPage.robot
-Resource  ../../Resource/PageObjects/V10A/WLANGuestNetwork.robot
-Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
+Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
+Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
+Resource  ../../Resource/PageObjects/SW2/SW2_WLANGuestNetwork.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
 
 
@@ -16,7 +14,7 @@ Test Setup  Login to DUT
 ***Test Cases***
 
 Verify total BSSID
-    [Tags]  V10A  Funtional  WiFi2.4  WiFi  CheckMeshSSID
+    [Tags]  SW2  Funtional  WiFi  CheckMeshSSID
     ${CountofV10A}=  Get total V10A count
     ${CountofSW2}=  Get total SuperWifi2 count
     ${CountofSW1}=  Get total SuperWifi1 count
@@ -40,7 +38,7 @@ Verify total BSSID
 *** Keywords ***
 Fetch the Initial WLAN details 
     Login to DUT
-    Go to WLAN Page
+    Go to Settings Page
     ${Orginal_ssid}=  Get the SSID name
     Set Global Variable  ${Orginal_ssid}
     Go to WLAN Guest Page
