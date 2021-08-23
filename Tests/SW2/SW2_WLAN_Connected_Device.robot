@@ -13,7 +13,6 @@ Test Teardown  Run Keyword And Ignore Error  Cleanup
 *** Test Cases ***            
 Check Wifi connected devices 
     [Documentation]  This Test case is to verify Connected Devices
-    # [Arguments]  ${SSID}
     [Tags]  SW2   Funtional  WiFi  SW2WiFiConnectedDevices
     Go to Connected Devices Page
     ${Connected_Devices_Mac_Address_GUI}=  Get the MAC Address of WiFi Connected Devices list

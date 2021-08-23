@@ -1,10 +1,10 @@
-Documentation  TestCase to verify WLAN Mesh features
+Documentation  TestCase to verify WLAN ExtraWiFi features
 
 ***Settings***
 Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
 Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
-Resource  ../../Resource/PageObjects/SW2/SW2_WLANGuestNetwork.robot
 Resource  ../../Resource/CommonWindowsFunction.robot
+Resource  ../../Resource/PageObjects/SW2/SW2_WLAN_ExtraWiFi.robot
 
 
 Suite Setup  Fetch the Initial WLAN details

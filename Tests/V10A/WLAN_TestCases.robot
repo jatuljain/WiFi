@@ -1,24 +1,30 @@
 Documentation  TestCase to WLAN features
 
 ***Settings***
-Resource   ../../Resource/Telnet.robot
-Resource  ../../Resource/PageObjects/V10A/AdministrationPage.robot
-Resource  ../../Resource/PageObjects/V10A/RebootPage.robot
-Resource  ../../Resource/PageObjects/V10A/WLANGuestNetwork.robot
-Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
-Resource  ../../Resource/CommonWindowsFunction.robot
-Resource  ../../Resource/PageObjects/V10A/Network_LAN_Page.robot
-Resource  ../../Resource/PageObjects/V10A/Network_UPnP_Page.robot
-Resource  ../../Resource/PageObjects/V10A/WLAN_MAC_Filtering_Page.robot
-Resource  ../../Resource/PageObjects/V10A/Network_DDNS_Page.robot
-# Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
-# Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
-# Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
+
+### For V10A Test cases
+# Resource   ../../Resource/Telnet.robot
+# Resource  ../../Resource/PageObjects/V10A/AdministrationPage.robot
+# Resource  ../../Resource/PageObjects/V10A/RebootPage.robot
+# Resource  ../../Resource/PageObjects/V10A/WLANGuestNetwork.robot
+# Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
+# Resource  ../../Resource/CommonWindowsFunction.robot
+# Resource  ../../Resource/PageObjects/V10A/Network_LAN_Page.robot
+# Resource  ../../Resource/PageObjects/V10A/Network_UPnP_Page.robot
+# Resource  ../../Resource/PageObjects/V10A/WLAN_MAC_Filtering_Page.robot
+# Resource  ../../Resource/PageObjects/V10A/Network_DDNS_Page.robot
+
+
+### For SW2 Test cases
+Resource  ../../Resource/PageObjects/SW2/SW2SettingPage.robot
+Resource  ../../Resource/PageObjects/SW2/SW2CommonFunction.robot
+Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
+Resource  ../../Resource/PageObjects/SW2/SW2_WLAN_ExtraWiFi.robot
 
 # Suite Setup  Fetch the Initial WLAN details
-# Suite Teardown  Logout from DUT
+Suite Teardown  Logout from DUT
 
-# Test Setup  Login to DUT
+Test Setup  Login to DUT
 # Test Teardown  Run Keyword And Ignore Error  Logout from DUT
 
 ***Test Cases***
@@ -26,8 +32,18 @@ Resource  ../../Resource/PageObjects/V10A/Network_DDNS_Page.robot
 
 Verify Random TestCase
     [Tags]  Test
-    Get IP from console for WiFi Interface
-
+    Go to Settings Page
+    Go to WLAN Extra Wi-Fi Page
+    Enable Extra Wi-Fi Network 2.4GHz
+    Enable Extra Wi-Fi Network 5GHz
+    Enable SSID Broadcast 2.4GHz
+    Enable SSID Broadcast 5GHz 
+    Set Extra Wifi SSID 24GHz  Extra24SSID
+    Set Extra Wifi SSID 5GHz  Extra5SSID
+    Set Extra Wifi SSID Password 24GHz  $Extra24SSID123
+    Set Extra Wifi SSID Password 5GHz  $Extra24SSID5123
+    Save Extra Wi-Fi Network Settings with Sterring Yes
+    # Save Extra Wi-Fi Network Settings
 
 
 Verify Random Disbale TestCase
