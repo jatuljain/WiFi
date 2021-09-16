@@ -92,7 +92,7 @@ Get IP from console for WiFi Interface
     FOR  ${VAR}  IN RANGE    3
         ${result}=  Run Process  C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe  ${WiFi_LAN_MAC_cmd}  shell=True
         log  ${result.stdout}
-        ${WiFi_LAN_IP_cmd}=  String.get regexp matches  ${result.stdout}  IPv4 Address.*: ([0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,2}).*\n  1
+        ${WiFi_LAN_IP_cmd}=  String.get regexp matches  ${result.stdout}  IPv4 Address.*: ([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).*\n  1
     #   EXIT For Loop If   '169' not in """${WiFi_LAN_IP_cmd}"""
       EXIT For Loop If  ${WiFi_LAN_IP_cmd} != [] and '169' not in """${WiFi_LAN_IP_cmd}"""
       sleep  10s
