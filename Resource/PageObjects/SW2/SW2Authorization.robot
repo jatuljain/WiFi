@@ -5,7 +5,8 @@ Library			SeleniumLibrary
 
 *** Variables ***
 ${BROWSER}		firefox
-${HOME_PAGE}     http://192.168.2.8/login.htm
+${SW2_IP}       192.168.2.5
+${HOME_PAGE}     http://${SW2_IP}/login.htm
 ${Device_Type}  SW2
 ${Authorization}     Authorization
 ${Advanced}   Advanced
@@ -23,3 +24,5 @@ ${English_Language}  //html/body/div/a[1]/div
 ${Modify_Password}  //tbody/tr[6]/td[1]/div/a/span[2]
 ${Overview_Text}  //title[normalize-space()='Overview']
 # ${English_Language}  //html/body/div/a[1]/div
+
+${Upgrade_HOME_PAGE}     http://${SW2_IP}/firmware_upgrade_manual.htm
