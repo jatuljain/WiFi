@@ -14,7 +14,8 @@ ${Upgrade_Button}  //tbody/tr[4]/td[2]/div/a/span[2]
 
 ***Keywords***
 Login to Upgrade Home Page
-    [Arguments]    ${Password_value}
+    [Arguments]    ${Password_value}  ${SW2_IP}
+    ${Upgrade_HOME_PAGE}   Set Variable   http://${SW2_IP}/firmware_upgrade_manual.htm
 	Open Browser			${Upgrade_HOME_PAGE} 	${BROWSER}
     Maximize Browser Window
     Sleep  2s
