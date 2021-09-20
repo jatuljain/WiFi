@@ -33,5 +33,6 @@ Choose file and upgrade
     click element  ${Upgrade_Button}
     Handle Alert
     Handle Alert
-    sleep  240s 
+    sleep  240s
+    Close All Browsers 
 
