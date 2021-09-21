@@ -4,7 +4,6 @@ Documentation  Upgrade SuperWifi Disc2
 Resource  ../../Resource/PageObjects/V10A/CommonFunction.robot
 Resource  ../../Resource/PageObjects/V10A/WLAN_AccessPoints.robot
 Resource  ../../Resource/PageObjects/SW2/SW2_UpgradePage.robot
-# Resource  ../../Resource/PageObjects/SW2/SW2_SystemPage.robot
 Resource  ../../Resource/PageObjects/SW2/SW2Authorization.robot
 Library  String
 
